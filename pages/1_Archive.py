@@ -8,9 +8,12 @@ import subprocess
 import sys
 import streamlit as st
 import streamlit.components.v1 as components
+import github_store
+from dotenv import load_dotenv
 
-ARCHIVE_DIR = os.path.join(os.path.dirname(__file__), "..", "archive")
-SCRIPT_DIR = os.path.join(os.path.dirname(__file__), "..")
+load_dotenv()
+
+SCRIPT_DIR = os.path.abspath(os.path.join(os.path.dirname(__file__), ".."))
 
 st.set_page_config(page_title="MosAIc Pulse — Archive", page_icon="🗂️", layout="wide")
 
@@ -22,12 +25,21 @@ with col_btn:
     run_clicked = st.button("＋ Add Pulse", type="primary", use_container_width=True)
 
 if run_clicked:
+    # Pass GitHub credentials to the subprocess so it can commit the archive
+    env = os.environ.copy()
+    try:
+        env["GITHUB_TOKEN"] = st.secrets.get("GITHUB_TOKEN", env.get("GITHUB_TOKEN", ""))
+        env["GITHUB_REPO"] = st.secrets.get("GITHUB_REPO", env.get("GITHUB_REPO", "evontay/evon-newsletter"))
+        env["GITHUB_BRANCH"] = st.secrets.get("GITHUB_BRANCH", env.get("GITHUB_BRANCH", "master"))
+    except Exception:
+        pass
     with st.spinner("Running MosAIc Pulse — this takes a minute…"):
         result = subprocess.run(
             [sys.executable, "mosaic_pulse.py"],
             cwd=SCRIPT_DIR,
             capture_output=True,
             text=True,
+            env=env,
         )
     if result.returncode == 0:
         st.success("Pulse generated and archived.")
@@ -53,20 +65,15 @@ def extract_meta(html: str) -> dict:
     return {"date_label": date_label, "theme": theme}
 
 
+@st.cache_data(ttl=60)
 def load_archive():
-    if not os.path.isdir(ARCHIVE_DIR):
-        return []
-    files = sorted(
-        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html")],
-        reverse=True,
-    )
+    files = github_store.list_directory("archive")
+    files = [(name, html) for name, html in files if name.endswith(".html")]
+    files.sort(key=lambda x: x[0], reverse=True)
     entries = []
-    for filename in files:
-        filepath = os.path.join(ARCHIVE_DIR, filename)
-        with open(filepath, encoding="utf-8") as f:
-            html = f.read()
+    for filename, html in files:
         meta = extract_meta(html)
-        entries.append({"filename": filename, "filepath": filepath, "html": html, **meta})
+        entries.append({"filename": filename, "html": html, **meta})
     return entries
 
 

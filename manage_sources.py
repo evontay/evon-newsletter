@@ -7,8 +7,12 @@ import re
 import requests
 import streamlit as st
 import feedparser
+from dotenv import load_dotenv
 from urllib.parse import urljoin
+import github_store
 from sources import SOURCES
+
+load_dotenv()
 
 SOURCES_FILE = "sources.py"
 
@@ -60,7 +64,7 @@ def parse_sources_with_categories():
 
 
 def write_sources(sources_by_category):
-    """Write sources back to sources.py, preserving category groupings."""
+    """Commit updated sources.py back to GitHub."""
     lines = ["SOURCES = [\n"]
     for i, category in enumerate(CATEGORIES):
         items = sources_by_category.get(category, [])
@@ -72,8 +76,12 @@ def write_sources(sources_by_category):
         for item in items:
             lines.append(f'    {{"url": "{item["url"]}", "name": "{item["name"]}"}},\n')
     lines.append("]\n")
+    content = "".join(lines)
+    # Write locally so the running session stays in sync
     with open(SOURCES_FILE, "w") as f:
-        f.writelines(lines)
+        f.write(content)
+    # Commit to GitHub so changes persist on Streamlit Cloud
+    github_store.write_file("sources.py", content, "Update sources via Streamlit UI")
 
 
 HEADERS = {"User-Agent": "Mozilla/5.0 (compatible; feed-discovery/1.0)"}

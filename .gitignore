@@ -4,4 +4,3 @@ token.json
 __pycache__/
 *.pyc
 pulse.log
-archive/

@@ -809,19 +809,19 @@ def send_email(subject: str, plain_body: str, html_body: str) -> None:
 
 
 def save_to_archive(html: str) -> None:
-    """Save the newsletter HTML to the archive folder."""
-    archive_dir = os.path.join(os.path.dirname(__file__), "archive")
-    os.makedirs(archive_dir, exist_ok=True)
+    """Commit the newsletter HTML to archive/ in the GitHub repo."""
+    import github_store
     date_str = datetime.now().strftime("%Y-%m-%d")
-    filepath = os.path.join(archive_dir, f"{date_str}.html")
-    # Avoid overwriting — append suffix if file already exists
+    path = f"archive/{date_str}.html"
+    # Use a unique path if one already exists for today
     counter = 2
-    while os.path.exists(filepath):
-        filepath = os.path.join(archive_dir, f"{date_str}-{counter}.html")
+    existing = [name for name, _ in github_store.list_directory("archive")]
+    base = f"{date_str}.html"
+    while path.split("/")[-1] in existing:
+        path = f"archive/{date_str}-{counter}.html"
         counter += 1
-    with open(filepath, "w", encoding="utf-8") as f:
-        f.write(html)
-    log.info(f"Newsletter archived to {filepath}")
+    github_store.write_file(path, html, f"Add newsletter archive {date_str}")
+    log.info(f"Newsletter archived to {path} in GitHub")
 
 
 def build_email_body(digest: str) -> tuple:
