@@ -808,6 +808,22 @@ def send_email(subject: str, plain_body: str, html_body: str) -> None:
     log.info(f"Email sent to {TO_EMAIL}")
 
 
+def save_to_archive(html: str) -> None:
+    """Commit the newsletter HTML to archive/ in the GitHub repo."""
+    import github_store
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    path = f"archive/{date_str}.html"
+    # Use a unique path if one already exists for today
+    counter = 2
+    existing = [name for name, _ in github_store.list_directory("archive")]
+    base = f"{date_str}.html"
+    while path.split("/")[-1] in existing:
+        path = f"archive/{date_str}-{counter}.html"
+        counter += 1
+    github_store.write_file(path, html, f"Add newsletter archive {date_str}")
+    log.info(f"Newsletter archived to {path} in GitHub")
+
+
 def build_email_body(digest: str) -> tuple:
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     plain = (
@@ -817,6 +833,7 @@ def build_email_body(digest: str) -> tuple:
         + f"\n\n{'─' * 60}\nGenerated: {timestamp} | mosaic_pulse.py"
     )
     html = digest_to_html(digest, timestamp)
+    save_to_archive(html)
     return plain, html
 
 

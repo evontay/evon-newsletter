@@ -26,6 +26,7 @@ SOURCES = [
     {"url": "https://www.proofofconcept.pub/feed", "name": "Proof of Concept"},
     {"url": "https://eflowers.substack.com/feed", "name": "Eflowers Substack"},
     {"url": "https://medium.com/feed/tag/design-leadership", "name": "Medium Design Leadership"},
+    {"url": "https://www.mynameisjehad.com/blog/rss/", "name": "My Name Is Jehad"},
 
     # Horizon Watch
     {"url": "https://www.ben-evans.com/benedictevans/rss.xml", "name": "Benedict Evans"},
@@ -38,6 +39,11 @@ SOURCES = [
     {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCW3VsBfpxXB8BXPWI0JOIfQ", "name": "NNg YouTube"},
     {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCkVKBqCG-GSsxmE6mMfGpWw", "name": "Figma YouTube"},
     {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC-b3c7kxa5vU-bnmaROgvog", "name": "Google Design"},
+    {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UC6t1O76G0jYXOAoYCm153dA", "name": "Lenny's Podcast"},
+    {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCK7tJXHCdxWpA4Q5349wfkw", "name": "Invisible Machines"},
+    {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCp7p0k2K8SnMh4gzxgne75Q", "name": "Ladies that UX in English"},
+    {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCOcC_iP_yrGDvPJzPaG6viA", "name": "IDEO U"},
+    {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCXk6wQPSLhEfant1aA_G2Qw", "name": "https://www.youtube.com/@JoinLearners"},
 
     # Jobs / Skills Market
     {"url": "https://blog.academyux.com/tag/jobs/rss/", "name": "Academy UX Jobs"},
