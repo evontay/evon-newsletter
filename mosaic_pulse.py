@@ -808,6 +808,22 @@ def send_email(subject: str, plain_body: str, html_body: str) -> None:
     log.info(f"Email sent to {TO_EMAIL}")
 
 
+def save_to_archive(html: str) -> None:
+    """Save the newsletter HTML to the archive folder."""
+    archive_dir = os.path.join(os.path.dirname(__file__), "archive")
+    os.makedirs(archive_dir, exist_ok=True)
+    date_str = datetime.now().strftime("%Y-%m-%d")
+    filepath = os.path.join(archive_dir, f"{date_str}.html")
+    # Avoid overwriting — append suffix if file already exists
+    counter = 2
+    while os.path.exists(filepath):
+        filepath = os.path.join(archive_dir, f"{date_str}-{counter}.html")
+        counter += 1
+    with open(filepath, "w", encoding="utf-8") as f:
+        f.write(html)
+    log.info(f"Newsletter archived to {filepath}")
+
+
 def build_email_body(digest: str) -> tuple:
     timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
     plain = (
@@ -817,6 +833,7 @@ def build_email_body(digest: str) -> tuple:
         + f"\n\n{'─' * 60}\nGenerated: {timestamp} | mosaic_pulse.py"
     )
     html = digest_to_html(digest, timestamp)
+    save_to_archive(html)
     return plain, html
 
 

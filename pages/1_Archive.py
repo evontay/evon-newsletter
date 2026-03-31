@@ -1,0 +1,100 @@
+"""
+Archive page — browse all past MosAIc Pulse newsletters.
+"""
+
+import re
+import os
+import subprocess
+import sys
+import streamlit as st
+import streamlit.components.v1 as components
+
+ARCHIVE_DIR = os.path.join(os.path.dirname(__file__), "..", "archive")
+SCRIPT_DIR = os.path.join(os.path.dirname(__file__), "..")
+
+st.set_page_config(page_title="MosAIc Pulse — Archive", page_icon="🗂️", layout="wide")
+
+col_title, col_btn = st.columns([5, 1])
+with col_title:
+    st.title("🗂️ MosAIc Pulse — Archive")
+with col_btn:
+    st.write("")  # vertical alignment nudge
+    run_clicked = st.button("＋ Add Pulse", type="primary", use_container_width=True)
+
+if run_clicked:
+    with st.spinner("Running MosAIc Pulse — this takes a minute…"):
+        result = subprocess.run(
+            [sys.executable, "mosaic_pulse.py"],
+            cwd=SCRIPT_DIR,
+            capture_output=True,
+            text=True,
+        )
+    if result.returncode == 0:
+        st.success("Pulse generated and archived.")
+        st.rerun()
+    else:
+        st.error("Pulse run failed.")
+        st.code(result.stderr or result.stdout, language="text")
+
+
+def extract_meta(html: str) -> dict:
+    """Pull date label and theme out of a saved newsletter HTML file."""
+    # Date: "Week of DD Month YYYY" from the subtitle paragraph
+    date_match = re.search(r'Week of ([^<]+)', html)
+    date_label = date_match.group(1).strip() if date_match else "Unknown date"
+
+    # Theme: paragraph immediately after "This Week's Theme" span
+    theme_match = re.search(
+        r"This Week's Theme.*?<p[^>]*>(.*?)</p>",
+        html, re.DOTALL | re.IGNORECASE
+    )
+    theme = re.sub(r'<[^>]+>', '', theme_match.group(1)).strip() if theme_match else ""
+
+    return {"date_label": date_label, "theme": theme}
+
+
+def load_archive():
+    if not os.path.isdir(ARCHIVE_DIR):
+        return []
+    files = sorted(
+        [f for f in os.listdir(ARCHIVE_DIR) if f.endswith(".html")],
+        reverse=True,
+    )
+    entries = []
+    for filename in files:
+        filepath = os.path.join(ARCHIVE_DIR, filename)
+        with open(filepath, encoding="utf-8") as f:
+            html = f.read()
+        meta = extract_meta(html)
+        entries.append({"filename": filename, "filepath": filepath, "html": html, **meta})
+    return entries
+
+
+entries = load_archive()
+
+if not entries:
+    st.info("No newsletters archived yet. Click **＋ Add Pulse** to generate one.")
+    st.stop()
+
+st.caption(f"{len(entries)} newsletter{'s' if len(entries) != 1 else ''} in archive")
+st.divider()
+
+selected = st.session_state.get("selected_entry", None)
+
+for entry in entries:
+    col_text, col_btn = st.columns([6, 1])
+    with col_text:
+        st.markdown(f"**{entry['date_label']}**")
+        if entry["theme"]:
+            st.caption(entry["theme"])
+    with col_btn:
+        if st.button("View", key=entry["filename"]):
+            st.session_state["selected_entry"] = entry["filename"]
+            selected = entry["filename"]
+
+if selected:
+    match = next((e for e in entries if e["filename"] == selected), None)
+    if match:
+        st.divider()
+        st.subheader(f"Week of {match['date_label']}")
+        components.html(match["html"], height=900, scrolling=True)
