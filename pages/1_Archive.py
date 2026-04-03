@@ -86,22 +86,6 @@ if not entries:
 st.caption(f"{len(entries)} newsletter{'s' if len(entries) != 1 else ''} in archive")
 st.divider()
 
-selected = st.session_state.get("selected_entry", None)
-
 for entry in entries:
-    col_text, col_btn = st.columns([6, 1])
-    with col_text:
-        st.markdown(f"**{entry['date_label']}**")
-        if entry["theme"]:
-            st.caption(entry["theme"])
-    with col_btn:
-        if st.button("View", key=entry["filename"]):
-            st.session_state["selected_entry"] = entry["filename"]
-            selected = entry["filename"]
-
-if selected:
-    match = next((e for e in entries if e["filename"] == selected), None)
-    if match:
-        st.divider()
-        st.subheader(f"Week of {match['date_label']}")
-        components.html(match["html"], height=900, scrolling=True)
+    with st.expander(f"**{entry['date_label']}**" + (f"  —  {entry['theme']}" if entry["theme"] else "")):
+        components.html(entry["html"], height=900, scrolling=True)
