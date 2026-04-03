@@ -273,6 +273,20 @@ def collect_from_gmail() -> list[dict]:
 
 # ── Step 2: Filter ─────────────────────────────────────────────────────────────
 
+UTM_PARAMS = {"utm_source", "utm_medium", "utm_campaign", "utm_content", "utm_term"}
+
+
+def normalise_url(url: str) -> str:
+    """Strip UTM tracking parameters so the same article always maps to the same key."""
+    try:
+        from urllib.parse import urlparse, urlencode, parse_qsl
+        parsed = urlparse(url)
+        clean_qs = urlencode([(k, v) for k, v in parse_qsl(parsed.query) if k not in UTM_PARAMS])
+        return parsed._replace(query=clean_qs).geturl()
+    except Exception:
+        return url
+
+
 def get_domain(url: str) -> str:
     try:
         hostname = urlparse(url).hostname or ""
@@ -320,12 +334,14 @@ def filter_items(items: list[dict], used_urls: set = None) -> tuple[list[dict], 
     log.info(f"After date filter (last {LOOKBACK_DAYS} days): {len(dated)} items")
 
     # Deduplicate by URL, and exclude previously featured articles
+    # Use normalised URLs (UTM params stripped) for comparison
     previously_seen = used_urls or set()
     seen_urls = set()
     deduped = []
     for item in dated:
-        if item["url"] not in seen_urls and item["url"] not in previously_seen:
-            seen_urls.add(item["url"])
+        key = normalise_url(item["url"])
+        if key not in seen_urls and key not in previously_seen:
+            seen_urls.add(key)
             deduped.append(item)
     log.info(f"After dedup + archive exclusion: {len(deduped)} items")
 
@@ -933,7 +949,7 @@ def main():
     send_email(subject, plain, html)
 
     # Record featured URLs so they're excluded from future issues
-    featured_urls = [i["url"] for i in scored_editorial + scored_youtube + job_items[:MAX_JOB_ITEMS]]
+    featured_urls = [normalise_url(i["url"]) for i in scored_editorial + scored_youtube + job_items[:MAX_JOB_ITEMS]]
     save_used_urls(featured_urls, used_urls)
     log.info(f"Saved {len(featured_urls)} featured URLs to archive exclusion list")
     log.info("=== MosAIc Pulse complete ===")
