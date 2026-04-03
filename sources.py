@@ -44,6 +44,7 @@ SOURCES = [
     {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCp7p0k2K8SnMh4gzxgne75Q", "name": "Ladies that UX in English"},
     {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCOcC_iP_yrGDvPJzPaG6viA", "name": "IDEO U"},
     {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCXk6wQPSLhEfant1aA_G2Qw", "name": "https://www.youtube.com/@JoinLearners"},
+    {"url": "https://www.youtube.com/feeds/videos.xml?channel_id=UCMEQZDhP_k_YkFnwoCgT7SQ", "name": "vaexperience"},
 
     # Jobs / Skills Market
     {"url": "https://blog.academyux.com/tag/jobs/rss/", "name": "Academy UX Jobs"},
