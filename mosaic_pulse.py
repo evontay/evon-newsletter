@@ -287,20 +287,47 @@ def is_job_item(url: str) -> bool:
     return any(jd in domain for jd in JOB_DOMAINS)
 
 
-def filter_items(items: list[dict]) -> tuple[list[dict], list[dict], list[dict]]:
+def load_used_urls() -> set:
+    """Load all article URLs previously featured in past newsletters."""
+    try:
+        files = github_store.list_directory("archive")
+        for name, content in files:
+            if name == "used_urls.json":
+                return set(json.loads(content))
+    except Exception as e:
+        log.warning(f"Could not load used URLs: {e}")
+    return set()
+
+
+def save_used_urls(new_urls: list, existing: set) -> None:
+    """Append newly featured URLs to the persistent used-URLs list."""
+    updated = sorted(existing | set(new_urls))
+    try:
+        github_store.write_file(
+            "archive/used_urls.json",
+            json.dumps(updated, indent=2),
+            "Update used article URLs",
+        )
+    except Exception as e:
+        log.warning(f"Could not save used URLs: {e}")
+
+
+def filter_items(items: list[dict], used_urls: set = None) -> tuple[list[dict], list[dict], list[dict]]:
     cutoff = datetime.now(timezone.utc) - timedelta(days=LOOKBACK_DAYS)
 
     # Date filter
     dated = [i for i in items if i["pub_date"] and i["pub_date"] >= cutoff]
     log.info(f"After date filter (last {LOOKBACK_DAYS} days): {len(dated)} items")
 
-    # Deduplicate by URL
+    # Deduplicate by URL, and exclude previously featured articles
+    previously_seen = used_urls or set()
     seen_urls = set()
     deduped = []
     for item in dated:
-        if item["url"] not in seen_urls:
+        if item["url"] not in seen_urls and item["url"] not in previously_seen:
             seen_urls.add(item["url"])
             deduped.append(item)
+    log.info(f"After dedup + archive exclusion: {len(deduped)} items")
 
     # Separate jobs, YouTube, and editorial
     editorial = []
@@ -853,8 +880,10 @@ def main():
         raw_items.extend(gmail_items)
         log.info(f"Total items after Gmail merge: {len(raw_items)}")
 
-    # Step 2: Filter
-    editorial_items, youtube_items, job_items = filter_items(raw_items)
+    # Step 2: Filter (excluding URLs already featured in past issues)
+    used_urls = load_used_urls()
+    log.info(f"Loaded {len(used_urls)} previously featured URLs to exclude")
+    editorial_items, youtube_items, job_items = filter_items(raw_items, used_urls=used_urls)
 
     if not editorial_items and not youtube_items and not job_items:
         log.warning("No items passed date filter — sending 'nothing this week' email")
@@ -902,6 +931,11 @@ def main():
     # Step 5: Email
     plain, html = build_email_body(digest)
     send_email(subject, plain, html)
+
+    # Record featured URLs so they're excluded from future issues
+    featured_urls = [i["url"] for i in scored_editorial + scored_youtube + job_items[:MAX_JOB_ITEMS]]
+    save_used_urls(featured_urls, used_urls)
+    log.info(f"Saved {len(featured_urls)} featured URLs to archive exclusion list")
     log.info("=== MosAIc Pulse complete ===")
 
 
