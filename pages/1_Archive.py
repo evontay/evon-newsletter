@@ -10,6 +10,7 @@ import shutil
 import subprocess
 import sys
 from pathlib import Path
+import time
 
 import streamlit as st
 import streamlit.components.v1 as components
@@ -236,22 +237,59 @@ for entry in entries:
                         env["GITHUB_BRANCH"] = st.secrets.get("GITHUB_BRANCH", env.get("GITHUB_BRANCH", "master"))
                     except Exception:
                         pass
-                    with st.spinner("Generating podcast — this takes a few minutes…"):
-                        result = subprocess.run(
-                            [PYTHON312, str(SCRIPT_DIR / "podcast.py"),
-                             str(ARCHIVE_DIR / entry["filename"])],
-                            cwd=SCRIPT_DIR,
-                            capture_output=True,
-                            text=True,
-                            env=env,
-                        )
-                    if result.returncode == 0:
-                        st.success("Podcast ready!")
+
+                    status = st.empty()
+                    progress = st.progress(0)
+                    status.markdown("✍️ Writing script…")
+
+                    proc = subprocess.Popen(
+                        [PYTHON312, str(SCRIPT_DIR / "podcast.py"),
+                         str(ARCHIVE_DIR / entry["filename"])],
+                        cwd=SCRIPT_DIR,
+                        stdout=subprocess.PIPE,
+                        stderr=subprocess.STDOUT,
+                        text=True,
+                        bufsize=1,
+                        env=env,
+                    )
+
+                    total_turns = None
+                    for line in proc.stdout:
+                        line = line.strip()
+                        m_turns = re.search(r'Script generated — (\d+) turns', line)
+                        m_synth = re.search(r'\[(\d+)/(\d+)\].*?(VERA|KAI):\s*(.{0,50})', line)
+                        if m_turns:
+                            total_turns = int(m_turns.group(1))
+                            status.markdown("🎙️ Synthesising audio…")
+                            progress.progress(0.15)
+                        elif "Loading Kokoro" in line:
+                            status.markdown("🔊 Loading voice model…")
+                            progress.progress(0.18)
+                        elif m_synth:
+                            cur, total = int(m_synth.group(1)), int(m_synth.group(2))
+                            speaker = m_synth.group(3).title()
+                            snippet = m_synth.group(4).strip()
+                            pct = 0.20 + (cur / total) * 0.70
+                            progress.progress(pct)
+                            status.markdown(f"🎙️ **{speaker}** ({cur}/{total}): *{snippet}…*")
+                        elif "Audio saved" in line:
+                            progress.progress(0.95)
+                            status.markdown("💾 Saving files…")
+                        elif "committed to GitHub" in line:
+                            progress.progress(0.98)
+                            status.markdown("☁️ Uploading to GitHub…")
+
+                    proc.wait()
+                    if proc.returncode == 0:
+                        progress.progress(1.0)
+                        status.markdown("✅ Podcast ready!")
+                        time.sleep(0.8)
                         st.cache_data.clear()
                         st.rerun()
                     else:
-                        st.error("Podcast generation failed.")
-                        st.code(result.stderr or result.stdout, language="text")
+                        status.empty()
+                        progress.empty()
+                        st.error("Podcast generation failed — check terminal for details.")
             else:
                 st.caption("Podcast generation requires Python 3.12 + Kokoro (local only).")
 
