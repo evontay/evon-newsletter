@@ -86,11 +86,14 @@ def load_archive():
         html = html_files[filename]
         stem = filename.replace(".html", "")
         meta = extract_meta(html)
+        # Check GitHub AND local disk (in case GitHub upload of large MP3 failed)
+        on_github = f"{stem}_script.json" in script_files and f"{stem}.mp3" in mp3_files
+        on_disk = (ARCHIVE_DIR / f"{stem}_script.json").exists() and (ARCHIVE_DIR / f"{stem}.mp3").exists()
         entries.append({
             "filename": filename,
             "stem": stem,
             "html": html,
-            "has_podcast": f"{stem}_script.json" in script_files and f"{stem}.mp3" in mp3_files,
+            "has_podcast": on_github or on_disk,
             **meta,
         })
     return entries

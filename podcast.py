@@ -172,10 +172,11 @@ def save_outputs(turns: list[dict], audio: np.ndarray, source_filename: str):
     try:
         import github_store
         github_store.write_file(f"archive/{stem}_script.json", script_content, f"Add podcast script {stem}")
+        log.info("Script committed to GitHub")
         github_store.write_file(f"archive/{stem}.mp3", mp3_path.read_bytes(), f"Add podcast audio {stem}")
         log.info("Podcast files committed to GitHub")
     except Exception as e:
-        log.warning(f"Could not commit podcast to GitHub: {e}")
+        log.warning(f"Could not commit podcast to GitHub: {e} — files saved locally only")
 
 
 # ── Main ───────────────────────────────────────────────────────────────────────
