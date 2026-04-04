@@ -43,7 +43,7 @@ def write_file(path, content, commit_message):
 
 
 def list_directory(path):
-    """Return a list of (filename, decoded_content) tuples for files in a repo directory."""
+    """Return a list of (filename, decoded_content) tuples for text files in a repo directory."""
     from github import GithubException
     repo, branch = get_repo()
     try:
@@ -57,3 +57,27 @@ def list_directory(path):
         ]
     except GithubException:
         return []
+
+
+def list_filenames(path):
+    """Return just the filenames in a repo directory — fast, no content fetch."""
+    from github import GithubException
+    repo, branch = get_repo()
+    try:
+        contents = repo.get_contents(path, ref=branch)
+        if not isinstance(contents, list):
+            contents = [contents]
+        return [f.name for f in contents if not f.name.startswith(".")]
+    except GithubException:
+        return []
+
+
+def read_file_bytes(path):
+    """Read a binary file (e.g. MP3) from the repo and return raw bytes."""
+    from github import GithubException
+    repo, branch = get_repo()
+    try:
+        f = repo.get_contents(path, ref=branch)
+        return f.decoded_content
+    except GithubException:
+        return None
