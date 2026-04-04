@@ -4,3 +4,7 @@ token.json
 __pycache__/
 *.pyc
 pulse.log
+*.onnx
+*.bin
+*.mp3
+*.wav

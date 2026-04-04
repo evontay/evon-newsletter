@@ -1,5 +1,8 @@
 anthropic>=0.40.0
 PyGithub>=2.0
+kokoro-onnx>=0.4.0
+soundfile>=0.12.0
+pydub>=0.25.0
 streamlit>=1.35.0
 feedparser>=6.0.11
 python-dotenv>=1.0.0

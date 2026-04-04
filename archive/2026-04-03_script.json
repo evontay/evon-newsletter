@@ -1,0 +1,146 @@
+[
+  {
+    "speaker": "VERA",
+    "line": "Alright Kai, I've been staring at this week's digest and there's something almost... philosophical happening here. We're seeing this split between GenUI and what they're calling 'vibe coding' — basically who's driving the AI bus."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Right, Nielsen Norman finally gave us some vocabulary for what we've all been fumbling around with. GenUI is AI deciding what to build, vibe coding is us telling AI what we want. Though I have to say, 'vibe coding' sounds like something a startup would put on a hackathon t-shirt."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Ha! But here's what's interesting — while we're getting these shiny new AI paradigms, the leadership pieces this week are all about going back to basics. Peter Merholz is saying AI just amplifies whatever management problems you already had."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Which honestly makes sense from where I'm sitting. I've seen teams where designers can't agree on button styles, and now we're supposed to hand interface generation over to AI? That's not going to end well."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly! And that Proof of Concept case study shows this isn't theoretical anymore. They actually shipped something, then had to rebuild it for AI-native workflows. That's the migration reality hitting us in real time."
+  },
+  {
+    "speaker": "KAI",
+    "line": "I read that one twice. The part that stuck with me was how they had to rethink their entire component system. It's not just swapping out Figma for some AI tool — it's reconsidering how you structure design decisions from the ground up."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right, and here's where I think the tension gets really interesting. As AI starts generating more interfaces, human judgment doesn't become less important — it becomes more critical. We're moving up the abstraction ladder."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Okay, but let's be practical about this. If I'm working on our mobile app and I use GenUI, who actually decides if the AI's navigation pattern is right for our users? The AI doesn't know our research insights or brand constraints."
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the million dollar question, and it connects to that UX Collective piece about design quality frameworks. If AI output varies wildly between practitioners — which it absolutely will — then your quality systems become make-or-break."
+  },
+  {
+    "speaker": "KAI",
+    "line": "This is where I get skeptical though. Everyone's talking about AI fluency like it's this new skill, but we can't even get consistent icon usage across our current team. Adding AI to the mix without fixing the fundamentals feels like putting a turbo engine in a car with wobbly wheels."
+  },
+  {
+    "speaker": "VERA",
+    "line": "But maybe that's exactly why this moment is so important. AI forces us to get explicit about things we've been doing intuitively. Like, when you review a GenUI output, what are your actual criteria?"
+  },
+  {
+    "speaker": "KAI",
+    "line": "Fair point. I usually know when something feels off, but I'd struggle to write down the checklist. And if AI is going to be generating options, I need to be able to articulate why option A works better than option B."
+  },
+  {
+    "speaker": "VERA",
+    "line": "And that's where the skills-based organization stuff from Merholz comes in. Role blur isn't just about who does what anymore — it's about who makes which decisions and when."
+  },
+  {
+    "speaker": "KAI",
+    "line": "The timing on this is interesting too. That Google job posting for Staff AI Product Designer at Gemini — they want someone who understands both AI product strategy and iOS platform constraints. That's not a traditional design role."
+  },
+  {
+    "speaker": "VERA",
+    "line": "It's a hybrid role that didn't exist two years ago. And look at what Simon Willison is saying about agentic workflows coming to design tools in the next six months. We're going to be collaborating with autonomous AI agents, not just using AI as a fancy autocomplete."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Autonomous agents... that sounds both exciting and terrifying. Like, an AI agent that can iterate on designs based on user feedback without me being in the loop? I need to know what guardrails are in place."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly, and that brings us back to authority and decision-making. In an agentic workflow, you're not just reviewing AI output — you're setting boundaries for what an AI agent can decide independently."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Which requires a completely different kind of design thinking. Instead of 'make this button blue,' it's more like 'here are the constraints and success metrics, go figure out the interface.' That's a huge shift."
+  },
+  {
+    "speaker": "VERA",
+    "line": "And it puts pressure on all those leadership fundamentals that the newsletter keeps emphasizing. You need clear quality standards, well-defined decision authority, and robust feedback loops. AI amplifies whatever organizational patterns you already have."
+  },
+  {
+    "speaker": "KAI",
+    "line": "So if our team is already struggling with design consistency, GenUI will just create more inconsistent designs faster. But if we have solid systems and clear standards..."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Then AI becomes a force multiplier for good design decisions. It's like the reflection prompt asks — who retains decision authority over generated elements, and how do we maintain consistency across AI-assisted outputs."
+  },
+  {
+    "speaker": "KAI",
+    "line": "I keep coming back to that Proof of Concept rebuild. They had to ship something first, learn from it, then rebuild for AI workflows. Maybe that's the path — not trying to get it right from day one, but being intentional about the learning cycle."
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's a very pragmatic take. And it aligns with what we're seeing in the market — teams that are experimenting now are building the muscle memory for when agentic workflows become standard."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Though we should probably start with the basics. Define our design quality criteria, map out decision authority, maybe run some GenUI experiments on non-critical projects. Build confidence before we hand the keys to an AI agent."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Yes, and I think we need to get comfortable with AI as a collaborator rather than just a tool. That mindset shift from 'AI does what I tell it' to 'AI and I figure this out together' is fundamental."
+  },
+  {
+    "speaker": "KAI",
+    "line": "But always with clear boundaries. I'm fine with AI suggesting navigation patterns, but I want final say on whether it aligns with our user research and brand guidelines. That human judgment layer stays critical."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Absolutely. And as these capabilities evolve — especially with agentic workflows on the horizon — we'll need to get even more precise about where human oversight is non-negotiable versus where we can trust AI to operate independently."
+  },
+  {
+    "speaker": "KAI",
+    "line": "This feels like one of those moments where the technology is moving faster than our organizational ability to integrate it thoughtfully. But maybe that's always been true with big shifts."
+  },
+  {
+    "speaker": "VERA",
+    "line": "True, though I'd argue this one is different because it touches every part of the design process. It's not just a new tool in the toolkit — it's reshaping how we think about design authorship and decision-making."
+  },
+  {
+    "speaker": "KAI",
+    "line": "So what's our takeaway for the team? Start experimenting with GenUI tools but invest just as much energy in clarifying our quality standards and decision frameworks?"
+  },
+  {
+    "speaker": "VERA",
+    "line": "That sounds right. And maybe we frame it as building our AI collaboration muscles — getting comfortable with the back-and-forth between human judgment and AI generation before the stakes get higher with agentic workflows."
+  },
+  {
+    "speaker": "KAI",
+    "line": "I like that framing. Collaboration, not replacement. And if we do this right, we could end up with both better design outcomes and clearer team processes. The AI forces us to be more intentional about things we've been doing on autopilot."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly. The technology is reshaping the craft, but the fundamentals of good design leadership are becoming more important, not less. That's the paradox we need to navigate."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Alright, I'm convinced. Let's start with some low-stakes GenUI experiments and see what questions come up about decision authority and quality standards. Learn by doing, but with clear guardrails."
+  },
+  {
+    "speaker": "VERA",
+    "line": "Perfect. And let's keep an eye on those agentic workflow developments. Six months isn't very long to prepare for AI agents that can iterate designs autonomously. We want to be ready, not reactive."
+  },
+  {
+    "speaker": "KAI",
+    "line": "Agreed. Though knowing our team, we'll probably end up with some interesting stories about AI-generated interfaces that nobody expected. Should make for good podcast material at least."
+  }
+]
