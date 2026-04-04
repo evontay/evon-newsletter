@@ -125,7 +125,7 @@ def render_player(mp3_bytes: bytes, turns: list[dict]):
     transcript_html = ""
     for i, turn in enumerate(turns):
         speaker = turn["speaker"]
-        cls = "vera" if speaker == "VERA" else "kai"
+        cls = {"VERA": "vera", "KAI": "kai", "DAN": "dan", "CARLA": "carla"}.get(speaker, "kai")
         line = turn["line"].replace("<", "&lt;").replace(">", "&gt;")
         transcript_html += f"""
         <div class="turn" id="turn-{i}" data-start="{turn.get('start', 0)}" data-end="{turn.get('end', 9999)}">
@@ -157,6 +157,8 @@ def render_player(mp3_bytes: bytes, turns: list[dict]):
       .speaker {{ font-size: 10px; font-weight: 700; text-transform: uppercase; letter-spacing: 1.2px; margin-bottom: 3px; }}
       .speaker.vera {{ color: #7C3AED; }}
       .speaker.kai {{ color: #059669; }}
+      .speaker.dan {{ color: #D97706; }}
+      .speaker.carla {{ color: #E11D48; }}
       .line {{ font-size: 13px; line-height: 1.65; color: #333; }}
     </style></head><body>
       <audio id="player" controls>
@@ -267,7 +269,7 @@ for entry in entries:
                         all_output.append(line.rstrip())
                         line = line.strip()
                         m_turns = re.search(r'Script generated — (\d+) turns', line)
-                        m_synth = re.search(r'\[(\d+)/(\d+)\].*?(VERA|KAI):\s*(.{0,50})', line)
+                        m_synth = re.search(r'\[(\d+)/(\d+)\].*?(VERA|KAI|DAN|CARLA):\s*(.{0,50})', line)
                         if m_turns:
                             total_turns = int(m_turns.group(1))
                             status.markdown("🎙️ Synthesising audio…")

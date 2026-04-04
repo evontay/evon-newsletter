@@ -1,7 +1,7 @@
 #!/usr/bin/env python3.12
 """
 MosAIc Pulse — Podcast Generator
-Turns a newsletter digest into a Vera & Kai audio episode.
+Turns a newsletter digest into a Vera, Kai, Dan & Carla audio episode.
 
 Usage:
     python3.12 podcast.py                        # uses latest archive
@@ -33,9 +33,12 @@ log = logging.getLogger(__name__)
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
 SONNET_MODEL = "claude-sonnet-4-20250514"
 
-# Kokoro voice IDs — af_heart is warm/female, am_michael is grounded/male
-VERA_VOICE = "af_nova"   # Vera: big-picture strategist
-KAI_VOICE  = "am_echo"  # Kai: on-the-ground practitioner
+VOICES = {
+    "VERA":  "af_nova",      # Big-picture strategist
+    "KAI":   "am_echo",      # Design practitioner
+    "DAN":   "am_puck",      # DesignOps specialist
+    "CARLA": "af_jessica",   # User researcher
+}
 SAMPLE_RATE = 24000
 
 # Short silence between turns (0.4s)
@@ -67,21 +70,23 @@ def html_to_text(html: str) -> str:
 
 # ── Step 2: Generate script ────────────────────────────────────────────────────
 
-SYSTEM_PROMPT = """You are writing a podcast script for an internal UX/DesignOps team at MosAIc AI Experience, Singapore.
+SYSTEM_PROMPT = """You are writing a podcast script for an internal UX/DesignOps team at MosAIc AI Experience, Singapore — a team in the middle of an AI transformation.
 
-The two hosts are AI personas:
-- VERA: Big-picture strategist. Thinks in systems, trends, long arcs. Raises implications and tensions. Can be a little intense about the future.
-- KAI: On-the-ground practitioner. Translates ideas into day-to-day design work. Sceptical of hype, grounded, occasionally dry wit.
+The four hosts are AI personas with distinct roles and voices:
+- VERA: Big-picture strategist. Thinks in systems, long arcs, and structural shifts. Raises implications and tensions the others haven't seen yet. Can be a little intense about the future.
+- KAI: Design practitioner. Focused on craft — interaction design, design systems, visual and UX quality. Translates abstract ideas into what they mean for the work itself. Grounded, occasionally dry wit.
+- DAN: DesignOps specialist. Thinks in workflows, tooling, team rituals, and organisational friction. Pragmatic. Spots the process bottleneck everyone else misses. Sceptical of things that sound good in theory but break in practice.
+- CARLA: User researcher. Centres the human perspective — who gets left out, what the data doesn't capture, what assumptions are being made. Brings empathy and rigour. Pushes back when the team moves too fast.
 
-Their dynamic: bantery, warm, mutually respectful, genuinely curious. They push back on each other to arrive at joint insights. Neither wins — they build together.
+Group dynamic: warm, collegiate, bantery. They genuinely respect each other's expertise. No one dominates — they build on each other's points, push back constructively, and arrive at shared insights. Not all four need to speak equally on every topic; let the conversation flow naturally to the most relevant voices.
 
 Format rules:
 - Output ONLY a JSON array of turns: [{"speaker": "VERA", "line": "..."}, ...]
-- 30-40 turns total (~2000-2500 words across all lines)
+- 36-44 turns total (~2500-3000 words across all lines)
 - Open with a brief informal exchange (2-3 turns) before diving in
-- Cover the major stories from the newsletter — don't just summarise, debate the implications
+- Cover the major stories — don't just summarise, debate the implications from each person's angle
 - Each line should be 1-4 sentences. Natural spoken rhythm. No bullet points.
-- End with both hosts landing on a shared takeaway for the team
+- End with the group landing on a shared takeaway for the team
 - No section headers, no stage directions, no markdown — just the JSON array"""
 
 
@@ -96,7 +101,7 @@ def generate_script(digest_text: str) -> list[dict]:
         system=SYSTEM_PROMPT,
         messages=[{
             "role": "user",
-            "content": f"Here is this week's newsletter digest. Write the Vera & Kai episode.\n\n{digest_text}"
+            "content": f"Here is this week's newsletter digest. Write the episode.\n\n{digest_text}"
         }],
     )
 
@@ -124,7 +129,7 @@ def synthesise(turns: list[dict]) -> np.ndarray:
     for i, turn in enumerate(turns):
         speaker = turn["speaker"]
         line = turn["line"]
-        voice = VERA_VOICE if speaker == "VERA" else KAI_VOICE
+        voice = VOICES.get(speaker, VOICES["KAI"])
 
         log.info(f"  [{i+1}/{len(turns)}] {speaker}: {line[:60]}…")
         samples, _ = kokoro.create(line, voice=voice, speed=1.0, lang="en-us")
