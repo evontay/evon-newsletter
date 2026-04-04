@@ -242,9 +242,14 @@ for entry in entries:
                     progress = st.progress(0)
                     status.markdown("✍️ Writing script…")
 
+                    # Write HTML to local disk so podcast.py can read it
+                    ARCHIVE_DIR.mkdir(exist_ok=True)
+                    local_html = ARCHIVE_DIR / entry["filename"]
+                    local_html.write_text(entry["html"], encoding="utf-8")
+
                     proc = subprocess.Popen(
                         [PYTHON312, str(SCRIPT_DIR / "podcast.py"),
-                         str(ARCHIVE_DIR / entry["filename"])],
+                         str(local_html)],
                         cwd=SCRIPT_DIR,
                         stdout=subprocess.PIPE,
                         stderr=subprocess.STDOUT,
@@ -254,7 +259,9 @@ for entry in entries:
                     )
 
                     total_turns = None
+                    all_output = []
                     for line in proc.stdout:
+                        all_output.append(line.rstrip())
                         line = line.strip()
                         m_turns = re.search(r'Script generated — (\d+) turns', line)
                         m_synth = re.search(r'\[(\d+)/(\d+)\].*?(VERA|KAI):\s*(.{0,50})', line)
@@ -289,7 +296,8 @@ for entry in entries:
                     else:
                         status.empty()
                         progress.empty()
-                        st.error("Podcast generation failed — check terminal for details.")
+                        st.error("Podcast generation failed.")
+                        st.code("\n".join(all_output), language="text")
             else:
                 st.caption("Podcast generation requires Python 3.12 + Kokoro (local only).")
 
