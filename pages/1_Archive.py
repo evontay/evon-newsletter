@@ -74,33 +74,48 @@ def extract_meta(html: str) -> dict:
     return {"date_label": date_label, "theme": theme}
 
 
+HOSTS = ["VERA", "KAI", "DAN", "CARLA"]
+HOST_LABELS = {
+    "VERA":  "Vera — Strategist",
+    "KAI":   "Kai — Design practitioner",
+    "DAN":   "Dan — DesignOps",
+    "CARLA": "Carla — User researcher",
+}
+
+
 @st.cache_data(ttl=60)
 def load_archive():
     files = github_store.list_directory("archive")
     html_files = {name: content for name, content in files if name.endswith(".html")}
-    script_files = {name for name, _ in files if name.endswith("_script.json")}
-    mp3_files = {name for name, _ in files if name.endswith(".mp3")}
+    all_filenames = {name for name, _ in files}
 
     entries = []
     for filename in sorted(html_files, reverse=True):
         html = html_files[filename]
-        stem = filename.replace(".html", "")
+        date_stem = filename.replace(".html", "")
         meta = extract_meta(html)
-        # Check GitHub AND local disk (in case GitHub upload of large MP3 failed)
-        on_github = f"{stem}_script.json" in script_files and f"{stem}.mp3" in mp3_files
-        on_disk = (ARCHIVE_DIR / f"{stem}_script.json").exists() and (ARCHIVE_DIR / f"{stem}.mp3").exists()
+
+        # Find which host podcasts exist for this newsletter
+        existing_podcasts = {}
+        for host in HOSTS:
+            stem = f"{date_stem}_{host.lower()}"
+            on_github = f"{stem}_script.json" in all_filenames and f"{stem}.mp3" in all_filenames
+            on_disk = (ARCHIVE_DIR / f"{stem}_script.json").exists() and (ARCHIVE_DIR / f"{stem}.mp3").exists()
+            if on_github or on_disk:
+                existing_podcasts[host] = stem
+
         entries.append({
             "filename": filename,
-            "stem": stem,
+            "date_stem": date_stem,
             "html": html,
-            "has_podcast": on_github or on_disk,
+            "existing_podcasts": existing_podcasts,
             **meta,
         })
     return entries
 
 
 def load_podcast(stem: str):
-    """Return (mp3_bytes, turns) for a given stem, checking local disk first."""
+    """Return (mp3_bytes, turns) for a given host stem, checking local disk first."""
     mp3_local = ARCHIVE_DIR / f"{stem}.mp3"
     script_local = ARCHIVE_DIR / f"{stem}_script.json"
 
@@ -222,89 +237,117 @@ if not entries:
 st.caption(f"{len(entries)} newsletter{'s' if len(entries) != 1 else ''} in archive")
 st.divider()
 
+def run_podcast(entry, host):
+    """Run podcast.py for the given host and show live progress."""
+    env = os.environ.copy()
+    try:
+        env["GITHUB_TOKEN"] = st.secrets.get("GITHUB_TOKEN", env.get("GITHUB_TOKEN", ""))
+        env["GITHUB_REPO"] = st.secrets.get("GITHUB_REPO", env.get("GITHUB_REPO", "evontay/evon-newsletter"))
+        env["GITHUB_BRANCH"] = st.secrets.get("GITHUB_BRANCH", env.get("GITHUB_BRANCH", "master"))
+    except Exception:
+        pass
+
+    ARCHIVE_DIR.mkdir(exist_ok=True)
+    local_html = ARCHIVE_DIR / entry["filename"]
+    local_html.write_text(entry["html"], encoding="utf-8")
+
+    status = st.empty()
+    progress = st.progress(0)
+    status.markdown("✍️ Writing script…")
+
+    proc = subprocess.Popen(
+        [PYTHON312, str(SCRIPT_DIR / "podcast.py"), str(local_html), "--host", host],
+        cwd=SCRIPT_DIR,
+        stdout=subprocess.PIPE,
+        stderr=subprocess.STDOUT,
+        text=True,
+        bufsize=1,
+        env=env,
+    )
+
+    all_output = []
+    for line in proc.stdout:
+        all_output.append(line.rstrip())
+        line = line.strip()
+        if re.search(r'Script generated', line):
+            status.markdown("🎙️ Synthesising audio…")
+            progress.progress(0.15)
+        elif "Loading Kokoro" in line:
+            status.markdown("🔊 Loading voice model…")
+            progress.progress(0.18)
+        elif m := re.search(r'\[(\d+)/(\d+)\].*?(VERA|KAI|DAN|CARLA):\s*(.{0,50})', line):
+            cur, total = int(m.group(1)), int(m.group(2))
+            progress.progress(0.20 + (cur / total) * 0.70)
+            status.markdown(f"🎙️ **{m.group(3).title()}** ({cur}/{total}): *{m.group(4).strip()}…*")
+        elif "Audio saved" in line:
+            progress.progress(0.95)
+            status.markdown("💾 Saving files…")
+        elif "committed to GitHub" in line:
+            progress.progress(0.98)
+            status.markdown("☁️ Uploading to GitHub…")
+
+    proc.wait()
+    if proc.returncode == 0:
+        progress.progress(1.0)
+        status.markdown("✅ Podcast ready!")
+        time.sleep(0.8)
+        st.cache_data.clear()
+        st.rerun()
+    else:
+        status.empty()
+        progress.empty()
+        st.error("Podcast generation failed.")
+        st.code("\n".join(all_output), language="text")
+
+
+def podcast_generator_ui(entry, available_hosts, key_suffix):
+    """Show host selector and generate button."""
+    if not PYTHON312:
+        st.caption("Podcast generation requires Python 3.12 + Kokoro (local only).")
+        return
+    if not available_hosts:
+        st.caption("All four host perspectives have been generated for this issue.")
+        return
+    host_choice = st.radio(
+        "Choose a perspective:",
+        available_hosts,
+        format_func=lambda h: HOST_LABELS[h],
+        horizontal=True,
+        key=f"radio_{key_suffix}",
+    )
+    st.caption({
+        "VERA":  "Vera picks the signal she thinks will matter most in 2–3 years and goes deep on strategic implications.",
+        "KAI":   "Kai picks the story most relevant to design craft and works through what it means for how the team actually designs.",
+        "DAN":   "Dan identifies the operational bottleneck or process shift and digs into what it would take to actually change.",
+        "CARLA": "Carla surfaces the human perspective most at risk of being overlooked and pushes the team to slow down.",
+    }[host_choice])
+    if st.button("🎙️ Generate Podcast", key=f"gen_{key_suffix}", type="primary"):
+        run_podcast(entry, host_choice)
+
+
 for entry in entries:
     label = f"**{entry['date_label']}**" + (f"  —  {entry['theme']}" if entry["theme"] else "")
     with st.expander(label):
-        # Podcast section
-        if entry["has_podcast"]:
-            with st.spinner("Loading audio…"):
-                mp3_bytes, turns = load_podcast(entry["stem"])
-            if mp3_bytes and turns:
-                render_player(mp3_bytes, turns)
-                st.divider()
+        existing = entry["existing_podcasts"]  # {host: stem}
+        existing_hosts = [h for h in HOSTS if h in existing]
+        available_hosts = [h for h in HOSTS if h not in existing]
+
+        if existing_hosts:
+            # Tabs for each generated perspective + one to add a new one
+            tab_labels = [HOST_LABELS[h] for h in existing_hosts] + ["＋ New perspective"]
+            tabs = st.tabs(tab_labels)
+
+            for i, host in enumerate(existing_hosts):
+                with tabs[i]:
+                    with st.spinner("Loading audio…"):
+                        mp3_bytes, turns = load_podcast(existing[host])
+                    if mp3_bytes and turns:
+                        render_player(mp3_bytes, turns)
+
+            with tabs[-1]:
+                podcast_generator_ui(entry, available_hosts, f"new_{entry['date_stem']}")
         else:
-            if PYTHON312:
-                if st.button("🎙️ Generate Podcast", key=f"pod_{entry['stem']}"):
-                    env = os.environ.copy()
-                    try:
-                        env["GITHUB_TOKEN"] = st.secrets.get("GITHUB_TOKEN", env.get("GITHUB_TOKEN", ""))
-                        env["GITHUB_REPO"] = st.secrets.get("GITHUB_REPO", env.get("GITHUB_REPO", "evontay/evon-newsletter"))
-                        env["GITHUB_BRANCH"] = st.secrets.get("GITHUB_BRANCH", env.get("GITHUB_BRANCH", "master"))
-                    except Exception:
-                        pass
+            podcast_generator_ui(entry, available_hosts, entry["date_stem"])
 
-                    status = st.empty()
-                    progress = st.progress(0)
-                    status.markdown("✍️ Writing script…")
-
-                    # Write HTML to local disk so podcast.py can read it
-                    ARCHIVE_DIR.mkdir(exist_ok=True)
-                    local_html = ARCHIVE_DIR / entry["filename"]
-                    local_html.write_text(entry["html"], encoding="utf-8")
-
-                    proc = subprocess.Popen(
-                        [PYTHON312, str(SCRIPT_DIR / "podcast.py"),
-                         str(local_html)],
-                        cwd=SCRIPT_DIR,
-                        stdout=subprocess.PIPE,
-                        stderr=subprocess.STDOUT,
-                        text=True,
-                        bufsize=1,
-                        env=env,
-                    )
-
-                    total_turns = None
-                    all_output = []
-                    for line in proc.stdout:
-                        all_output.append(line.rstrip())
-                        line = line.strip()
-                        m_turns = re.search(r'Script generated — (\d+) turns', line)
-                        m_synth = re.search(r'\[(\d+)/(\d+)\].*?(VERA|KAI|DAN|CARLA):\s*(.{0,50})', line)
-                        if m_turns:
-                            total_turns = int(m_turns.group(1))
-                            status.markdown("🎙️ Synthesising audio…")
-                            progress.progress(0.15)
-                        elif "Loading Kokoro" in line:
-                            status.markdown("🔊 Loading voice model…")
-                            progress.progress(0.18)
-                        elif m_synth:
-                            cur, total = int(m_synth.group(1)), int(m_synth.group(2))
-                            speaker = m_synth.group(3).title()
-                            snippet = m_synth.group(4).strip()
-                            pct = 0.20 + (cur / total) * 0.70
-                            progress.progress(pct)
-                            status.markdown(f"🎙️ **{speaker}** ({cur}/{total}): *{snippet}…*")
-                        elif "Audio saved" in line:
-                            progress.progress(0.95)
-                            status.markdown("💾 Saving files…")
-                        elif "committed to GitHub" in line:
-                            progress.progress(0.98)
-                            status.markdown("☁️ Uploading to GitHub…")
-
-                    proc.wait()
-                    if proc.returncode == 0:
-                        progress.progress(1.0)
-                        status.markdown("✅ Podcast ready!")
-                        time.sleep(0.8)
-                        st.cache_data.clear()
-                        st.rerun()
-                    else:
-                        status.empty()
-                        progress.empty()
-                        st.error("Podcast generation failed.")
-                        st.code("\n".join(all_output), language="text")
-            else:
-                st.caption("Podcast generation requires Python 3.12 + Kokoro (local only).")
-
-        # Newsletter HTML
+        st.divider()
         components.html(entry["html"], height=900, scrolling=True)

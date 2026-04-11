@@ -70,44 +70,82 @@ def html_to_text(html: str) -> str:
 
 # ── Step 2: Generate script ────────────────────────────────────────────────────
 
-SYSTEM_PROMPT = """You are writing a podcast script for an internal UX/DesignOps team at MosAIc AI Experience, Singapore — a team in the middle of an AI transformation.
+BASE_PROMPT = """You are writing a podcast script for an internal UX/DesignOps team at MosAIc AI Experience, Singapore — a team in the middle of an AI transformation.
 
 The four hosts are AI personas with distinct roles and voices:
-- VERA: Big-picture strategist. Thinks in systems, long arcs, and structural shifts. Raises implications and tensions the others haven't seen yet. Can be a little intense about the future.
-- KAI: Design practitioner. Focused on craft — interaction design, design systems, visual and UX quality. Translates abstract ideas into what they mean for the work itself. Grounded, occasionally dry wit.
+- VERA: Big-picture strategist. Thinks in systems, long arcs, and structural shifts. Raises implications and tensions others haven't seen yet. Can be a little intense about the future.
+- KAI: Design practitioner. Focused on craft — interaction design, design systems, visual and UX quality. Translates abstract ideas into what they concretely mean for day-to-day design work. Grounded, occasionally dry wit.
 - DAN: DesignOps specialist. Thinks in workflows, tooling, team rituals, and organisational friction. Pragmatic. Spots the process bottleneck everyone else misses. Sceptical of things that sound good in theory but break in practice.
 - CARLA: User researcher. Centres the human perspective — who gets left out, what the data doesn't capture, what assumptions are being made. Brings empathy and rigour. Pushes back when the team moves too fast.
 
-Group dynamic: warm, collegiate, bantery. They genuinely respect each other's expertise. No one dominates — they build on each other's points, push back constructively, and arrive at shared insights.
-
-STRUCTURE — this is critical:
-- Pick 3-4 of the most significant topics from the newsletter. Do not cover every article.
-- Treat each topic as a full conversation segment. Stay on it until it is genuinely exhausted — minimum 8-10 turns per topic before moving on.
-- Within each topic: open with one host framing the issue, then let others react, challenge, add a layer, give a concrete example, push back, and land on a joint insight before transitioning.
-- Not all four hosts need to speak on every topic — route each topic to the 2-3 most relevant voices, and let the others chime in naturally.
-- Transitions between topics should feel organic, not abrupt — one host bridges from the current topic to the next.
-- Open with a 2-3 turn informal exchange. Close with a shared team takeaway (3-4 turns).
-- Total: 55-70 turns, ~3500-4500 words. This should run 15-20 minutes at natural speaking pace.
-
-Line-level rules:
-- Each line is 2-5 sentences. Substantive, not throwaway. Characters should develop an argument, not just react.
-- Natural spoken rhythm — contractions, incomplete thoughts occasionally finished by another speaker, light humour.
-- No bullet points, no lists, no markdown. No stage directions.
+Line-level rules (apply to every turn):
+- Each line is 3-6 sentences. Substantive — develop an argument, share a specific example, name a tension. Not just reactions.
+- Natural spoken rhythm. Contractions, the occasional incomplete thought. Warmth and banter.
+- No bullet points, no lists, no markdown, no stage directions.
 - Output ONLY a valid JSON array: [{"speaker": "VERA", "line": "..."}, ...]"""
 
+HOST_FRAMES = {
+    "VERA": """
+EPISODE FORMAT — VERA IS LEADING:
+Vera scans this week's newsletter and picks the ONE story or signal that she finds most significant for the long-term trajectory of UX and AI — the thing she thinks the team is underestimating or hasn't fully sat with yet.
 
-def generate_script(digest_text: str) -> list[dict]:
-    """Call Claude Sonnet to generate the Vera & Kai dialogue."""
+Structure:
+1. Vera opens with 2-3 turns establishing why this topic matters strategically — not just this week, but over the next 2-3 years. She is specific and opinionated.
+2. She invites Kai and Carla in to pressure-test her thinking. Kai should challenge from the craft angle (does this hold up when you're actually designing?), Carla from the human angle (who does this leave out?).
+3. The conversation goes deep — disagreement, specific examples, moments where someone changes their mind or sharpens their view. Dan can appear briefly if the DesignOps angle becomes relevant.
+4. After 25-30 turns of real depth, the group lands on a shared implication for the team — something concrete they'd actually do differently.
+5. Total: 30-38 turns. Vera speaks roughly 40% of turns. Stay on ONE topic the entire episode.""",
+
+    "KAI": """
+EPISODE FORMAT — KAI IS LEADING:
+Kai picks the ONE story from the newsletter most relevant to design craft and practice — a shift in how design work is actually done, evaluated, or taught.
+
+Structure:
+1. Kai opens with 2-3 turns working through what this means concretely for the team's day-to-day work — specific design decisions, quality standards, how they'd approach a real project differently.
+2. He invites Dan and Vera in. Dan should probe the workflow and tooling implications (how do we actually implement this?), Vera the strategic framing (why does this matter beyond this sprint?).
+3. The conversation stays in the concrete — examples from real projects, specific tools, actual design decisions. When it gets too abstract, Kai pulls it back.
+4. Carla can appear if the user perspective becomes directly relevant. After 25-30 turns, land on a practical next step the team could take this week.
+5. Total: 30-38 turns. Kai speaks roughly 40% of turns. Stay on ONE topic the entire episode.""",
+
+    "DAN": """
+EPISODE FORMAT — DAN IS LEADING:
+Dan picks the ONE story most relevant to how the team actually operates — a workflow bottleneck, a tooling shift, a process that needs rethinking in light of AI.
+
+Structure:
+1. Dan opens with 2-3 turns identifying the specific operational problem or opportunity he sees. He is concrete — naming the friction point, the handoff that breaks, the ritual that no longer fits.
+2. He invites Kai and Vera in. Kai should validate or challenge from the craft side (does this match what designers actually experience?), Vera from the strategic side (is this a symptom of something bigger?).
+3. The conversation digs into the how — what would actually change, who would resist it, what you'd need to put in place. Carla appears if the researcher workflow or participant experience is at stake.
+4. After 25-30 turns, land on a specific process change or experiment the team could try.
+5. Total: 30-38 turns. Dan speaks roughly 40% of turns. Stay on ONE topic the entire episode.""",
+
+    "CARLA": """
+EPISODE FORMAT — CARLA IS LEADING:
+Carla picks the ONE story where she thinks the human perspective is most at risk of being overlooked — a place where the team's AI enthusiasm might be running ahead of the evidence.
+
+Structure:
+1. Carla opens with 2-3 turns naming what she's worried about — which users, which assumptions, which research gaps. She is specific and grounded in evidence or its absence.
+2. She invites Dan and Vera in. Dan should engage with the operational side (what would it actually take to slow down and do this properly?), Vera with the systemic angle (is this a pattern across the industry, not just us?).
+3. The conversation grapples honestly with the tension between moving fast and being rigorous. Kai can appear when the craft implications become direct.
+4. After 25-30 turns, land on a concrete research or validation step the team should take before moving forward.
+5. Total: 30-38 turns. Carla speaks roughly 40% of turns. Stay on ONE topic the entire episode.""",
+}
+
+
+def generate_script(digest_text: str, lead_host: str = "VERA") -> list[dict]:
+    """Call Claude Sonnet to generate a host-led podcast episode."""
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
-    log.info("Generating podcast script with Claude Sonnet…")
+    host_frame = HOST_FRAMES.get(lead_host.upper(), HOST_FRAMES["VERA"])
+    system = BASE_PROMPT + "\n" + host_frame
+
+    log.info(f"Generating podcast script — lead host: {lead_host}")
     response = client.messages.create(
         model=SONNET_MODEL,
         max_tokens=8000,
-        system=SYSTEM_PROMPT,
+        system=system,
         messages=[{
             "role": "user",
-            "content": f"Here is this week's newsletter digest. Write the episode.\n\n{digest_text}"
+            "content": f"Here is this week's newsletter digest. Write the episode led by {lead_host.title()}.\n\n{digest_text}"
         }],
     )
 
@@ -152,10 +190,11 @@ def synthesise(turns: list[dict]) -> np.ndarray:
 
 # ── Step 4: Save outputs ───────────────────────────────────────────────────────
 
-def save_outputs(turns: list[dict], audio: np.ndarray, source_filename: str):
+def save_outputs(turns: list[dict], audio: np.ndarray, source_filename: str, lead_host: str = "VERA"):
     """Save the script as JSON and the audio as MP3."""
     archive_dir = Path(__file__).parent / "archive"
-    stem = source_filename.replace(".html", "")
+    date_stem = source_filename.replace(".html", "")
+    stem = f"{date_stem}_{lead_host.lower()}"
 
     # Save script
     script_path = archive_dir / f"{stem}_script.json"
@@ -193,17 +232,23 @@ def save_outputs(turns: list[dict], audio: np.ndarray, source_filename: str):
 # ── Main ───────────────────────────────────────────────────────────────────────
 
 def main():
-    if len(sys.argv) > 1:
-        path = Path(sys.argv[1])
+    import argparse
+    parser = argparse.ArgumentParser()
+    parser.add_argument("html_file", nargs="?", help="Path to newsletter HTML file")
+    parser.add_argument("--host", default="VERA", choices=["VERA", "KAI", "DAN", "CARLA"],
+                        help="Which host leads the episode")
+    args = parser.parse_args()
+
+    if args.html_file:
+        path = Path(args.html_file)
         html = path.read_text(encoding="utf-8")
         filename = path.name
         digest_text = html_to_text(html)
     else:
         filename, digest_text = load_latest_archive()
 
-    log.info(f"Generating podcast for: {filename}")
+    log.info(f"Generating podcast for: {filename} — lead host: {args.host}")
 
-    # Check Kokoro model files exist
     model_path = Path(__file__).parent / "kokoro-v1.0.onnx"
     voices_path = Path(__file__).parent / "voices-v1.0.bin"
     if not model_path.exists() or not voices_path.exists():
@@ -214,9 +259,9 @@ def main():
         )
         sys.exit(1)
 
-    turns = generate_script(digest_text)
+    turns = generate_script(digest_text, lead_host=args.host)
     audio = synthesise(turns)
-    save_outputs(turns, audio, filename)
+    save_outputs(turns, audio, filename, lead_host=args.host)
     log.info("=== Podcast complete ===")
 
 
