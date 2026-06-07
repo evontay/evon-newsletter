@@ -1,0 +1,242 @@
+[
+  {
+    "speaker": "DAN",
+    "line": "Morning team. Just read through this week's Pulse — feels like everything's shifting from 'how do we design AI products' to 'how do we design alongside AI.' Which honestly makes my head spin a bit less than the previous approach.",
+    "start": 0.0,
+    "end": 13.61
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's exactly the inflection point I've been sensing. We're moving from AI as output to AI as collaborator, and that fundamentally changes the power dynamics in our creative process.",
+    "start": 14.01,
+    "end": 24.98
+  },
+  {
+    "speaker": "KAI",
+    "line": "The GenUI versus vibe coding distinction caught my attention. Finally, some vocabulary for what we've been experiencing but couldn't quite articulate.",
+    "start": 25.38,
+    "end": 34.55
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right, but look deeper at what that distinction reveals. GenUI positions AI as responsive to user intent — it's reading the room, making design decisions based on context. Vibe coding is more like AI as a very sophisticated design tool that executes human direction.",
+    "start": 34.95,
+    "end": 51.01
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Which raises the question of who's actually making the design decisions when GenUI is involved. Are we designing experiences or are we designing the parameters for AI to design experiences?",
+    "start": 51.41,
+    "end": 63.0
+  },
+  {
+    "speaker": "KAI",
+    "line": "From a craft perspective, I'm more comfortable with vibe coding right now. I can still see the line between my creative decisions and the AI's execution. With GenUI, that line gets pretty blurry.",
+    "start": 63.4,
+    "end": 74.55
+  },
+  {
+    "speaker": "DAN",
+    "line": "But that's exactly why the context management piece from UX Collective matters. If AI is making more of the design decisions, we need to get really good at curating what information it has access to.",
+    "start": 74.95,
+    "end": 87.61
+  },
+  {
+    "speaker": "VERA",
+    "line": "Context architecture as a core competency — I love that framing. We're essentially becoming information choreographers for AI systems.",
+    "start": 88.01,
+    "end": 96.52
+  },
+  {
+    "speaker": "CARLA",
+    "line": "The signal-to-noise challenge resonates deeply with research work. I spend half my time now figuring out how to structure insights so AI can actually use them meaningfully rather than just regurgitate them.",
+    "start": 96.92,
+    "end": 108.44
+  },
+  {
+    "speaker": "KAI",
+    "line": "That Proof of Concept piece about rewriting apps for AI workflows — did anyone else find it both exciting and terrifying? The developer basically had to rethink everything from the ground up.",
+    "start": 108.84,
+    "end": 119.18
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'm curious about their architectural decisions. Our handoff process is still very much human-to-human. If we're designing for AI interpretation, we might need completely different deliverable formats.",
+    "start": 119.58,
+    "end": 132.06
+  },
+  {
+    "speaker": "VERA",
+    "line": "Which connects to Merholz's point about skills-based organisation. The traditional handoff assumes discrete roles — designer creates, developer implements. But if AI is intermediating that exchange, maybe those role boundaries don't make sense anymore.",
+    "start": 132.46,
+    "end": 146.44
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I appreciate that Merholz is acknowledging what we've all been feeling. Job descriptions feel increasingly irrelevant when half my work now involves prompting AI research tools and the other half involves validating their outputs.",
+    "start": 146.84,
+    "end": 159.57
+  },
+  {
+    "speaker": "DAN",
+    "line": "The leadership diagnostic angle is spot-on too. AI adoption definitely reveals which of our team practices were actually working versus which ones we were just attached to out of habit.",
+    "start": 159.97,
+    "end": 171.81
+  },
+  {
+    "speaker": "KAI",
+    "line": "Speaking of team practices, that Google job posting for 'Staff AI Product Designer' — are we looking at a future where AI fluency becomes a separate track rather than an enhancement to existing roles?",
+    "start": 172.21,
+    "end": 183.48
+  },
+  {
+    "speaker": "VERA",
+    "line": "That job posting is a signal of bifurcation. Either everyone becomes AI-fluent, or AI fluency becomes a specialized discipline. I suspect we'll see both happen simultaneously in different parts of the industry.",
+    "start": 183.88,
+    "end": 197.32
+  },
+  {
+    "speaker": "CARLA",
+    "line": "The Letícia Cianconi video was eye-opening for research applications. She showed AI integration points I hadn't even considered, especially in the insight synthesis phase.",
+    "start": 197.72,
+    "end": 207.68
+  },
+  {
+    "speaker": "DAN",
+    "line": "What did you think about her approach to using AI for interview analysis? I'm always skeptical of automating the parts of research that feel most interpretive.",
+    "start": 208.08,
+    "end": 217.98
+  },
+  {
+    "speaker": "CARLA",
+    "line": "She was thoughtful about it — using AI to surface patterns but keeping human judgment for meaning-making. Though I do worry about confirmation bias when AI highlights what it thinks are the important themes.",
+    "start": 218.38,
+    "end": 229.64
+  },
+  {
+    "speaker": "KAI",
+    "line": "The design systems metrics piece feels relevant here too. If AI is generating components, we need ways to evaluate their effectiveness that go beyond 'does it look good' or 'does it follow the guidelines.'",
+    "start": 230.04,
+    "end": 241.48
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly. We're going to need impact metrics for AI-generated design work. Which is complicated because traditional design metrics assume human creative decisions throughout the process.",
+    "start": 241.88,
+    "end": 252.52
+  },
+  {
+    "speaker": "DAN",
+    "line": "That brings us back to the evaluation question from the reflection prompt. When AI generates something we wouldn't have made, how do we assess it?",
+    "start": 252.92,
+    "end": 261.61
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I think we need to separate 'different' from 'better' more rigorously. Different could mean it's solving for user needs we hadn't considered, or it could mean it's optimizing for metrics that don't actually matter.",
+    "start": 262.01,
+    "end": 272.25
+  },
+  {
+    "speaker": "KAI",
+    "line": "From a craft perspective, I judge AI output against the same quality bars I'd use for human work — usability, accessibility, visual hierarchy, interaction patterns. If it meets those standards, the fact that I wouldn't have designed it that way becomes less relevant.",
+    "start": 272.65,
+    "end": 287.37
+  },
+  {
+    "speaker": "VERA",
+    "line": "But we also need meta-evaluation criteria. Is the AI-generated solution expanding our design thinking, or is it just producing variations within our existing paradigms?",
+    "start": 287.77,
+    "end": 298.45
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's a workflow question too. If AI solutions consistently push us in directions we wouldn't have considered, do we need to update our review and approval processes?",
+    "start": 298.85,
+    "end": 309.26
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to stay vigilant about whose perspectives are embedded in AI-generated solutions. Different doesn't always mean more inclusive — sometimes it just means optimized for different biases.",
+    "start": 309.66,
+    "end": 320.63
+  },
+  {
+    "speaker": "KAI",
+    "line": "The context architecture skill feels like something we should be developing more intentionally as a team. Right now we're all kind of figuring it out individually.",
+    "start": 321.03,
+    "end": 329.99
+  },
+  {
+    "speaker": "DAN",
+    "line": "Agreed. Maybe we need some shared practices around information curation for AI collaboration — almost like style guides but for contextual input.",
+    "start": 330.39,
+    "end": 340.12
+  },
+  {
+    "speaker": "VERA",
+    "line": "I'm seeing this as part of a larger shift toward editorial thinking in design. We're becoming curators of possibility spaces rather than creators of specific solutions.",
+    "start": 340.52,
+    "end": 350.82
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Which requires different kinds of judgment skills. We need to get better at recognizing when AI output is revealing genuine insights versus when it's just sophisticated pattern matching.",
+    "start": 351.22,
+    "end": 361.5
+  },
+  {
+    "speaker": "KAI",
+    "line": "So where does this leave us practically? We're redesigning our workflows, updating our skill sets, and questioning our role definitions all at once.",
+    "start": 361.9,
+    "end": 369.84
+  },
+  {
+    "speaker": "DAN",
+    "line": "I think we need to experiment more systematically. Pick one project and intentionally try different AI collaboration modes — see what works, what breaks, what surprises us.",
+    "start": 370.24,
+    "end": 381.06
+  },
+  {
+    "speaker": "VERA",
+    "line": "And we need to document what we learn, not just for ourselves but for the broader field. These transition patterns are going to matter for other teams going through similar transformations.",
+    "start": 381.46,
+    "end": 391.42
+  },
+  {
+    "speaker": "CARLA",
+    "line": "The key insight for me this week is that AI collaboration isn't just about new tools — it's about new forms of creative agency. We need to get comfortable with shared creative responsibility.",
+    "start": 391.82,
+    "end": 402.76
+  },
+  {
+    "speaker": "KAI",
+    "line": "Shared creative responsibility — I like that framing. It acknowledges that we're still making creative decisions, but they're different kinds of decisions than we used to make.",
+    "start": 403.16,
+    "end": 412.36
+  },
+  {
+    "speaker": "DAN",
+    "line": "Right. Instead of deciding what the solution is, we're deciding what constraints and context shape the solution space. It's still design thinking, but applied differently.",
+    "start": 412.76,
+    "end": 422.91
+  },
+  {
+    "speaker": "VERA",
+    "line": "So our takeaway for this week: start treating context architecture as a core design competency, not just a technical skill. And get more intentional about how we evaluate AI-generated work against both quality standards and expansion of our creative thinking.",
+    "start": 423.31,
+    "end": 438.29
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And remember that 'designing with AI' means staying actively involved in the creative process, not just prompting and accepting. We're editorial partners, not just users.",
+    "start": 438.69,
+    "end": 448.25
+  },
+  {
+    "speaker": "KAI",
+    "line": "Sounds like we have some experiments to design. Let's see what happens when we intentionally lean into that shared creative agency model.",
+    "start": 448.65,
+    "end": 456.39
+  }
+]

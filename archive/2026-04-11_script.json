@@ -1,0 +1,242 @@
+[
+  {
+    "speaker": "DAN",
+    "line": "Right, so AI agents are now users and we need to design for them, but users are also getting AI fatigue and want things to look more handmade. Anyone else feeling like we're being pulled in opposite directions here?",
+    "start": 0.0,
+    "end": 13.27
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That's exactly what caught my eye too. We're supposed to make interfaces that AI agents can navigate while also making sure humans feel like there's actual human craft behind what they're seeing.",
+    "start": 13.67,
+    "end": 24.12
+  },
+  {
+    "speaker": "VERA",
+    "line": "This feels like a fundamental shift in how we think about users, plural. We've spent decades refining human-centered design, and now we need to design for multiple types of intelligence simultaneously.",
+    "start": 24.52,
+    "end": 36.38
+  },
+  {
+    "speaker": "KAI",
+    "line": "Okay, but let's get practical about this. If I'm designing a flow that needs to work for both humans and AI agents, what does that actually look like? Do I need two different interaction patterns?",
+    "start": 36.78,
+    "end": 47.62
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's where the Nielsen Norman piece on agent-first design gets interesting. They're suggesting we audit our flows for API accessibility and programmatic discoverability. Basically, can an AI agent actually complete the task without getting stuck on a CAPTCHA or some weird modal pattern?",
+    "start": 48.02,
+    "end": 65.51
+  },
+  {
+    "speaker": "CARLA",
+    "line": "But here's what worries me about that approach — if we optimize for AI agents, do we risk making interfaces feel cold and mechanical to humans? The research on AI fatigue suggests people are already pushing back against that algorithmic perfection.",
+    "start": 65.91,
+    "end": 80.08
+  },
+  {
+    "speaker": "VERA",
+    "line": "That tension might be the key insight though. Maybe the solution isn't choosing between human-first or agent-first, but designing systems that can express intentional human craft while maintaining programmatic accessibility.",
+    "start": 80.48,
+    "end": 93.15
+  },
+  {
+    "speaker": "KAI",
+    "line": "So like, the underlying structure needs to be agent-friendly, but the surface layer signals human decision-making? That actually makes sense from a design systems perspective.",
+    "start": 93.55,
+    "end": 103.28
+  },
+  {
+    "speaker": "DAN",
+    "line": "Right, you could have clean semantic markup and clear interaction patterns that agents can parse, but the visual treatment and micro-interactions feel crafted rather than generated.",
+    "start": 103.68,
+    "end": 114.33
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That reminds me of the MacBook Neo case study about cutting features strategically. When you can generate endless possibilities with AI, the human value becomes knowing what not to include.",
+    "start": 114.73,
+    "end": 125.24
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly! The constraint becomes the craft. AI gives us infinite options, so human judgment about what to exclude becomes more valuable, not less.",
+    "start": 125.64,
+    "end": 134.5
+  },
+  {
+    "speaker": "KAI",
+    "line": "This connects to something I've been noticing in my own work. When I use AI for initial concepts, the real design work happens in the editing and refinement. The AI gives me raw material, but the taste is still human.",
+    "start": 134.9,
+    "end": 147.1
+  },
+  {
+    "speaker": "DAN",
+    "line": "Speaking of workflows, that DHH piece about agent-first coding got me thinking about our own handoff processes. If developers are moving toward AI agents handling routine coding tasks, how does that change what we need to document in our design specs?",
+    "start": 147.5,
+    "end": 163.24
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Good question. If an AI agent is implementing the design, it might need different types of documentation than a human developer would.",
+    "start": 163.64,
+    "end": 171.26
+  },
+  {
+    "speaker": "VERA",
+    "line": "This is where the Peter Merholz warnings about leadership gaps become really relevant. We're not just adopting new tools, we're fundamentally restructuring how design work gets done.",
+    "start": 171.66,
+    "end": 181.86
+  },
+  {
+    "speaker": "KAI",
+    "line": "And that quality management piece hits hard too. When AI can accelerate output, maintaining design quality becomes an active leadership challenge, not something that just happens.",
+    "start": 182.26,
+    "end": 192.33
+  },
+  {
+    "speaker": "DAN",
+    "line": "Yeah, I've seen this play out already. Teams start using AI tools, output volume goes up, but nobody's set up systems to ensure the quality keeps pace. You end up with more mediocre work, faster.",
+    "start": 192.73,
+    "end": 205.78
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Which brings us back to the user research angle from that Letícia video. If we're using AI across the entire research cycle, we need even stronger frameworks for validating insights and maintaining research rigor.",
+    "start": 206.18,
+    "end": 218.06
+  },
+  {
+    "speaker": "VERA",
+    "line": "The systems thinking piece is crucial here. That Superhuman job posting calling out enterprise complexity alongside AI capabilities — enterprise products especially need designers who can handle multi-layered user models and agent interactions.",
+    "start": 218.46,
+    "end": 232.76
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'm curious about that 6-month timeline projection though. If AI capabilities are shifting the baseline user expectations that quickly, how do we plan design systems that won't feel outdated before they're implemented?",
+    "start": 233.16,
+    "end": 245.64
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's the process challenge I'm most worried about. Our planning cycles assume relatively stable capability baselines, but if those are shifting every few months, we might need more adaptive planning approaches.",
+    "start": 246.04,
+    "end": 258.45
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to be really careful about who gets left behind in these rapid shifts. AI fatigue isn't evenly distributed — some user groups are going to need more time and different approaches to adoption.",
+    "start": 258.85,
+    "end": 269.63
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right, which is why this isn't just technical adoption. It's identity work for the discipline. We're redefining what it means to be a designer when AI can handle many tasks we used to do manually.",
+    "start": 270.03,
+    "end": 281.03
+  },
+  {
+    "speaker": "KAI",
+    "line": "But maybe that's liberating? If AI handles the routine stuff, we get to focus more on the strategic and creative aspects. The taste, the judgment, the human insight.",
+    "start": 281.43,
+    "end": 291.01
+  },
+  {
+    "speaker": "DAN",
+    "line": "As long as we actually develop systems to maintain quality and not just assume it'll happen. That's where the operational side becomes critical.",
+    "start": 291.41,
+    "end": 300.44
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And as long as we keep centering actual user needs, not just what's technically possible or efficient for our new AI workflows.",
+    "start": 300.84,
+    "end": 308.07
+  },
+  {
+    "speaker": "VERA",
+    "line": "So here's what I'm hearing — we need to design for multiple types of users simultaneously, maintain human craft while enabling programmatic access, and restructure our processes without losing quality or user focus.",
+    "start": 308.47,
+    "end": 321.12
+  },
+  {
+    "speaker": "KAI",
+    "line": "When you put it like that, it sounds impossible. But maybe we start small? Pick one flow, audit it for agent usability like Nielsen Norman suggests, but also test how the human experience changes.",
+    "start": 321.52,
+    "end": 332.76
+  },
+  {
+    "speaker": "DAN",
+    "line": "I like that approach. We could prototype some dual-audience patterns and see what breaks in practice versus theory.",
+    "start": 333.16,
+    "end": 339.99
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we should definitely include diverse user groups in that testing. AI fatigue affects different people differently.",
+    "start": 340.39,
+    "end": 346.64
+  },
+  {
+    "speaker": "VERA",
+    "line": "The reflection prompt about 30% of touchpoints being agent-primary is interesting. That feels like a tipping point where the economics of the interface fundamentally change.",
+    "start": 347.04,
+    "end": 357.19
+  },
+  {
+    "speaker": "KAI",
+    "line": "Yeah, at that scale you probably need to think about it as agent-first with human accommodation, rather than human-first with agent accessibility.",
+    "start": 357.59,
+    "end": 365.64
+  },
+  {
+    "speaker": "DAN",
+    "line": "But we're not there yet, so we have time to experiment and build frameworks. The key is starting now before we're forced to react.",
+    "start": 366.04,
+    "end": 373.89
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Agreed. And keeping the human perspective central even as we expand our definition of users.",
+    "start": 374.29,
+    "end": 379.34
+  },
+  {
+    "speaker": "VERA",
+    "line": "So for our team, I think the takeaway is that we need to develop dual fluency — technical capabilities for AI workflows and design judgment for maintaining human connection and quality.",
+    "start": 379.74,
+    "end": 390.45
+  },
+  {
+    "speaker": "KAI",
+    "line": "And practical skills for designing interfaces that work for both human and AI users without compromising either experience.",
+    "start": 390.85,
+    "end": 398.77
+  },
+  {
+    "speaker": "DAN",
+    "line": "Plus operational frameworks to manage quality and planning cycles in a rapidly shifting landscape.",
+    "start": 399.17,
+    "end": 405.35
+  },
+  {
+    "speaker": "CARLA",
+    "line": "All while keeping actual user needs and diverse perspectives at the center of what we do.",
+    "start": 405.75,
+    "end": 410.36
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right. It's not about choosing between human-centered design and AI capabilities. It's about expanding our practice to handle both simultaneously.",
+    "start": 410.76,
+    "end": 419.55
+  },
+  {
+    "speaker": "DAN",
+    "line": "Sounds like we have our experiment outlined — audit one flow for dual usability and see what we learn about balancing these tensions in practice.",
+    "start": 419.95,
+    "end": 429.0
+  }
+]

@@ -1,0 +1,188 @@
+[
+  {
+    "speaker": "DAN",
+    "line": "Right, so I've been chewing on this design systems evolution piece all week, and it's hitting our workflow in ways I don't think we're prepared for. We've spent years building our component library as this reliable, predictable thing — designers grab a button variant, developers implement it exactly as spec'd, QA tests against known states. But if our components start making contextual decisions about how they render, we're looking at a fundamental breakdown in how handoffs work.",
+    "start": 0.0,
+    "end": 22.49
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'm seeing this already with some of our AI-enhanced form components. Last sprint, design delivered mockups for three input states, but the live component is adapting its validation messaging based on user behaviour patterns we never designed for. Our QA process doesn't know how to test something that changes based on context they can't control.",
+    "start": 22.89,
+    "end": 41.02
+  },
+  {
+    "speaker": "DAN",
+    "line": "The real kicker is documentation. Our design system docs assume static properties — here's the button, here's when to use it, here are the variants. But if properties become adaptive parameters, what exactly are we documenting? The range of possibilities? The decision logic? The edge cases where the inference fails?",
+    "start": 41.42,
+    "end": 59.17
+  },
+  {
+    "speaker": "KAI",
+    "line": "Yeah, this is hitting my day-to-day hard. I spent two hours yesterday trying to design for an interface that I can't actually predict the final output of. How do I specify margin and padding when the component might decide different spacing creates better visual hierarchy based on content length? It feels like I'm designing the decision tree rather than the actual interface.",
+    "start": 59.57,
+    "end": 78.85
+  },
+  {
+    "speaker": "KAI",
+    "line": "And honestly, some of our adaptive experiments are producing better designs than what I would have manually created. But that creates this weird tension where I'm not sure if I'm adding value or just constraining what could be better outcomes. There's this uncomfortable space where the system knows something about good design that I haven't encoded yet.",
+    "start": 79.25,
+    "end": 97.0
+  },
+  {
+    "speaker": "VERA",
+    "line": "This is exactly the shift I've been anticipating, and I think it's bigger than workflow friction. We're moving from design as specification to design as training data. Every decision we make about component behaviour is teaching the system our design judgment, not just documenting it. That changes the fundamental nature of craft work — you're not just solving today's problem, you're encoding principles for tomorrow's unknowns.",
+    "start": 97.4,
+    "end": 118.07
+  },
+  {
+    "speaker": "VERA",
+    "line": "But Dan's right about the operational chaos this creates. Traditional design systems gave us governance — who can change what, how we maintain consistency, how we scale decisions across teams. If components start evolving based on usage patterns, we lose that control. We need new models for governance that account for emergent behaviour.",
+    "start": 118.47,
+    "end": 136.37
+  },
+  {
+    "speaker": "DAN",
+    "line": "Exactly, and the versioning nightmare alone keeps me up at night. Right now, when we update a component, teams can choose when to adopt the new version. But if components are learning and adapting, when does a 'new version' even happen? Do we version the training data? The decision algorithms? What happens when Component A learns something that affects how Component B should behave?",
+    "start": 136.77,
+    "end": 154.37
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'm also seeing resistance from engineering. They're comfortable implementing static designs, but asking them to build systems that make contextual design decisions? That requires a completely different skill set. We're essentially asking developers to become design system architects who understand both technical implementation and design judgment.",
+    "start": 154.77,
+    "end": 173.87
+  },
+  {
+    "speaker": "KAI",
+    "line": "The Peter Merholz point about uniform mediocrity is hitting differently in this context too. Our static design system definitely created consistency, but maybe at the cost of appropriate variation. I'm watching our adaptive components produce solutions that feel more contextually right than anything in our pattern library. Makes me wonder if we've been optimising for the wrong thing.",
+    "start": 174.27,
+    "end": 194.06
+  },
+  {
+    "speaker": "KAI",
+    "line": "But then I see the accessibility implications and get nervous. Our current system lets users predict how interactions will behave because buttons always look and act the same way. If every button adapts to context, are we trading predictability for optimisation? That feels like a dangerous trade-off for users who rely on consistent patterns.",
+    "start": 194.46,
+    "end": 212.62
+  },
+  {
+    "speaker": "VERA",
+    "line": "That tension between adaptation and predictability is going to define the next phase of design practice. We can't solve it by choosing one over the other — we need new frameworks for contextual consistency. Maybe the pattern isn't 'this button always looks exactly like this,' but 'this button always signals its function clearly, regardless of how it adapts to context.'",
+    "start": 213.02,
+    "end": 231.88
+  },
+  {
+    "speaker": "DAN",
+    "line": "That sounds reasonable in theory, but how do we actually implement contextual consistency? Our current governance relies on visual audits and component inventories. How do you audit a system that's constantly changing? How do you maintain brand coherence across adaptive interfaces? I need concrete mechanisms, not just principles.",
+    "start": 232.28,
+    "end": 249.86
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I need to jump in here because we're talking about changing user expectations in ways that could seriously impact research validity. If interfaces adapt to individual users, how do we run comparative testing? How do we identify usability problems when every user sees potentially different interactions? Our research methods assume some level of consistent experience across participants.",
+    "start": 250.26,
+    "end": 269.8
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And there's a deeper equity question. Adaptive systems learn from usage patterns, which means they'll optimise for frequent users and typical use cases. Users with disabilities, edge case scenarios, or infrequent interaction patterns risk getting increasingly marginalised as the system learns away from their needs. We need safeguards against algorithmic abandonment of minority user experiences.",
+    "start": 270.2,
+    "end": 290.44
+  },
+  {
+    "speaker": "KAI",
+    "line": "Carla's point about research methods is spot on. I'm already struggling to create prototypes that represent what users will actually experience if the live system adapts beyond what I've designed. How do we test design decisions when the final experience emerges from usage rather than specification? Feels like we need new prototyping approaches entirely.",
+    "start": 290.84,
+    "end": 310.23
+  },
+  {
+    "speaker": "DAN",
+    "line": "This is crystallising the operational challenge for me. We need three new workflow capabilities we don't currently have. First, a way to document and version adaptive behaviour rather than static states. Second, QA processes that can test emergent interface qualities. Third, governance mechanisms that work with learning systems rather than fighting them.",
+    "start": 310.63,
+    "end": 329.45
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'm thinking we need to pilot this with one low-risk component first. Maybe our search interface — it's already somewhat contextual, users expect adaptive behaviour there, and the consequences of weird edge cases are lower than, say, our checkout flow. We could instrument it heavily and learn what adaptive governance actually looks like in practice.",
+    "start": 329.85,
+    "end": 347.79
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's smart, but I'd push for instrumenting not just the component behaviour but the design decision-making process around it. We need to understand how adaptive systems change the nature of design work itself. What decisions do designers stop making? What new types of decisions emerge? How does the feedback loop between human and algorithmic design judgment actually function?",
+    "start": 348.19,
+    "end": 367.39
+  },
+  {
+    "speaker": "CARLA",
+    "line": "If we're piloting with search, we absolutely need to track differential adaptation across user groups. I want to see usage data broken down by accessibility needs, frequency of use, and task complexity from day one. We need early warning systems for when adaptation starts optimising away from inclusive design. That can't be an afterthought.",
+    "start": 367.79,
+    "end": 385.41
+  },
+  {
+    "speaker": "KAI",
+    "line": "For the pilot, I'd want to focus on parameters that feel genuinely contextual rather than just variable. Like, search suggestion prioritisation based on user expertise level makes sense, but changing the visual hierarchy of results based on time of day probably doesn't. We need crisp criteria for what should adapt versus what should stay consistent.",
+    "start": 385.81,
+    "end": 404.5
+  },
+  {
+    "speaker": "DAN",
+    "line": "Good point. We need adaptation constraints — parameters that define the boundaries within which the system can learn and change. Think of them like design system guidelines, but for algorithmic behaviour rather than human decisions. Clear rules about what aspects of the experience must remain predictable for accessibility and usability.",
+    "start": 404.9,
+    "end": 423.31
+  },
+  {
+    "speaker": "DAN",
+    "line": "Here's what I'm thinking for next steps: We instrument our search component with adaptive capability but strict guardrails. We document the decision logic as explicitly as we currently document component APIs. We create new QA protocols that test the range of possible outputs, not just specific states. And we track how this changes our actual design and engineering workflows.",
+    "start": 423.71,
+    "end": 441.93
+  },
+  {
+    "speaker": "VERA",
+    "line": "I'd add one more layer: we need to track the organisational learning, not just the system learning. How do our design reviews change when we're evaluating adaptive parameters rather than fixed designs? How does stakeholder feedback work when the interface they're reviewing might not match what users see? The meta-workflow changes might be more significant than the component changes.",
+    "start": 442.33,
+    "end": 460.91
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need a clear protocol for what happens when adaptation goes wrong. When do we override the system's decisions? How do we identify bias or exclusion in adaptive behaviour? What's our rollback strategy if we discover the system has learned something harmful? These aren't technical edge cases — they're core ethical considerations.",
+    "start": 461.31,
+    "end": 478.14
+  },
+  {
+    "speaker": "KAI",
+    "line": "This conversation is clarifying something for me. We're not just updating our design system — we're evolving what it means to design at scale. Instead of creating solutions, we're creating solution frameworks. Instead of making decisions, we're encoding decision-making principles. It's a fundamentally different type of craft work.",
+    "start": 478.54,
+    "end": 495.35
+  },
+  {
+    "speaker": "DAN",
+    "line": "Alright, so concrete next actions: I'll scope the search component pilot with engineering, focusing on adaptive suggestion ranking with strict visual consistency constraints. Kai, can you work out the documentation approach for adaptive parameters? Carla, we need research protocols for testing adaptive interfaces. Vera, help me think through the governance implications once we get initial data.",
+    "start": 495.75,
+    "end": 514.98
+  },
+  {
+    "speaker": "DAN",
+    "line": "Timeline-wise, I want to have the instrumented pilot running within two sprints, with the first adaptation data review in four weeks. We're not trying to solve adaptive design systems broadly — we're trying to understand what changes operationally when one small piece becomes contextual. That feels like the right scope for learning what we actually need to build.",
+    "start": 515.38,
+    "end": 533.59
+  },
+  {
+    "speaker": "VERA",
+    "line": "Four weeks feels tight for meaningful learning, but right for initial signal detection. The real question is how quickly we can distinguish between normal adaptation growing pains and fundamental problems with the approach. We need criteria for what would make us pause the experiment versus what we expect to work through as part of the learning process.",
+    "start": 533.99,
+    "end": 552.51
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'm excited about this, honestly. Even if the technical implementation is messy, this feels like design work that's actually grappling with AI's capabilities rather than just applying old patterns to new tools. We're designing the design process itself, which is exactly where we should be pushing as a team.",
+    "start": 552.91,
+    "end": 569.85
+  },
+  {
+    "speaker": "DAN",
+    "line": "Same here. This is the kind of operational evolution our team exists to figure out. We're not just adapting to AI — we're actively shaping how design work changes in response to it. That feels like the right place for a DesignOps team to be leaning in. Let's see what adaptive governance actually looks like when it's not just a conference talk.",
+    "start": 570.25,
+    "end": 587.96
+  }
+]

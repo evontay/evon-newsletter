@@ -1,0 +1,224 @@
+[
+  {
+    "speaker": "VERA",
+    "line": "Kai, I've been staring at this week's digest for twenty minutes. There's something almost existential about that reflection prompt at the end.",
+    "start": 0.0,
+    "end": 7.66
+  },
+  {
+    "speaker": "KAI",
+    "line": "The rebuild-from-scratch question? Yeah, that's the kind of prompt that makes you realise how much of what we do is just... legacy thinking.",
+    "start": 8.06,
+    "end": 15.48
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly. And I think that's the real story this week — we're past the point of incremental AI adoption. The field is finally admitting this is a fundamental reconstruction, not just new tools bolted onto old processes.",
+    "start": 15.88,
+    "end": 28.45
+  },
+  {
+    "speaker": "KAI",
+    "line": "That MacBook Neo case study really drives this home. When your biggest design challenge becomes what to cut rather than what to create, you know something fundamental has shifted.",
+    "start": 28.85,
+    "end": 38.6
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right, because traditionally scarcity drove focus. Limited time, limited resources, limited iterations. But when AI can generate endless variations, the bottleneck becomes human judgment and strategic thinking.",
+    "start": 39.0,
+    "end": 51.97
+  },
+  {
+    "speaker": "KAI",
+    "line": "Which is terrifying for teams that haven't developed those muscles. I mean, how many designers have we seen who are brilliant at execution but struggle with the strategic cutting decisions?",
+    "start": 52.37,
+    "end": 62.65
+  },
+  {
+    "speaker": "VERA",
+    "line": "And now those strategic muscles aren't just nice-to-have — they're survival skills. The Nielsen Norman survey design piece reinforces this. AI speeds up production, but someone still needs to catch when the methodology goes off the rails.",
+    "start": 63.05,
+    "end": 76.34
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's what worries me about all this transformation rhetoric. It assumes teams have the judgment capabilities to rebuild thoughtfully rather than just... throwing AI at everything and hoping for the best.",
+    "start": 76.74,
+    "end": 87.83
+  },
+  {
+    "speaker": "VERA",
+    "line": "Peter Merholz seems to be thinking along similar lines with that leadership piece. AI transitions expose existing leadership gaps faster than traditional change. It's like a stress test for teams that thought they were functioning well.",
+    "start": 88.23,
+    "end": 101.01
+  },
+  {
+    "speaker": "KAI",
+    "line": "The skills-based versus role-based organisation point hits differently too. We've structured teams around job titles for so long, but when AI blurs the lines between research, design, and strategy work, those boundaries become meaningless.",
+    "start": 101.41,
+    "end": 114.75
+  },
+  {
+    "speaker": "VERA",
+    "line": "Which connects to that Google Gemini job posting. Staff-level AI roles requiring both technical AI understanding and senior product strategy. The market is literally pricing this hybrid thinking.",
+    "start": 115.15,
+    "end": 127.37
+  },
+  {
+    "speaker": "KAI",
+    "line": "But here's my skeptical take — how sustainable is this skills premium? If everyone rushes to develop AI fluency, doesn't that just become the new baseline rather than a differentiator?",
+    "start": 127.77,
+    "end": 137.97
+  },
+  {
+    "speaker": "VERA",
+    "line": "Maybe, but I think you're missing the depth required. It's not just AI fluency — it's AI fluency combined with strategic judgment, combined with domain expertise, combined with the ability to rebuild processes from first principles.",
+    "start": 138.37,
+    "end": 151.62
+  },
+  {
+    "speaker": "KAI",
+    "line": "Fair point. That workflow app rebuild story is actually a perfect example. They didn't just add AI features — they rebuilt the entire information architecture to accommodate how AI changes the creative process.",
+    "start": 152.02,
+    "end": 164.43
+  },
+  {
+    "speaker": "VERA",
+    "line": "And that AI tokens as resource management metaphor? That's the kind of systems thinking that separates teams who get this from teams who are just playing with new toys.",
+    "start": 164.83,
+    "end": 174.03
+  },
+  {
+    "speaker": "KAI",
+    "line": "Though I have to ask — when we talk about tracking token usage patterns for workflow optimization, are we solving for efficiency or are we optimizing ourselves into a corner?",
+    "start": 174.43,
+    "end": 184.2
+  },
+  {
+    "speaker": "VERA",
+    "line": "What do you mean by that?",
+    "start": 184.6,
+    "end": 186.37
+  },
+  {
+    "speaker": "KAI",
+    "line": "Well, if we get really good at optimizing AI workflows for cost and speed, do we lose the messy, inefficient parts of design thinking that actually matter? The wandering, the dead ends, the happy accidents?",
+    "start": 186.77,
+    "end": 198.03
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's... actually a profound concern. But maybe that's where this forward-deployed thinking concept comes in. Moving to where problems exist rather than waiting for requirements.",
+    "start": 198.43,
+    "end": 208.16
+  },
+  {
+    "speaker": "KAI",
+    "line": "Explain that connection.",
+    "start": 208.56,
+    "end": 210.37
+  },
+  {
+    "speaker": "VERA",
+    "line": "If we're only optimizing for efficiency, we're still in reactive mode. But forward-deployed thinking means we're actively seeking out the spaces where AI breaks down, where human judgment is irreplaceable.",
+    "start": 210.77,
+    "end": 222.57
+  },
+  {
+    "speaker": "KAI",
+    "line": "So instead of optimizing AI workflows to be faster, we're optimizing them to surface the problems that need human intelligence. I can get behind that.",
+    "start": 222.97,
+    "end": 232.04
+  },
+  {
+    "speaker": "VERA",
+    "line": "And it connects to the Nielsen Norman piece on AI agents. If we're moving toward goal-pursuing, iterative systems rather than prompt-response tools, we need frameworks for collaboration, not just efficiency.",
+    "start": 232.44,
+    "end": 244.53
+  },
+  {
+    "speaker": "KAI",
+    "line": "Which brings us back to that existential question about rebuilding from scratch. Maybe the real insight is that we can't just retrofit AI onto existing processes — we need to redesign for partnership with intelligent systems.",
+    "start": 244.93,
+    "end": 257.8
+  },
+  {
+    "speaker": "VERA",
+    "line": "Yes, and Jessica Fain's point about influence being the AI-resistant leadership skill fits perfectly here. When technical expertise becomes commoditized, your ability to shape direction becomes everything.",
+    "start": 258.2,
+    "end": 269.95
+  },
+  {
+    "speaker": "KAI",
+    "line": "But influence requires trust, and trust requires competence. So we're back to needing that hybrid thinking — AI fluency plus strategic judgment plus the ability to communicate why certain decisions matter.",
+    "start": 270.35,
+    "end": 282.09
+  },
+  {
+    "speaker": "VERA",
+    "line": "Which is why I think this week's stories all point to the same underlying shift. We're not just adding AI to design teams — we're evolving into something that looks more like human-AI collaboration pods.",
+    "start": 282.49,
+    "end": 294.15
+  },
+  {
+    "speaker": "KAI",
+    "line": "And the teams that figure out how to structure for that collaboration rather than just individual AI adoption are going to have a massive advantage.",
+    "start": 294.55,
+    "end": 302.85
+  },
+  {
+    "speaker": "VERA",
+    "line": "So what does this mean practically for our team? If we took that reflection prompt seriously and rebuilt our core design process from scratch?",
+    "start": 303.25,
+    "end": 311.04
+  },
+  {
+    "speaker": "KAI",
+    "line": "Honestly? I think we'd keep way less than we think. Maybe keep the user research fundamentals and the strategic thinking frameworks, but rebuild everything about how we generate, iterate, and validate ideas.",
+    "start": 311.44,
+    "end": 322.45
+  },
+  {
+    "speaker": "VERA",
+    "line": "And we'd probably need to add entirely new capabilities around AI collaboration, resource optimization, and what I'm starting to think of as 'intelligent curation' — knowing what to pursue versus what to discard.",
+    "start": 322.85,
+    "end": 335.14
+  },
+  {
+    "speaker": "KAI",
+    "line": "Plus developing better frameworks for human-AI handoffs. When do you lean on the AI, when do you take control, and how do you maintain creative ownership throughout?",
+    "start": 335.54,
+    "end": 344.69
+  },
+  {
+    "speaker": "VERA",
+    "line": "That feels like the real work ahead. Not just learning to use AI tools, but learning to think and work in partnership with intelligent systems that are pursuing their own goals.",
+    "start": 345.09,
+    "end": 354.69
+  },
+  {
+    "speaker": "KAI",
+    "line": "So our takeaway for the team isn't 'adopt more AI tools' — it's 'rebuild your mental models for collaborative intelligence.'",
+    "start": 355.09,
+    "end": 362.04
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly. And maybe start with that audit exercise from the workflow piece. Pick one current process and redesign it from the ground up, not just bolt AI onto the existing flow.",
+    "start": 362.44,
+    "end": 372.68
+  },
+  {
+    "speaker": "KAI",
+    "line": "Small experiments in fundamental thinking. I can live with that approach.",
+    "start": 373.08,
+    "end": 377.73
+  },
+  {
+    "speaker": "VERA",
+    "line": "Because the alternative is getting disrupted by teams who figured out collaboration while we were still optimizing for individual productivity.",
+    "start": 378.13,
+    "end": 386.33
+  }
+]
