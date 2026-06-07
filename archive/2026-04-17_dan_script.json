@@ -1,0 +1,194 @@
+[
+  {
+    "speaker": "DAN",
+    "line": "Alright team, I've been stewing on the Merholz piece about AI transformation exposing weak leadership practices. We're seeing this play out in real time — decisions that used to hide behind 'that's just how we do things' are suddenly under scrutiny because AI is forcing us to be explicit about our workflows. I think we've got some of these hidden weaknesses in our own processes, and the AI transition is making them impossible to ignore.",
+    "start": 0.0,
+    "end": 19.9
+  },
+  {
+    "speaker": "DAN",
+    "line": "Here's what I'm seeing: our design critique sessions worked fine when everyone was using the same Figma templates and following predictable patterns. But now Kai's experimenting with AI-generated concepts, Carla's using AI to analyze research findings, and suddenly our critique format doesn't know what to do with work that has different provenance. We're spending half the session just figuring out what we're actually evaluating.",
+    "start": 20.3,
+    "end": 39.46
+  },
+  {
+    "speaker": "DAN",
+    "line": "The deeper issue is that our leadership — and I'm including myself here — never had to articulate clear decision criteria because the tools and outputs were standardized. We could rely on 'good design sense' and shared intuition. AI assistance is blowing that up because now we need explicit frameworks for evaluating work that's created through completely different processes.",
+    "start": 39.86,
+    "end": 58.78
+  },
+  {
+    "speaker": "VERA",
+    "line": "Dan, you're hitting on something crucial — this isn't just about critique sessions, it's about the collapse of implicit knowledge transfer. When our workflows were stable, junior designers learned by osmosis, watching senior designers work through familiar problems. Now that AI can generate multiple design directions in minutes, the learning happens in the prompting and curation, not the pixel-pushing. Our mentorship model is fundamentally broken.",
+    "start": 59.18,
+    "end": 80.52
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'm living this daily, and it's honestly disorienting. Last week I used AI to generate three different navigation concepts, then spent hours refining them manually. When I presented them, nobody knew how to give feedback — were they critiquing my prompts, my curation choices, or my manual refinements? The boundaries got so blurry that the conversation became useless. We need new vocabulary for this hybrid work.",
+    "start": 80.92,
+    "end": 102.74
+  },
+  {
+    "speaker": "DAN",
+    "line": "Exactly, and here's where the leadership weakness shows up: instead of developing new critique frameworks, we've been defaulting to either treating AI-assisted work like traditional work — which doesn't fit — or getting so meta about the process that we lose sight of whether the design actually solves the user problem. We're avoiding the hard work of building new evaluation criteria.",
+    "start": 103.14,
+    "end": 121.49
+  },
+  {
+    "speaker": "VERA",
+    "line": "This connects to a bigger pattern I'm seeing across the industry. Teams that had strong design culture and clear decision-making processes are adapting to AI tools relatively smoothly. Teams that were coasting on convention and hierarchy are struggling because AI forces you to be explicit about what 'good' actually means. You can't hide behind 'years of experience' when the tools themselves have ingested decades of design patterns.",
+    "start": 121.89,
+    "end": 143.78
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's uncomfortably accurate. I realized last month that I couldn't actually explain why I chose certain spacing or color relationships — it was just muscle memory from years of similar decisions. When I'm prompting AI or refining its output, I need to be much more intentional about my choices. The AI forces me to articulate design reasoning I'd internalized but never verbalized.",
+    "start": 144.18,
+    "end": 165.06
+  },
+  {
+    "speaker": "DAN",
+    "line": "So here's my operational question: how do we redesign our team rituals to handle this? Our current critique format assumes single-author designs created through familiar processes. Our design reviews expect traditional deliverables. Our onboarding teaches tool proficiency but not AI collaboration. We need new process scaffolding that acknowledges this hybrid workflow reality.",
+    "start": 165.46,
+    "end": 184.58
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Can I jump in here? Because this leadership weakness Dan's talking about is showing up in our research practice too. I used AI to help analyze interview transcripts last month, and when I presented insights, nobody knew how to validate them. Did the AI miss important nuances? Did it impose patterns that weren't actually there? We don't have frameworks for quality-checking AI-assisted research, so we're flying blind on reliability.",
+    "start": 184.98,
+    "end": 204.5
+  },
+  {
+    "speaker": "VERA",
+    "line": "Carla raises the stakes perfectly — this isn't just about internal team dynamics, it's about the integrity of our user understanding. If our leadership practices can't distinguish between human insight and AI synthesis, we're making product decisions on potentially flawed foundations. The AI transformation is demanding that we become more rigorous about methodology, not less.",
+    "start": 204.9,
+    "end": 224.99
+  },
+  {
+    "speaker": "DAN",
+    "line": "Right, and the organisational impact is that teams with weak leadership practices are either rejecting AI tools entirely — missing the capability gains — or adopting them without governance, creating quality and consistency problems. We're in this narrow window where we can choose to strengthen our practices or watch them erode further.",
+    "start": 225.39,
+    "end": 243.97
+  },
+  {
+    "speaker": "KAI",
+    "line": "I think the craft angle is important here too. AI tools are incredible at generating options but terrible at making principled choices between them. That should be elevating the role of design judgment and aesthetic sensibility, but only if leadership can articulate what those things actually mean. Otherwise we just get analysis paralysis in front of infinite possibilities.",
+    "start": 244.37,
+    "end": 264.21
+  },
+  {
+    "speaker": "DAN",
+    "line": "So here's what I'm proposing: we pilot a new critique format that explicitly separates process evaluation from outcome evaluation. We spend the first third of each session understanding how the work was created — what AI tools were used, what manual refinements happened, what decision points the designer navigated. Then we evaluate the final outcome against user needs and business goals.",
+    "start": 264.61,
+    "end": 283.47
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's smart process design, Dan, but I think we need to go deeper on the evaluation criteria themselves. What does 'good design judgment' look like when you're curating AI output versus creating from scratch? We need new competency frameworks that acknowledge these hybrid skills, or we'll keep defaulting to old standards that don't fit.",
+    "start": 283.87,
+    "end": 301.3
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to build quality checks into the AI-assisted research workflow. I'm thinking about creating documentation standards that track which parts of our insights come from human analysis versus AI synthesis. That way when we're making product decisions, we're explicit about our confidence levels and methodology.",
+    "start": 301.7,
+    "end": 318.21
+  },
+  {
+    "speaker": "DAN",
+    "line": "Carla, that's exactly the kind of process transparency I'm talking about. We should apply that same logic to design work — tagging components or concepts with their creation method so we can track patterns over time. Are AI-generated solutions performing better or worse than human-created ones? We don't have that data because we haven't been systematic about tracking provenance.",
+    "start": 318.61,
+    "end": 337.13
+  },
+  {
+    "speaker": "KAI",
+    "line": "I like this direction because it actually makes the work more intentional, not less. Instead of just accepting that some designs 'feel right,' we'd have to articulate why we're choosing specific AI outputs and what manual refinements we're adding. That's going to improve design quality whether or not AI is involved.",
+    "start": 337.53,
+    "end": 354.58
+  },
+  {
+    "speaker": "VERA",
+    "line": "This conversation is reinforcing my sense that the teams that will thrive in AI transformation are the ones that use this moment to become more explicit about their values and standards. The AI tools are forcing conversations about quality and methodology that we should have been having all along. It's revealing hidden assumptions and making them addressable.",
+    "start": 354.98,
+    "end": 373.98
+  },
+  {
+    "speaker": "DAN",
+    "line": "Exactly, and from an ops perspective, that means this transition period is actually an opportunity to strengthen team practices, not just accommodate new tools. We can build better critique frameworks, clearer quality standards, and more intentional onboarding — all under the banner of AI adoption but really about becoming a more effective design organization.",
+    "start": 374.38,
+    "end": 393.14
+  },
+  {
+    "speaker": "CARLA",
+    "line": "There's a user research parallel here that's worth noting. AI tools are making it easier to generate insights, but they're also making it easier to generate plausible-sounding insights that aren't actually grounded in user reality. Strong research leadership means getting better at distinguishing signal from noise, not just accepting more data points.",
+    "start": 393.54,
+    "end": 411.46
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's hitting on something important — AI amplifies whatever design culture you already have. If your team has strong craft standards and clear decision-making, AI becomes a powerful accelerator. If your team is sloppy about quality or unclear about goals, AI just helps you create more polished garbage faster.",
+    "start": 411.86,
+    "end": 428.99
+  },
+  {
+    "speaker": "DAN",
+    "line": "So here's my concrete proposal for our team: let's redesign our weekly design critique to explicitly address this hybrid workflow reality. New format would be thirty minutes, split into three ten-minute segments — process transparency, outcome evaluation, and methodology reflection. We document decisions differently, track provenance systematically, and build competency around AI curation rather than just AI usage.",
+    "start": 429.39,
+    "end": 449.33
+  },
+  {
+    "speaker": "VERA",
+    "line": "I think that format could work, but we should also add a monthly retrospective specifically focused on how our AI adoption is affecting team culture and decision quality. Are we becoming more intentional about our choices, or are we deferring to algorithmic suggestions? Are junior designers learning design thinking or just prompt optimization?",
+    "start": 449.73,
+    "end": 468.34
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to be honest about what we're losing as well as what we're gaining. If AI-assisted workflows mean designers spend less time wrestling with visual problems, are they developing the spatial reasoning and aesthetic judgment that makes them better curators of AI output? We can't just assume the fundamentals will take care of themselves.",
+    "start": 468.74,
+    "end": 486.17
+  },
+  {
+    "speaker": "DAN",
+    "line": "Good point, Carla. Maybe we need deliberate practice sessions where designers work without AI assistance — not because the tools are bad, but because you need to understand the problem space deeply before you can effectively direct AI solutions. Like musicians practicing scales even though they'll perform with amplification and effects.",
+    "start": 486.57,
+    "end": 504.63
+  },
+  {
+    "speaker": "KAI",
+    "line": "That resonates with my experience. The days when I sketch interfaces by hand before touching any digital tools — AI or otherwise — I end up with stronger concepts because I've thought through the spatial and interaction logic myself. Then when I do use AI, I'm directing it toward specific solutions rather than just hoping it suggests something good.",
+    "start": 505.03,
+    "end": 523.94
+  },
+  {
+    "speaker": "VERA",
+    "line": "This is why the Merholz observation feels so important to me. AI transformation isn't really about the technology — it's about whether your team practices can evolve to handle increased capability and complexity. The teams that treat this as a technical implementation challenge are missing the deeper organisational development opportunity.",
+    "start": 524.34,
+    "end": 543.3
+  },
+  {
+    "speaker": "DAN",
+    "line": "Alright, so here's what we're committing to: next week we pilot the new critique format I outlined. Thirty minutes, three segments, explicit provenance tracking. We run it for a month, then do a retrospective on whether it's actually improving our design quality and team learning. And we schedule monthly check-ins on how AI adoption is affecting our culture and competency development.",
+    "start": 543.7,
+    "end": 562.2
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'll work on the research methodology documentation standards we discussed — creating templates that separate AI-assisted analysis from human interpretation. That should help with the quality confidence issues I mentioned earlier.",
+    "start": 562.6,
+    "end": 575.55
+  },
+  {
+    "speaker": "KAI",
+    "line": "And I'll experiment with that deliberate practice idea — setting aside time each week to work through design problems manually before engaging AI tools. I'm curious whether it actually improves my AI collaboration or just feels like unnecessary friction.",
+    "start": 575.95,
+    "end": 590.65
+  },
+  {
+    "speaker": "VERA",
+    "line": "This feels like exactly the kind of proactive culture development that separates teams that thrive in AI transformation from teams that just survive it. We're using the technology transition as a catalyst for becoming more intentional about our craft and more explicit about our standards. That's going to serve us well regardless of what tools we're using.",
+    "start": 591.05,
+    "end": 609.78
+  }
+]
