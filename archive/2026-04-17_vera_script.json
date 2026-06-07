@@ -1,0 +1,218 @@
+[
+  {
+    "speaker": "VERA",
+    "line": "I keep coming back to that Nielsen Norman observation about users craving visible human craftsmanship as a trust signal. It's not just about aesthetics — this is a fundamental shift in how trust and value get communicated in digital products. We're moving from 'polished and efficient' to 'recognizably human' as the premium signal.",
+    "start": 0.0,
+    "end": 18.05
+  },
+  {
+    "speaker": "VERA",
+    "line": "What makes this significant isn't just the trend itself, but what it exposes about where we're headed. If users are actively seeking proof of human involvement, we're not just talking about a stylistic preference — we're talking about a new form of digital literacy where people are learning to distinguish between human and AI work. That changes everything about how we approach craft.",
+    "start": 18.45,
+    "end": 37.29
+  },
+  {
+    "speaker": "VERA",
+    "line": "The deeper implication is that we're entering a period where 'good design' might actually mean deliberately showing your work — making the human decision-making visible rather than hiding it behind seamless interfaces. That's a complete reversal of the last decade's design philosophy, and I think most teams are going to be caught off guard by how quickly this becomes a competitive necessity.",
+    "start": 37.69,
+    "end": 57.8
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'm skeptical that this holds up when you're actually shipping products though. Users say they want to see human craftsmanship, but do they really want interfaces that feel less polished or more effortful to use? There's a difference between appreciating handmade aesthetics and actually preferring them in your daily tools.",
+    "start": 58.2,
+    "end": 73.86
+  },
+  {
+    "speaker": "VERA",
+    "line": "But that's exactly the point — it's not about making things less polished. It's about making human intention legible. Think about it from a systems perspective: as AI becomes ubiquitous, the scarcity shifts from computational power to human judgment. Products that can credibly signal where human thinking shaped the experience will have a massive advantage.",
+    "start": 74.26,
+    "end": 92.65
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'm with Kai on this one, but for different reasons. Who gets to define what 'human craftsmanship' looks like? There's a real risk that this becomes another form of exclusion — where certain aesthetic choices or interaction patterns get coded as 'authentically human' while others get dismissed as 'AI-like.' We could be creating new forms of bias without realizing it.",
+    "start": 93.05,
+    "end": 110.86
+  },
+  {
+    "speaker": "KAI",
+    "line": "Carla raises a good point about bias, but I think there's a more immediate practical issue. How do you actually implement this? Do we start adding deliberate imperfections to our interfaces? Do we show version history or design decisions? Most of what makes something feel 'handmade' would actually make it harder to use.",
+    "start": 111.26,
+    "end": 127.11
+  },
+  {
+    "speaker": "VERA",
+    "line": "You're both thinking about this too literally. It's not about imperfections or showing your Figma layers. It's about designing with intention that's apparent to users — choices that clearly couldn't have been made by an algorithm. When you see a product where someone clearly thought through edge cases, or where micro-interactions feel surprisingly delightful, that's human craft made visible.",
+    "start": 127.51,
+    "end": 146.39
+  },
+  {
+    "speaker": "CARLA",
+    "line": "But Vera, you're assuming users can actually distinguish between sophisticated AI work and human work. My concern is that we're designing for a user literacy that might not exist. Most people can't tell the difference between good AI-generated content and human-created content — so how are they supposed to identify 'human craft' in interfaces?",
+    "start": 146.79,
+    "end": 165.18
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's actually making me rethink this. Maybe the signal isn't about the output looking human-made, but about the design solving problems in ways that feel distinctly non-algorithmic. Like when you encounter a feature that addresses some weird edge case you never thought to complain about — that's clearly human insight, not pattern matching.",
+    "start": 165.58,
+    "end": 182.91
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly, Kai. And Carla, I think you're underestimating how quickly people are developing that literacy. We're already seeing it in other domains — people can increasingly spot AI-generated images or text, not because of technical markers, but because of patterns in decision-making. Interface design will follow the same trajectory.",
+    "start": 183.31,
+    "end": 201.33
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'll grant you that people are getting better at spotting AI content, but I'm still worried about the exclusionary aspect. If 'human craft' becomes a premium signal, what happens to teams or designers who don't have the resources or cultural capital to perform that kind of craftsmanship? Are we creating a two-tier system where 'human' becomes a luxury good?",
+    "start": 201.73,
+    "end": 219.35
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's a fair concern, but I think you're looking at this backwards. The teams that will struggle aren't the ones without resources — they're the ones that have been coasting on AI tools without developing their fundamental design judgment. This shift rewards teams that have invested in building strong design thinking, regardless of their budget.",
+    "start": 219.75,
+    "end": 237.1
+  },
+  {
+    "speaker": "KAI",
+    "line": "Wait, let me push back on both of you. We're talking about this like it's a choice we get to make, but if users start demanding visible human craft, won't AI just get better at mimicking it? We might be chasing a signal that becomes meaningless within a year or two.",
+    "start": 237.5,
+    "end": 251.13
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the genius of it though — it's not about mimicking specific aesthetic choices, it's about decision-making processes. AI can copy the surface patterns of human craft, but it can't replicate the contextual judgment that comes from understanding users' unstated needs or business constraints. The signal keeps evolving as AI capabilities advance.",
+    "start": 251.53,
+    "end": 270.56
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'm starting to see how this might work, but I want to challenge the premise. Are users actually asking for visible human craft, or are they asking for interfaces that feel more trustworthy and less manipulative? Maybe what they're rejecting isn't AI assistance, but algorithmic optimization that prioritizes engagement over user wellbeing.",
+    "start": 270.96,
+    "end": 288.67
+  },
+  {
+    "speaker": "KAI",
+    "line": "Carla's onto something there. When I think about the interfaces that feel most 'human' to me, they're not the ones with handmade aesthetics — they're the ones where someone clearly prioritized my goals over the system's goals. That's a different kind of craft signal entirely.",
+    "start": 289.07,
+    "end": 303.0
+  },
+  {
+    "speaker": "VERA",
+    "line": "You're both making the same point I am, just from different angles. Whether you call it 'human craft' or 'trustworthy decision-making,' the core shift is the same: users are becoming more sophisticated about identifying when systems are designed with their interests in mind versus when they're being optimized for other goals.",
+    "start": 303.4,
+    "end": 320.27
+  },
+  {
+    "speaker": "CARLA",
+    "line": "But if that's true, then the solution isn't about signaling human involvement — it's about actually aligning our design decisions with user needs rather than business metrics. That's a much bigger organizational challenge than adjusting our visual language or interaction patterns.",
+    "start": 320.67,
+    "end": 335.54
+  },
+  {
+    "speaker": "KAI",
+    "line": "Now I'm seeing the real implication here. If users are getting better at spotting when products prioritize system goals over user goals, then all those dark patterns and engagement hacks that companies have been relying on are about to become massive liabilities. Teams that can't design with genuine user-centricity will get called out.",
+    "start": 335.94,
+    "end": 354.07
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly. And here's why this matters strategically for us: we're in the middle of an AI transformation, which means we're rebuilding a lot of our design systems and patterns from scratch. We have a window right now to embed this kind of user-first thinking into our new workflows before bad habits solidify.",
+    "start": 354.47,
+    "end": 370.58
+  },
+  {
+    "speaker": "DAN",
+    "line": "Speaking of workflows, this has huge implications for how we evaluate and iterate on AI-assisted designs. If the goal is making human judgment visible, then our review processes need to capture not just what got designed, but why specific decisions got made. We'll need different documentation standards.",
+    "start": 370.98,
+    "end": 388.52
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Dan's right, and it goes deeper than documentation. If we're committing to making human decision-making legible, then we need to be much more intentional about whose judgment we're centering. Are we designing from the perspective of power users, edge cases, or the most vulnerable users? That choice needs to be visible too.",
+    "start": 388.92,
+    "end": 405.43
+  },
+  {
+    "speaker": "KAI",
+    "line": "This is starting to feel overwhelming though. We're talking about fundamentally changing how we approach craft, documentation, and user research all at once. How do we actually implement this without grinding our shipping velocity to a halt?",
+    "start": 405.83,
+    "end": 418.59
+  },
+  {
+    "speaker": "VERA",
+    "line": "I don't think it slows us down — I think it makes us more efficient. When human judgment is the differentiating factor, you can't afford to waste time on decisions that could be automated. The key is getting really good at identifying which design choices actually require human insight and which ones don't.",
+    "start": 418.99,
+    "end": 434.99
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's a workflow design challenge I can actually sink my teeth into. We'd need to map our current design processes and identify the decision points where human judgment adds the most value. Then we can optimize our AI tooling to handle everything else, freeing up cognitive resources for the stuff that matters.",
+    "start": 435.39,
+    "end": 452.6
+  },
+  {
+    "speaker": "CARLA",
+    "line": "But we have to be careful not to create a false binary between 'human judgment' and 'automated decisions.' Some of our most important insights come from the interplay between data and intuition. If we're not careful, we might end up privileging gut feelings over evidence-based design.",
+    "start": 453.0,
+    "end": 467.87
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's making me think about our design system work differently. Instead of just documenting component specs, we might need to document the reasoning behind design decisions — not just what to use, but when and why. That way the human judgment gets baked into the system itself.",
+    "start": 468.27,
+    "end": 483.08
+  },
+  {
+    "speaker": "VERA",
+    "line": "Now we're getting to the practical implications. If we're going to compete on visible human judgment, then our design system needs to be opinionated about values, not just visual consistency. Every component choice should encode a perspective about what good user experience looks like.",
+    "start": 483.48,
+    "end": 499.11
+  },
+  {
+    "speaker": "DAN",
+    "line": "I can see how to operationalize this. We start by auditing our current AI-assisted workflows to identify where human judgment is already making a difference but isn't being captured or communicated. Then we figure out how to make those decision points more visible to users without adding interface complexity.",
+    "start": 499.51,
+    "end": 516.75
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to test this assumption with actual users. Let's run some research to understand how people currently distinguish between human-designed and AI-designed experiences. We might be solving for a signal that users aren't actually looking for or can't actually detect.",
+    "start": 517.15,
+    "end": 531.81
+  },
+  {
+    "speaker": "VERA",
+    "line": "Fair enough. But I think the research question should be broader: how do users currently assess trustworthiness and intentionality in digital products? The 'human craft' framing might be wrong, but the underlying shift toward evaluating design decisions more critically is definitely happening.",
+    "start": 532.21,
+    "end": 547.5
+  },
+  {
+    "speaker": "KAI",
+    "line": "So our concrete next step is probably to start documenting our design rationale more rigorously — not for internal use, but as a practice for making our thinking visible. If we can't articulate why we made specific choices, then users definitely can't recognize the human judgment behind them.",
+    "start": 547.9,
+    "end": 564.03
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'd add one more thing: we should pick one product area and experiment with making design reasoning more transparent to users. Maybe through progressive disclosure or contextual help that explains why certain features work the way they do. Test whether it actually builds trust or just creates noise.",
+    "start": 564.43,
+    "end": 581.37
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's a good pilot approach. The bigger takeaway for me is that we're entering a period where design quality will be measured not just by usability or aesthetics, but by how clearly products communicate their underlying values and decision-making. Teams that master that communication will have a significant competitive advantage.",
+    "start": 581.77,
+    "end": 599.65
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And if we're wrong about this trend, the worst-case scenario is that we become better at articulating our design decisions and centering user needs. That's not exactly a downside risk.",
+    "start": 600.05,
+    "end": 609.97
+  }
+]
