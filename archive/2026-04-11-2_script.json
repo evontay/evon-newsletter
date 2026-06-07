@@ -1,0 +1,212 @@
+[
+  {
+    "speaker": "VERA",
+    "line": "Morning, everyone. I've been staring at this week's digest, and there's this fascinating tension I can't shake. We're seeing AI agents becoming legitimate users of our interfaces, but simultaneously there's this user fatigue with AI-generated aesthetics. It feels like we're at this inflection point where the pendulum is swinging back toward visible human craft.",
+    "start": 0.0,
+    "end": 19.01
+  },
+  {
+    "speaker": "KAI",
+    "line": "That Nielsen Norman piece really hit me. Users are actively preferring designs that signal human creation over AI-generated ones. As someone who's been wrestling with AI tools in my daily practice, I'm not entirely surprised. There's something about AI output that feels... sterile? Even when it's technically proficient.",
+    "start": 19.41,
+    "end": 37.05
+  },
+  {
+    "speaker": "DAN",
+    "line": "But here's what's interesting from an ops perspective — this isn't just aesthetic preference, it's becoming a competitive advantage. If teams can maintain visible human craft signals while using AI to augment their process, they're essentially having their cake and eating it too. The question is how we systematize that without losing the authenticity.",
+    "start": 37.45,
+    "end": 56.12
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I think we need to be careful about what we mean by 'human craft' though. Are we talking about hand-drawn elements, or something deeper about intention and empathy? Because if users are craving authenticity, it might be less about the visual signals and more about whether they feel understood as humans, not just conversion targets.",
+    "start": 56.52,
+    "end": 72.5
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly, Carla. And this ties into something bigger I'm seeing. The organizations that are treating this as binary — human OR AI — are missing the actual transformation happening. It's not about choosing sides, it's about integrated capability. The teams that master both technical AI fluency and fundamental craft skills are going to differentiate themselves.",
+    "start": 72.9,
+    "end": 91.95
+  },
+  {
+    "speaker": "KAI",
+    "line": "So practically, what does this mean for how I approach a design sprint next week? I'm using AI for rapid ideation and exploration, but I need to ensure the final output carries those human craft signals. Maybe it's about being more intentional about where I apply human judgment versus where I let AI do the heavy lifting.",
+    "start": 92.35,
+    "end": 109.71
+  },
+  {
+    "speaker": "DAN",
+    "line": "This is where that Eflowers piece becomes relevant. Tool mastery becomes obsolete, but navigation skills — knowing when to use which approach, how to guide the tools — that remains valuable. We should be investing in judgment frameworks for the team, not just training everyone on the latest AI features.",
+    "start": 110.11,
+    "end": 127.24
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to test these assumptions with real users. I'm curious whether users can actually distinguish between 'AI-generated' and 'human-crafted' work, or if they're responding to other qualities entirely. Maybe it's about coherence, or intentionality, or just better execution overall.",
+    "start": 127.64,
+    "end": 143.28
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's a crucial research question. But stepping back, I think this signals a broader shift in how we think about design leadership. Peter Merholz's threads suggest that AI transformation success isn't just about technical adoption — it's about leadership fundamentals. Teams need leaders who can navigate this integrated approach.",
+    "start": 143.68,
+    "end": 161.47
+  },
+  {
+    "speaker": "DAN",
+    "line": "Which brings me to something that's been bugging me about our current AI tool rollout. We've been focusing on getting everyone trained up on specific platforms, but maybe we should be spending more time on building that judgment layer. How do we recognize when AI is the right tool versus when human craft is what's needed?",
+    "start": 161.87,
+    "end": 179.13
+  },
+  {
+    "speaker": "KAI",
+    "line": "I've been experimenting with this in my own workflow. Sometimes AI gives me a great starting point, but the magic happens in the refinement — the micro-interactions, the way elements relate to each other, the subtle personality that comes through. That's where the human craft lives, and it's not easily replicated.",
+    "start": 179.53,
+    "end": 195.7
+  },
+  {
+    "speaker": "CARLA",
+    "line": "This connects to what I'm seeing in user interviews too. People are becoming more sophisticated about recognizing AI-generated content, and they're developing preferences. It's not anti-AI sentiment exactly, but they want to feel like there's human intention behind what they're interacting with.",
+    "start": 196.1,
+    "end": 211.93
+  },
+  {
+    "speaker": "VERA",
+    "line": "Now here's where it gets really interesting — and this is the piece that's keeping me up at night. We're not just designing for humans anymore. That Nielsen Norman article about AI agents as interface users completely changes our accessibility assumptions. We're designing for dual audiences now.",
+    "start": 212.33,
+    "end": 228.61
+  },
+  {
+    "speaker": "KAI",
+    "line": "Wait, explain that more. You mean AI agents are actually using interfaces we design? Not just powering them, but navigating them like users?",
+    "start": 229.01,
+    "end": 237.65
+  },
+  {
+    "speaker": "VERA",
+    "line": "Exactly. AI agents need to parse our interface structures, understand our navigation patterns, interact with our forms. Traditional accessibility focused on human disabilities, but now we need to consider machine readability as a first-class constraint.",
+    "start": 238.05,
+    "end": 252.49
+  },
+  {
+    "speaker": "DAN",
+    "line": "This is fascinating from a systems perspective. Our design system documentation suddenly becomes critical not just for human designers, but for AI agents trying to understand how to interact with our interfaces. The semantic structure, the labeling, the logical hierarchy — it all matters differently now.",
+    "start": 252.89,
+    "end": 270.47
+  },
+  {
+    "speaker": "CARLA",
+    "line": "But I'm worried about the implications here. If we optimize for AI agent accessibility, do we risk making interfaces less human-centered? There's already enough pressure to design for conversion metrics rather than human needs.",
+    "start": 270.87,
+    "end": 283.22
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the tension, but I think it's a false dichotomy. Good semantic structure, clear labeling, logical hierarchy — these things benefit both human and AI users. The challenge is when their needs diverge. Like, an AI agent might prefer verbose alt-text that a screen reader user finds annoying.",
+    "start": 283.62,
+    "end": 300.22
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'm trying to imagine auditing one of our current projects for AI agent accessibility. What would that even look like? Checking that our component states are programmatically determinable? Making sure our form validation messages are machine-parseable?",
+    "start": 300.62,
+    "end": 313.91
+  },
+  {
+    "speaker": "DAN",
+    "line": "We'd probably need new design review criteria. Does our button hierarchy make sense to an automated system? Can an AI agent understand our error states and recovery paths? Are our loading states informative enough for non-human users who don't have visual patience cues?",
+    "start": 314.31,
+    "end": 330.07
+  },
+  {
+    "speaker": "CARLA",
+    "line": "This feels like it needs user research approaches we haven't developed yet. How do you interview an AI agent about its experience using your interface? How do you observe its behavior and understand its pain points?",
+    "start": 330.47,
+    "end": 341.82
+  },
+  {
+    "speaker": "VERA",
+    "line": "And here's the meta-layer that's really interesting — that One Useful Thing piece suggests interface design determines AI capability more than the underlying model performance. So we're not just accommodating AI agents, we're actively shaping how effectively they can help users.",
+    "start": 342.22,
+    "end": 357.63
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's a profound shift in responsibility. We're not just designing the user experience, we're designing the AI experience that enables better user experience. It's like... designing the tool that designs the experience?",
+    "start": 358.03,
+    "end": 370.27
+  },
+  {
+    "speaker": "DAN",
+    "line": "Which means we need to map our team's current AI tool interfaces and identify friction points. Where are we limiting effective AI collaboration just because of poor interface design? Our Figma setup, our research platforms, our documentation systems — they all need this dual-audience lens.",
+    "start": 370.67,
+    "end": 387.46
+  },
+  {
+    "speaker": "VERA",
+    "line": "This connects to something I noticed in that UX Magazine piece about organizational change. AI disruption is creating these natural crisis windows, and the smart organizations are framing these as strategic opportunities rather than reactive necessities. We're in one of those windows right now.",
+    "start": 387.86,
+    "end": 404.63
+  },
+  {
+    "speaker": "DAN",
+    "line": "I feel that tension daily. Every week there's a new AI capability that could transform how we work, but also the pressure to maintain delivery velocity while figuring out these new paradigms. It's exhausting, but you're right that it's also an opportunity to leapfrog competitors who are moving more slowly.",
+    "start": 405.03,
+    "end": 422.48
+  },
+  {
+    "speaker": "CARLA",
+    "line": "What concerns me is that OpenAI piece about their economic vision potentially excluding many practitioners from post-AI participation. Are we having honest conversations with our team about AI-readiness gaps? Because the skills market signals suggest some roles are getting more complex, not replaced.",
+    "start": 422.88,
+    "end": 439.52
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's exactly right. Look at those Superhuman job postings — they're still demanding sophisticated design thinking, stakeholder management, system-scale thinking. AI tools aren't replacing strategic design capability, they're making it more essential because the complexity is increasing.",
+    "start": 439.92,
+    "end": 455.9
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'm seeing this in my own work. AI handles a lot of the routine exploration and iteration, which means I'm spending more time on the high-level strategic decisions. What problem are we actually solving? What's the right interaction model? How does this fit into the broader system? Those questions require more sophisticated judgment, not less.",
+    "start": 456.3,
+    "end": 474.65
+  },
+  {
+    "speaker": "DAN",
+    "line": "So maybe our team development strategy needs to shift. Less time training people on specific AI tools, more time developing that judgment layer. How do we recognize good design problems? How do we evaluate whether an AI-generated solution actually serves user needs? How do we maintain craft standards in an AI-augmented workflow?",
+    "start": 475.05,
+    "end": 493.31
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And we need to address the cognitive empathy piece. That UX Magazine guide touched on something crucial — traditional user assumptions no longer hold when you're designing AI-human interaction patterns. We need new research methodologies, new ways of understanding these hybrid experiences.",
+    "start": 493.71,
+    "end": 509.49
+  },
+  {
+    "speaker": "VERA",
+    "line": "It's funny, we started talking about the swing back toward human craft, but I think what we've uncovered is that the future isn't human versus AI — it's about elevating human capabilities through AI integration. The craft becomes more important, not less, because it's what differentiates in a world where technical execution is commoditized.",
+    "start": 509.89,
+    "end": 527.86
+  },
+  {
+    "speaker": "KAI",
+    "line": "Right, and maybe that's why users are preferring visibly human-crafted work. It's not anti-AI sentiment, it's recognizing that human judgment, intention, and empathy are the scarce resources now. AI can generate variations, but it can't decide which variation serves human needs best.",
+    "start": 528.26,
+    "end": 544.64
+  },
+  {
+    "speaker": "DAN",
+    "line": "So our takeaway for the team — we need to get comfortable with this integrated approach. Master AI fluency not as an end goal, but as foundation for more sophisticated human craft. Build judgment frameworks. Design for dual audiences. And maybe most importantly, stay curious about what we don't know yet.",
+    "start": 545.04,
+    "end": 562.3
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And remember that behind all this transformation are real people whose work lives are changing. We need to bring empathy not just to our users, but to each other as we navigate this shift. The technical capabilities will evolve, but our ability to support each other through change — that's timeless human craft right there.",
+    "start": 562.7,
+    "end": 578.63
+  }
+]
