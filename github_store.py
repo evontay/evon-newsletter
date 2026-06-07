@@ -50,11 +50,15 @@ def list_directory(path):
         contents = repo.get_contents(path, ref=branch)
         if not isinstance(contents, list):
             contents = [contents]
-        return [
-            (f.name, f.decoded_content.decode("utf-8"))
-            for f in contents
-            if not f.name.startswith(".")
-        ]
+        results = []
+        for f in contents:
+            if f.name.startswith("."):
+                continue
+            try:
+                results.append((f.name, f.decoded_content.decode("utf-8")))
+            except (UnicodeDecodeError, Exception):
+                results.append((f.name, ""))
+        return results
     except GithubException:
         return []
 
