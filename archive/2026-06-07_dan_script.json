@@ -1,0 +1,206 @@
+[
+  {
+    "speaker": "DAN",
+    "line": "Alright team, I've been stewing on this week's pulse and there's something I need to unpack with you all. We're seeing this tension everywhere—AI promises speed, but the smartest teams are actually slowing down their discovery work. I'm watching our own workflows and I think we've got a real problem brewing in how we sequence discovery versus delivery now that we've got all these AI tools in our stack.",
+    "start": 0.0,
+    "end": 17.92
+  },
+  {
+    "speaker": "DAN",
+    "line": "Here's what I'm seeing in our sprints: designers are jumping straight to AI-assisted wireframing and rapid prototyping because it feels productive, but we're skipping the messy problem-framing work. Last sprint, three different designers came to me saying their AI-generated concepts felt hollow—technically sound but somehow missing the mark. That's not a tool problem, that's a process problem.",
+    "start": 18.32,
+    "end": 37.01
+  },
+  {
+    "speaker": "DAN",
+    "line": "The UX Collective piece this week nailed it—we're building the wrong thing faster. I think we need to restructure our sprint ritual to explicitly protect discovery time before anyone touches AI tools. But I want to hear from you, Kai—are you seeing this disconnect between AI velocity and design depth in your day-to-day work?",
+    "start": 37.41,
+    "end": 54.75
+  },
+  {
+    "speaker": "KAI",
+    "line": "God, yes. I've been feeling this weird guilt about not immediately jumping into Figma with AI assist when I get a new brief. But when I force myself to sit with the problem longer—like actually map out user mental models by hand first—the AI outputs become so much more targeted. It's like the AI amplifies whatever foundation you give it, and if that foundation is shaky, you just get really polished mediocrity.",
+    "start": 55.15,
+    "end": 76.83
+  },
+  {
+    "speaker": "KAI",
+    "line": "I've started this personal ritual where I ban myself from any AI tools for the first day of a new project. Just sketches, research notes, competitive analysis the old-fashioned way. Then when I do bring AI in, it's collaborating with something concrete rather than fishing around in the dark. The difference in output quality is honestly dramatic.",
+    "start": 77.23,
+    "end": 95.91
+  },
+  {
+    "speaker": "VERA",
+    "line": "This connects to something bigger that's happening across the industry right now. We're seeing the emergence of what that Nielsen Norman piece called distinct AI design roles—but I think what's really happening is the field is bifurcating. You've got teams optimising for AI-driven delivery speed, and teams optimising for AI-enhanced human judgment. The question is which path creates more strategic value long-term.",
+    "start": 96.31,
+    "end": 117.2
+  },
+  {
+    "speaker": "VERA",
+    "line": "That Medium piece about taste as a 'meaning layer'—that's the key insight. Our competitive advantage isn't in faster wireframes or more polished prototypes. It's in the curatorial judgment that decides which problems are worth solving and why. But Dan's right—if our processes don't explicitly create space for that judgment to develop, we'll just become really efficient at building the wrong things.",
+    "start": 117.6,
+    "end": 137.5
+  },
+  {
+    "speaker": "DAN",
+    "line": "Exactly, and here's the operational challenge I'm wrestling with. Our sprint planning template still assumes linear progression—discovery flows into ideation flows into prototyping. But with AI in the mix, those boundaries are blurring in ways that aren't necessarily healthy. Designers are prototyping before they've really understood the problem space, because the tools make prototyping so frictionless.",
+    "start": 137.9,
+    "end": 156.85
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'm thinking we need to restructure our Definition of Ready criteria. Right now we ask 'Do we have enough info to start designing?' But maybe the question should be 'Do we understand this problem well enough that AI tools will amplify our insights rather than paper over our gaps?' That's a much higher bar, and it might slow us down initially.",
+    "start": 157.25,
+    "end": 174.61
+  },
+  {
+    "speaker": "KAI",
+    "line": "That higher bar makes sense, but I'm worried about pushback from stakeholders who've gotten used to seeing visual progress fast. When I tell a PM I need two extra days for problem framing before I touch any design tools, they look at me like I'm being precious. How do we sell the value of that invisible work when AI makes the visible work look so impressive?",
+    "start": 175.01,
+    "end": 193.53
+  },
+  {
+    "speaker": "VERA",
+    "line": "This is where that design leadership angle comes in. We need to reframe what good looks like—not just for ourselves but for the stakeholders evaluating our work. Speed to first prototype used to be a reasonable proxy for design velocity. But now anyone can generate decent-looking interfaces quickly. The differentiator is speed to the right solution, which requires that upfront investment in understanding.",
+    "start": 193.93,
+    "end": 214.77
+  },
+  {
+    "speaker": "DAN",
+    "line": "Right, and I think we need to make that investment visible in our reporting. What if we tracked 'problem clarity score' alongside traditional velocity metrics? Something that measures how well-defined the challenge is before design work begins. It sounds a bit academic, but if we can show that projects with higher problem clarity have fewer late-stage pivots, that's a business case stakeholders will understand.",
+    "start": 215.17,
+    "end": 234.01
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Can I jump in here? Because I think there's a research workflow piece we're missing. That reflection prompt about extracting insights AI can't surface—that's exactly what I'm dealing with. I'm seeing designers use AI to analyse user feedback and generate insights, but they're missing the embodied, contextual stuff that only comes from actually watching people struggle with interfaces.",
+    "start": 234.41,
+    "end": 253.72
+  },
+  {
+    "speaker": "CARLA",
+    "line": "AI can pattern-match across thousands of user comments, but it can't catch the micro-expressions when someone's confused, or the way people work around broken flows in their actual environment. If we're restructuring our discovery process, we need to protect space for that kind of observational work too. Otherwise we're optimising for problems that sound real but aren't actually how people experience our products.",
+    "start": 254.12,
+    "end": 273.81
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's a crucial point, Carla. And it maps to something I've been noticing in our research-design handoffs. We used to have natural friction there—researchers would present findings, designers would ask clarifying questions, there'd be this back-and-forth that helped both sides understand the nuance. Now AI summaries make everything feel more definitive than it actually is.",
+    "start": 274.21,
+    "end": 293.05
+  },
+  {
+    "speaker": "DAN",
+    "line": "Maybe part of restructuring our process is creating more intentional friction points. Not bureaucratic friction, but cognitive friction—moments where we have to actively choose to slow down and question whether we really understand what we're solving for. What would that look like practically?",
+    "start": 293.45,
+    "end": 309.68
+  },
+  {
+    "speaker": "KAI",
+    "line": "One idea—what if we instituted a 'manual mode' phase for every project? First day or two, no AI tools allowed. Just whiteboards, sticky notes, conversations. Force ourselves to externalize our thinking in lo-fi ways before we let AI smooth over the rough edges. It's like that behavioral economics framework from Nielsen Norman—we need to surface the psychological friction in our own process.",
+    "start": 310.08,
+    "end": 331.24
+  },
+  {
+    "speaker": "VERA",
+    "line": "I like that, but I'd push it further. What if we treated problem framing as its own distinct deliverable, with its own success criteria? Not just a phase that leads to design work, but valuable output in its own right. That positions the discovery work as strategic rather than just preparatory, which might help with the stakeholder buy-in issue Kai mentioned.",
+    "start": 331.64,
+    "end": 350.1
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And from a research perspective, what if we created explicit checkpoints where AI insights have to be validated against direct observation? Like, you can use AI to identify patterns in user feedback, but before you act on those patterns, you need to show me three examples of users actually exhibiting that behavior in context. It's a way of keeping the human validation loop intact.",
+    "start": 350.5,
+    "end": 369.61
+  },
+  {
+    "speaker": "DAN",
+    "line": "These are all good ideas, but let me get concrete about implementation. I'm thinking we pilot this with one squad first—maybe the team working on the onboarding flow, since that's got clear user journey touchpoints. We restructure their sprint template to include a 'Problem Clarity Gate' that has to be passed before any design tools get opened.",
+    "start": 370.01,
+    "end": 387.82
+  },
+  {
+    "speaker": "DAN",
+    "line": "The gate criteria would be something like: Can you articulate the user's psychological friction in one sentence? Do you have three specific examples of users encountering this problem? Can you predict what success would look like from the user's emotional perspective, not just task completion? Only once those boxes are checked do AI design tools come into play.",
+    "start": 388.22,
+    "end": 406.63
+  },
+  {
+    "speaker": "KAI",
+    "line": "I actually love the simplicity of that gate. It's not anti-AI, it's pro-intentionality. And having concrete criteria takes the subjectivity out of it—either you can answer those questions or you can't. No room for 'well, we kind of understand the problem, let's just start designing and see what emerges.'",
+    "start": 407.03,
+    "end": 423.21
+  },
+  {
+    "speaker": "VERA",
+    "line": "The pilot approach is smart too. If we can show measurable improvement in solution quality or reduction in late-stage changes, that becomes a template other squads will want to adopt. And if it doesn't work, we've only disrupted one team's workflow while we iterate on the process.",
+    "start": 423.61,
+    "end": 439.05
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Can we also build in a retrospective component? Like, after each project that goes through the new process, we do a brief reflection on what insights emerged in the manual phase that wouldn't have surfaced with AI-first discovery. That way we're not just assuming the process is better—we're actually documenting the value of that upfront investment.",
+    "start": 439.45,
+    "end": 457.22
+  },
+  {
+    "speaker": "DAN",
+    "line": "Absolutely. And here's what I'm thinking for timeline—we introduce the Problem Clarity Gate to the onboarding squad starting next sprint. Give them two weeks to get used to it, then do a mid-sprint check-in to see how it's affecting their workflow. After they complete one full project cycle with the new process, we'll have enough data to decide whether to roll it out more broadly.",
+    "start": 457.62,
+    "end": 475.35
+  },
+  {
+    "speaker": "DAN",
+    "line": "The key metric I want to track is what I'm calling 'solution stability'—how often do core design decisions change after the first stakeholder review? My hypothesis is that better problem framing upfront will lead to fewer fundamental pivots later, even if it means slightly longer initial discovery phases.",
+    "start": 475.75,
+    "end": 493.35
+  },
+  {
+    "speaker": "KAI",
+    "line": "That's a metric that'll resonate with PMs too. Nothing drives them crazier than getting to high-fidelity mocks and then realizing we've been solving the wrong problem. If we can show that an extra day of problem framing prevents a week of rework, that's an easy business case.",
+    "start": 493.75,
+    "end": 508.17
+  },
+  {
+    "speaker": "VERA",
+    "line": "And it positions us strategically for the long term. As AI tools become more commoditized, the teams that maintain strong problem-framing muscles will be the ones creating genuinely differentiated products. Everyone else will just be building faster versions of the same shallow solutions.",
+    "start": 508.57,
+    "end": 524.7
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'm excited to see how this affects the quality of research integration too. When designers have to articulate user psychology upfront, it usually makes them more curious about research insights rather than just looking for validation of ideas they've already formed.",
+    "start": 525.1,
+    "end": 539.65
+  },
+  {
+    "speaker": "DAN",
+    "line": "Alright, let's make this concrete. I'll draft the Problem Clarity Gate criteria this week and run it by the onboarding squad lead to get their input on what feels realistic but rigorous. Kai, can you think through what the 'manual mode' phase would actually look like day-to-day? And Carla, help me design the retrospective template so we're capturing the right insights.",
+    "start": 540.05,
+    "end": 557.95
+  },
+  {
+    "speaker": "DAN",
+    "line": "The bigger picture here is that we're not fighting AI—we're fighting the temptation to use AI as an excuse to skip the hard thinking. The tools are incredible, but they're amplifiers, not substitutes for judgment. If we get this process right, we'll be the team that uses AI to build genuinely better products, not just prettier mediocrity.",
+    "start": 558.35,
+    "end": 576.31
+  },
+  {
+    "speaker": "KAI",
+    "line": "Agreed. And honestly, I think this will make working with AI more satisfying too. Right now there's this nagging feeling that the tools are driving the process instead of serving it. Creating that deliberate space for human judgment upfront should make the AI collaboration feel more like actual collaboration.",
+    "start": 576.71,
+    "end": 593.01
+  },
+  {
+    "speaker": "VERA",
+    "line": "This is the kind of operational evolution that could become our competitive advantage. While other teams are chasing AI efficiency, we're building AI wisdom. That difference is going to matter more as the tools get better and more ubiquitous.",
+    "start": 593.41,
+    "end": 606.91
+  },
+  {
+    "speaker": "DAN",
+    "line": "Perfect. Let's ship this pilot and see what we learn. I'll have the gate criteria ready for review by Friday, and we'll kick off with the onboarding squad Monday. Time to prove that slowing down discovery actually speeds up delivery.",
+    "start": 607.31,
+    "end": 621.41
+  }
+]
