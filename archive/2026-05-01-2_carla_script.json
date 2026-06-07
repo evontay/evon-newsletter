@@ -1,0 +1,200 @@
+[
+  {
+    "speaker": "CARLA",
+    "line": "I've been sitting with this Nielsen Norman piece about user panels degrading over time, and honestly, it's keeping me up at night. We're rushing toward these AI feedback loops and longitudinal user studies without acknowledging what we already know about research validity. The bias accumulation they're documenting isn't just a methodological concern — it's a fundamental challenge to how we're validating our AI features.",
+    "start": 0.0,
+    "end": 20.42
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Here's what's bothering me most: we've got three AI features in development right now, and each one relies on user feedback collected over months of interaction. But if Nielsen Norman is right about panels becoming less effective over time, we're potentially building our entire validation approach on degrading data. The participants who stick around longest might be the least representative of our broader user base.",
+    "start": 20.82,
+    "end": 40.7
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And there's this deeper issue I keep coming back to — when we're asking users to evaluate AI outputs that are inherently unpredictable, we're asking them to become research partners in a way they've never had to before. The cognitive load is different, the expertise required is different, and we're not accounting for how that changes the research relationship over time.",
+    "start": 41.1,
+    "end": 59.85
+  },
+  {
+    "speaker": "DAN",
+    "line": "You're hitting on something I've been wrestling with from the ops side. We've got these beautiful research roadmaps that assume consistent panel quality over six-month horizons, but nobody's factored in participant fatigue or the learning curve of evaluating AI. The research ops infrastructure we built for traditional features just doesn't map to AI validation timelines.",
+    "start": 60.25,
+    "end": 79.24
+  },
+  {
+    "speaker": "VERA",
+    "line": "This feels like a symptom of a much larger pattern across the industry right now. Teams are applying traditional research methodologies to AI systems without questioning the fundamental assumptions those methods were built on. We're seeing this everywhere — companies launching AI features based on user feedback that was collected using frameworks designed for static interfaces.",
+    "start": 79.64,
+    "end": 99.56
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Exactly, and the stakes are higher because AI outputs can reinforce biases in ways traditional interfaces couldn't. If our research panels are becoming less representative over time, and those panels are training our understanding of what good AI outputs look like, we're potentially encoding a very narrow view of user success into our systems.",
+    "start": 99.96,
+    "end": 118.74
+  },
+  {
+    "speaker": "DAN",
+    "line": "Let's get concrete about this. Right now, our research operations assume we can track the same users across multiple AI feature releases, building longitudinal understanding. But what would it actually look like to design research workflows that account for panel degradation? We'd need much more frequent participant rotation, different recruitment strategies, maybe entirely different study structures.",
+    "start": 119.14,
+    "end": 137.53
+  },
+  {
+    "speaker": "VERA",
+    "line": "And there's the resource tension — doing this properly would mean more recruiting, more onboarding, more complex research operations. But the alternative is making AI product decisions based on increasingly unreliable feedback. The systemic risk is that we're building AI features that work well for a very specific subset of users who happen to be good at evaluating AI.",
+    "start": 137.93,
+    "end": 157.98
+  },
+  {
+    "speaker": "CARLA",
+    "line": "What worries me is that we're not even measuring this degradation. We have no baseline for how our current AI research participants compare to our broader user base after months of engagement. Are they becoming AI power users who evaluate outputs differently? Are they developing expectations that don't match typical user mental models?",
+    "start": 158.38,
+    "end": 175.89
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's the operational blind spot. Our research tools are optimized for tracking individual participant responses over time, not for detecting when the panel as a whole is drifting away from representing our actual user population. We'd need different analytics, different quality metrics, different ways of validating that our research insights are still generalizable.",
+    "start": 176.29,
+    "end": 194.34
+  },
+  {
+    "speaker": "VERA",
+    "line": "And this connects to something bigger about AI product development timelines. Traditional user research assumes relatively stable user needs and capabilities, but AI features are asking users to develop new mental models in real time. The panel degradation might not just be about bias accumulation — it might be about participants evolving into a different type of user entirely.",
+    "start": 194.74,
+    "end": 215.24
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Right, and that evolution might be valuable data in itself, but only if we're intentionally studying it rather than treating it as noise. We need to understand how users' relationships with AI change over time, but we also need to maintain connection to users who are encountering AI features for the first time.",
+    "start": 215.64,
+    "end": 232.37
+  },
+  {
+    "speaker": "KAI",
+    "line": "From the design side, this is affecting how I think about AI interaction patterns. If our research is telling us that certain AI outputs work well, but that research is based on increasingly sophisticated user panels, I might be designing for AI fluency that most users don't actually have. The craft implications are huge.",
+    "start": 232.77,
+    "end": 250.99
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And that's exactly the trap. We think we're designing inclusive AI because our research participants are giving positive feedback, but those participants have developed AI literacy that our broader user base lacks. We're optimizing for the wrong success criteria.",
+    "start": 251.39,
+    "end": 265.96
+  },
+  {
+    "speaker": "DAN",
+    "line": "So what would it actually take to redesign our research operations around this? We'd need parallel research tracks — one following long-term participants to understand AI relationship evolution, and one constantly bringing in fresh participants to validate baseline usability. The coordination complexity alone is significant.",
+    "start": 266.36,
+    "end": 284.49
+  },
+  {
+    "speaker": "VERA",
+    "line": "But maybe that complexity is necessary. If we're serious about AI being different from traditional product development, our research methodologies need to be different too. This isn't just about MosAIc — this is about the entire field needing new frameworks for validating AI user experiences.",
+    "start": 284.89,
+    "end": 301.25
+  },
+  {
+    "speaker": "CARLA",
+    "line": "The more I think about it, the more I think we need to start treating AI user research as fundamentally collaborative rather than extractive. Traditional usability testing puts users in an evaluation role, but AI features require users to be creative partners. That changes everything about how we structure studies and interpret results.",
+    "start": 301.65,
+    "end": 319.3
+  },
+  {
+    "speaker": "KAI",
+    "line": "That makes sense for interaction design too. If users are creative partners rather than evaluators, I need to design AI interfaces that support creative collaboration, not just efficient task completion. The design patterns are completely different.",
+    "start": 319.7,
+    "end": 333.9
+  },
+  {
+    "speaker": "DAN",
+    "line": "But collaborative research is operationally intensive. It requires different consent models, different data handling, different analysis frameworks. We're talking about restructuring research operations around partnership rather than observation. That's a fundamental ops shift.",
+    "start": 334.3,
+    "end": 350.45
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And it raises ethical questions about what we're asking of our research participants. If they're partners in developing AI systems, they should have more agency in how their contributions are used. Our current research frameworks don't account for that level of participant investment.",
+    "start": 350.85,
+    "end": 365.77
+  },
+  {
+    "speaker": "VERA",
+    "line": "This is where the industry-wide pattern becomes clearest. We're all struggling with the same fundamental tension between moving fast with AI and doing the human-centered research that actually validates our assumptions. The companies that figure out research methodologies for AI first will have a significant competitive advantage.",
+    "start": 366.17,
+    "end": 384.34
+  },
+  {
+    "speaker": "CARLA",
+    "line": "But we can't wait for the industry to figure it out. We need to start experimenting now with research approaches that account for panel degradation and user evolution. Even if we don't get it perfect, we'll be building understanding that our future AI features desperately need.",
+    "start": 384.74,
+    "end": 399.44
+  },
+  {
+    "speaker": "DAN",
+    "line": "So what's the minimum viable experiment? Could we start by running parallel studies — traditional panels alongside fresh participant cohorts — for just one AI feature? That would give us concrete data about whether panel degradation is actually affecting our insights.",
+    "start": 399.84,
+    "end": 415.37
+  },
+  {
+    "speaker": "VERA",
+    "line": "And we could measure not just satisfaction metrics, but how participants' mental models of AI change over time. Understanding that evolution might be as valuable as maintaining fresh perspectives.",
+    "start": 415.77,
+    "end": 427.06
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I like that approach because it acknowledges that both perspectives — experienced AI users and fresh users — are valuable. We're not trying to eliminate the evolution, we're trying to understand it while also maintaining connection to baseline user experiences.",
+    "start": 427.46,
+    "end": 441.37
+  },
+  {
+    "speaker": "KAI",
+    "line": "From a design perspective, that dual-track research could inform adaptive interfaces that work differently for users with different levels of AI experience. Instead of designing one-size-fits-all AI interactions, we could design systems that recognize and respond to user AI fluency.",
+    "start": 441.77,
+    "end": 458.36
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's interesting — adaptive research leading to adaptive design. But we'd need participant tracking that respects privacy while still allowing us to recognize returning users and adjust the experience appropriately. The technical and operational complexity keeps growing.",
+    "start": 458.76,
+    "end": 474.78
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Maybe that complexity is telling us something important about AI product development. If we need more sophisticated research operations to validate AI features, maybe AI features are more sophisticated interventions in people's lives than we've been acknowledging.",
+    "start": 475.18,
+    "end": 490.35
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the systemic insight. AI isn't just a new feature category, it's a new relationship between users and technology. Research methodologies built for evaluating tools aren't sufficient for validating relationships.",
+    "start": 490.75,
+    "end": 503.7
+  },
+  {
+    "speaker": "CARLA",
+    "line": "So here's what I think we need to commit to. Before we launch the next AI feature, we run a parallel study comparing insights from our current long-term panel with insights from a fresh participant cohort. We measure not just usability, but how the two groups differ in their expectations, mental models, and success criteria for AI.",
+    "start": 504.1,
+    "end": 520.89
+  },
+  {
+    "speaker": "DAN",
+    "line": "I can work with that timeline. We'd need about six weeks to set up the parallel recruitment and study design, but it's doable. And the insights from that first experiment would inform how we structure research operations for all future AI features.",
+    "start": 521.29,
+    "end": 535.95
+  },
+  {
+    "speaker": "VERA",
+    "line": "And we should document everything about this process. If Nielsen Norman is right about this being a systemic issue, our learnings could contribute to new industry standards for AI user research. We have a chance to be leaders rather than followers on this.",
+    "start": 536.35,
+    "end": 550.45
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Perfect. Let's treat this as the foundation for building research methodologies that match the complexity of what we're actually building. AI features deserve AI-appropriate validation approaches.",
+    "start": 550.85,
+    "end": 562.05
+  }
+]
