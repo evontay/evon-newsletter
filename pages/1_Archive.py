@@ -5,7 +5,6 @@ Archive page — browse all past MosAIc Pulse newsletters with podcast player.
 import re
 import os
 import json
-import base64
 import shutil
 import subprocess
 import sys
@@ -114,27 +113,28 @@ def load_archive():
     return entries
 
 
+GITHUB_RAW = "https://raw.githubusercontent.com/evontay/evon-newsletter/master"
+
+
 def load_podcast(stem: str):
-    """Return (mp3_bytes, turns) for a given host stem, checking local disk first."""
-    mp3_local = ARCHIVE_DIR / f"{stem}.mp3"
+    """Return (mp3_url, turns) for a given host stem."""
+    # Always use raw GitHub URL — avoids downloading the full MP3 into Streamlit
+    mp3_url = f"{GITHUB_RAW}/archive/{stem}.mp3"
+
     script_local = ARCHIVE_DIR / f"{stem}_script.json"
+    if script_local.exists():
+        return mp3_url, json.loads(script_local.read_text())
 
-    if mp3_local.exists() and script_local.exists():
-        return mp3_local.read_bytes(), json.loads(script_local.read_text())
-
-    # Fall back to GitHub
-    mp3_bytes = github_store.read_file_bytes(f"archive/{stem}.mp3")
     script_files = github_store.list_directory("archive")
     script_content = next((c for n, c in script_files if n == f"{stem}_script.json"), None)
-    if mp3_bytes and script_content:
-        return mp3_bytes, json.loads(script_content)
+    if script_content:
+        return mp3_url, json.loads(script_content)
     return None, None
 
 
 # ── Audio player component ─────────────────────────────────────────────────────
 
-def render_player(mp3_bytes: bytes, turns: list[dict]):
-    mp3_b64 = base64.b64encode(mp3_bytes).decode("utf-8")
+def render_player(mp3_url: str, turns: list[dict]):
     turns_json = json.dumps(turns)
 
     transcript_html = ""
@@ -177,7 +177,7 @@ def render_player(mp3_bytes: bytes, turns: list[dict]):
       .line {{ font-size: 13px; line-height: 1.65; color: #333; }}
     </style></head><body>
       <audio id="player" controls>
-        <source src="data:audio/mpeg;base64,{mp3_b64}" type="audio/mpeg">
+        <source src="{mp3_url}" type="audio/mpeg">
       </audio>
       <div class="controls">
         <label>Speed:</label>
