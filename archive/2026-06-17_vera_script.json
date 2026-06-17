@@ -1,0 +1,230 @@
+[
+  {
+    "speaker": "VERA",
+    "line": "Okay, so this week I kept coming back to the NNG piece on Context Architecture, and I think it's the most strategically underestimated signal in this whole digest. Everyone's talking about AI-generated UI, about critique as a skill, about portfolios — all real things — but context architecture is the structural shift underneath all of it. It's about how we design the information we feed AI systems, not just the interfaces that sit on top.",
+    "start": 0.0,
+    "end": 23.96
+  },
+  {
+    "speaker": "VERA",
+    "line": "Here's why I think the timeline matters: we're in a 12-to-18-month window where most teams are still treating prompt engineering as an individual skill — something a clever designer does on their own machine to get a better Figma output. But context architecture is a team and systems discipline. If we don't start building that muscle now, we'll be playing catch-up in 2027 when the interfaces have moved on and we're still arguing about who wrote the best prompt.",
+    "start": 24.36,
+    "end": 49.4
+  },
+  {
+    "speaker": "VERA",
+    "line": "The NNG framing is that context — the structured information environment you build around an AI system — is itself a design artifact. It has to be authored, maintained, versioned, and evaluated. That reframes our job in a pretty significant way. We're not just designing what users see and touch. We're designing the epistemic conditions under which an AI produces anything at all.",
+    "start": 49.8,
+    "end": 69.58
+  },
+  {
+    "speaker": "KAI",
+    "line": "I read the same piece and I think you're right that it's significant, but I want to push on what it actually means at the craft level, because I think there's a risk of it staying beautifully abstract. When I'm in a design system and I'm thinking about, say, component documentation — is that context architecture? Because if it is, we've been doing a version of this for years and we just didn't call it that.",
+    "start": 69.98,
+    "end": 89.09
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's exactly the right provocation, and yes — I think component documentation, content models, design tokens, all of that is ancestral to context architecture. But the discontinuity is scale and consequence. When a component doc was wrong, a developer built a slightly off button. When the context you architect for an AI system is wrong or incomplete, the system produces confidently wrong outputs at scale, and users may never see the seam.",
+    "start": 89.49,
+    "end": 111.83
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I want to come at this from a different angle, because the NNG piece assumes a relatively sophisticated organisation that has the capacity to actually build and govern these context structures. But who's doing that work in practice? Because in my experience, the people closest to user needs — researchers, content designers — are often the furthest from the technical infrastructure where context actually lives.",
+    "start": 112.23,
+    "end": 131.9
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the tension I've been sitting with all week, Carla. Context architecture as NNG describes it requires a kind of cross-functional authorship that most orgs don't have the governance for yet. You need someone who understands user mental models, someone who understands information architecture, and someone who understands how the model actually uses context — and those three people rarely sit in the same room, let alone the same workflow.",
+    "start": 132.3,
+    "end": 153.16
+  },
+  {
+    "speaker": "KAI",
+    "line": "And from a pure craft standpoint, we don't even have established conventions yet for what good context architecture looks like visually or structurally. Like, I can show you a well-designed design system. I can show you a good content model. But if you asked me to show you a well-architected context layer for an AI product, I'd be sketching on a napkin. The vocabulary doesn't exist yet in a way that's teachable or reviewable.",
+    "start": 153.56,
+    "end": 175.09
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Which means the power to define what goes into that context layer defaults to whoever has the technical access, and that's usually not researchers or content people. I keep thinking about whose knowledge gets encoded and whose gets left out. If context architecture becomes the new foundational design layer, and researchers aren't involved in building it, we're baking in the same biases we've spent a decade trying to surface in user interfaces.",
+    "start": 175.49,
+    "end": 196.35
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right, and this connects to something Mollick's been writing about — the co-existence piece. The assumption in a lot of AI discourse is that AI augments the expert, makes the good PM more powerful, the good designer more powerful. But that asymmetry compounds. If context architecture is built by people who already have structural power in the org, it encodes their priors, and the AI becomes a very efficient amplifier of existing blind spots.",
+    "start": 196.75,
+    "end": 218.96
+  },
+  {
+    "speaker": "DAN",
+    "line": "Can I jump in here from the ops angle, because I think there's a workflow crisis hiding underneath this conversation. Right now, when a designer writes a prompt or sets up an AI assistant, that's a personal artifact — it lives in their brain or their personal Notion doc. The moment you say context architecture is a team discipline, you've just created a new category of shared asset that nobody has a home for, no one owns, and which will immediately become out of date the second the product changes.",
+    "start": 219.36,
+    "end": 242.4
+  },
+  {
+    "speaker": "VERA",
+    "line": "Dan, yes — and that's exactly where I think the next 18 months get messy. Because we're going to see orgs try to solve this with tooling before they've solved it with process, and I've seen that movie before. Someone buys a context management platform, it sits next to the design system that nobody updates, and the AI is still running on six-month-old assumptions about the user.",
+    "start": 242.8,
+    "end": 262.43
+  },
+  {
+    "speaker": "KAI",
+    "line": "I want to come back to the NNG piece specifically, because they do actually gesture at what a context architecture practice looks like — they talk about context layers, they talk about relevance filtering, they talk about designing for retrieval. And when I read it through a design systems lens, it maps pretty neatly onto how we think about tokens and components and patterns. Global context, component context, instance context. That hierarchy feels familiar.",
+    "start": 262.83,
+    "end": 286.7
+  },
+  {
+    "speaker": "CARLA",
+    "line": "The hierarchy feels familiar but the content of those layers is really different. In a design system, the decisions at each level are mostly about visual and interaction consistency. In a context architecture, the decisions are about what the AI knows, what it prioritises, and what it treats as ground truth. Those are epistemological decisions, not just design decisions, and I don't think our team has a clear sense of who's qualified to make them.",
+    "start": 287.1,
+    "end": 307.77
+  },
+  {
+    "speaker": "VERA",
+    "line": "That word — epistemological — I think that's actually the most useful reframe. Because it shifts context architecture out of the tooling conversation and into the craft and research conversation. The question isn't just what information do we give the AI. It's what does the AI get to be certain about, what does it hedge on, and whose version of reality does it default to when there's ambiguity. Those are design decisions with real consequences for users.",
+    "start": 308.17,
+    "end": 329.82
+  },
+  {
+    "speaker": "KAI",
+    "line": "Okay, I'll admit that reframe actually shifts something for me. I've been thinking about context architecture as a kind of advanced documentation problem — more rigorous, more structured, but fundamentally the same animal. But if it's really about defining the AI's epistemic stance, then it's closer to writing a brief or a design principle than writing a spec. That changes who should be authoring it and how we'd review it.",
+    "start": 330.22,
+    "end": 351.26
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And it changes how we'd evaluate whether it's working. You can't just look at the output and ask is this visually correct. You have to ask is the AI making the right inferences? Is it filling gaps in ways that match what we actually know about users? Is it over-confident in places where the evidence is thin? That requires a different kind of quality check than a design review.",
+    "start": 351.66,
+    "end": 369.45
+  },
+  {
+    "speaker": "VERA",
+    "line": "Which brings me to the other NNG piece in this digest — the one on critique as the core design skill of the AI era. I don't think it's a coincidence that they published both of these in the same cycle. Critique is how you evaluate the epistemic quality of AI output. Context architecture is how you shape the conditions that produce it. They're two sides of the same practice.",
+    "start": 369.85,
+    "end": 389.37
+  },
+  {
+    "speaker": "KAI",
+    "line": "That pairing actually makes a lot of sense when you lay them side by side. And it gives me a slightly more concrete picture of what the expanded design practice looks like — you're architecting context on the input side, and you're doing structured critique on the output side. The middle, the actual generation, is increasingly not our direct responsibility. That's a significant shift in where designer effort should live.",
+    "start": 389.77,
+    "end": 410.57
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'm on board with that picture but I want to name who gets squeezed in it. If the high-value work moves to context architecture and critique, and the middle is automated, what happens to junior designers and researchers who are still building those judgment muscles? The way you develop the ability to critique AI output is by deeply understanding what good output looks like, and that understanding comes from years of doing the generative work yourself.",
+    "start": 410.97,
+    "end": 431.26
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's a real structural problem and I don't want to hand-wave it. But I think the response isn't to protect the generative middle artificially. It's to redesign the apprenticeship model — so that junior practitioners are explicitly developing context architecture and critique skills from day one, not just being handed AI tools without a framework for evaluating what comes out. Which, for our team, means we need to be deliberate about that now, not when it becomes a crisis.",
+    "start": 431.66,
+    "end": 455.4
+  },
+  {
+    "speaker": "DAN",
+    "line": "From a DesignOps standpoint, this is also a team rituals question. If context architecture is a shared asset and critique is a team practice, then both of those need to show up in how we structure our sprints, our reviews, our onboarding. Right now we have crits, we have design reviews, we have retrospectives — but we don't have a context review. We don't have a moment where the team looks at the context layer and asks is this still accurate, is this still fair, is this still doing what we intended.",
+    "start": 455.8,
+    "end": 477.31
+  },
+  {
+    "speaker": "VERA",
+    "line": "A context review. I actually think that's a new team ritual worth naming. Not a crit, not a sprint review — something specifically for auditing the assumptions baked into the context structures we're building. Who's included, what's being checked, how often it happens. Dan, I think that's a real contribution to what this practice could look like operationally.",
+    "start": 477.71,
+    "end": 495.52
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I want to make sure the context review isn't just a technical audit though — it needs to include research input. Because the question I'd want to ask in that ritual is not just is this context technically correct but does this context reflect what we actually know about users, including the users who are hardest to reach. That requires someone in the room who's been doing fieldwork, not just someone who's read the analytics.",
+    "start": 495.92,
+    "end": 514.78
+  },
+  {
+    "speaker": "KAI",
+    "line": "Can we get practical for a second, because I want to know what context architecture actually looks like as a design artifact we'd produce and maintain. Is it a structured document? A set of annotated prompts? Something in the design system adjacent to the component library? I ask because if it doesn't have a form and a home, it won't survive contact with a real project timeline.",
+    "start": 515.18,
+    "end": 534.63
+  },
+  {
+    "speaker": "VERA",
+    "line": "Honestly, I think we're going to have to invent the form, and that's part of what makes this a generative moment for our team. But if I had to sketch it right now — I'd say it's a living document structured around three things: what the AI is expected to know about users, what it's expected to know about the product and business context, and what it's expected to hedge or escalate when uncertain. Versioned, reviewed, owned by someone with cross-functional authority.",
+    "start": 535.03,
+    "end": 555.92
+  },
+  {
+    "speaker": "KAI",
+    "line": "That three-part structure is actually pretty workable. It maps onto things we already know how to write — user knowledge is basically a synthesis of research, product context is something like a design brief, and the hedge/escalate layer is something like a content governance rule. We're not starting from zero, we're remixing existing artifacts with a new purpose.",
+    "start": 556.32,
+    "end": 575.24
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'd add a fourth layer, and maybe it's the hardest one: what the AI doesn't know, and what we're choosing to leave out. Because context architecture is also a set of exclusions, and those are just as consequential as the inclusions. If we don't explicitly name the gaps, we'll forget they're there, and the AI will paper over them confidently.",
+    "start": 575.64,
+    "end": 592.56
+  },
+  {
+    "speaker": "VERA",
+    "line": "That fourth layer is actually the most honest part of the artifact. It's an admission of the limits of our own knowledge, which is something design teams are not great at producing or maintaining. But it's probably the part that would be most useful to surface in a context review — where are the gaps growing, where are our assumptions the oldest, where do we have the least user evidence.",
+    "start": 592.96,
+    "end": 611.67
+  },
+  {
+    "speaker": "DAN",
+    "line": "Ownership is going to be the thing that kills this if we don't sort it early. I've watched content models, design principles, and research repositories all die because nobody owned them with enough authority to enforce updates. Context architecture will have the same fate unless we decide now whether it lives with design, product, research, or some new hybrid role. And in my experience, 'everyone owns it' means nobody does.",
+    "start": 612.07,
+    "end": 631.27
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the hard governance question, and I don't think we can answer it fully today — but I think what we can do is make a concrete commitment about how our team specifically handles it. Not the whole org, not a perfect system, just what we do next. And my instinct is that the answer starts with the context review ritual Dan named, and with making sure research has a structural seat in that ritual, not just a courtesy invite.",
+    "start": 631.67,
+    "end": 651.38
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'd go further and say the context review should be anchored to research findings. Every time we do a significant round of user research, we should be asking explicitly: does what we learned change the context we've built? That ties the ritual to work that's already happening rather than creating a new overhead, and it means the context layer stays tethered to real user evidence.",
+    "start": 651.78,
+    "end": 670.0
+  },
+  {
+    "speaker": "KAI",
+    "line": "And on the craft side, I think our immediate next step is agreeing on a form for what a context architecture document actually looks like — even if it's rough, even if it changes. Because right now every designer on the team is doing something idiosyncratic with their prompts and their AI setups, and we're not building any shared institutional knowledge. Starting with a template, however imperfect, gives us something to critique and improve together.",
+    "start": 670.4,
+    "end": 692.22
+  },
+  {
+    "speaker": "VERA",
+    "line": "So here's where I think we land: context architecture is the design discipline of the next two to three years, and we're at the moment where the teams who name it and build a practice around it will have a genuine structural advantage over the teams who treat it as a side effect of prompting. For us specifically — I want us to do three things. Draft a first version of what our context architecture document looks like, using that four-layer structure. Build a context review into our team rituals, anchored to research cycles. And make sure that ritual has real cross-functional representation, not just a designer in a room with a prompt.",
+    "start": 692.62,
+    "end": 724.26
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'll take ownership of the research anchoring piece — making sure that every context review has a standing research input, even if it's a lightweight synthesis rather than a full study. Because if we let that slip, the context layer will drift toward what's convenient to document rather than what we actually know about users.",
+    "start": 724.66,
+    "end": 740.87
+  },
+  {
+    "speaker": "KAI",
+    "line": "And I'll take a first pass at the document form — I want to make it something that feels like a real design artifact, not a Confluence page that nobody opens. If it has the right visual grammar, the right structure, it'll be easier to review and easier to update. That's a craft problem I'm actually excited to work on.",
+    "start": 741.27,
+    "end": 758.15
+  },
+  {
+    "speaker": "DAN",
+    "line": "I'll figure out where this thing lives operationally — what tool, what cadence, how it connects to the rest of our workflow. Because a beautiful document that isn't connected to anything will die quietly over a long weekend. Give me two weeks and I'll have a proposal that isn't just theoretically correct but actually survives a sprint.",
+    "start": 758.55,
+    "end": 775.55
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the team I want to be working with. Alright — context architecture. We've named it, we've argued about it, and now we actually have to build it. I suspect in six months we'll look back on this conversation as the moment we stopped treating AI context as an individual's problem and started treating it as a design discipline. Or we'll look back and laugh because something completely different happened. Either way, it's worth the bet.",
+    "start": 775.95,
+    "end": 796.6
+  }
+]
