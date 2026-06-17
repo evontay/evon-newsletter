@@ -31,7 +31,7 @@ logging.basicConfig(
 log = logging.getLogger(__name__)
 
 ANTHROPIC_API_KEY = os.getenv("ANTHROPIC_API_KEY")
-SONNET_MODEL = "claude-sonnet-4-20250514"
+SONNET_MODEL = "claude-sonnet-4-6"
 
 VOICES = {
     "VERA":  "af_nova",      # Big-picture strategist

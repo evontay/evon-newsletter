@@ -48,7 +48,7 @@ SMTP_PASSWORD = os.getenv("SMTP_PASSWORD")
 TO_EMAIL = os.getenv("TO_EMAIL")
 
 HAIKU_MODEL = "claude-haiku-4-5-20251001"
-SONNET_MODEL = "claude-sonnet-4-20250514"
+SONNET_MODEL = "claude-sonnet-4-6"
 
 PRIORITY_UNCAPPED_DOMAINS = {
     "petermerholz.com",
