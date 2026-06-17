@@ -661,7 +661,7 @@ def digest_to_html(digest: str, timestamp: str) -> str:
     in_context_block = False
 
     for line in lines:
-        stripped = line.strip()
+        stripped = re.sub(r'\*\*', '', line.strip())
 
         # Main title
         if stripped.startswith("MOSAIC PULSE —"):

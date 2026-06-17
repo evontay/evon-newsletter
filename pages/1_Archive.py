@@ -301,13 +301,34 @@ def run_podcast(entry, host):
 
 
 def podcast_generator_ui(entry, available_hosts, key_suffix):
-    """Show host selector and generate button."""
+    """Show topic selector, host selector, and generate button."""
     if not PYTHON312:
         st.caption("Podcast generation requires Python 3.12 + Kokoro (local only).")
         return
     if not available_hosts:
         st.caption("All four host perspectives have been generated for this issue.")
         return
+
+    # Topic deep-dive selector
+    topics = extract_topics(entry["html"])
+    topic_labels = [t["label"] for t in topics]
+    if topic_labels:
+        selected_topics = st.multiselect(
+            "Deep dive on specific topic(s) — optional:",
+            options=topic_labels,
+            placeholder="Leave empty to let the host choose",
+            key=f"topics_{key_suffix}",
+        )
+        if selected_topics:
+            st.caption(
+                f"The host will focus the entire episode on the {len(selected_topics)} "
+                f"selected topic{'s' if len(selected_topics) != 1 else ''}."
+            )
+        else:
+            st.caption("No topics selected — the host will choose whichever story they find most compelling.")
+    else:
+        selected_topics = []
+
     host_choice = st.radio(
         "Choose a perspective:",
         available_hosts,
@@ -322,7 +343,7 @@ def podcast_generator_ui(entry, available_hosts, key_suffix):
         "CARLA": "Carla surfaces the human perspective most at risk of being overlooked and pushes the team to slow down.",
     }[host_choice])
     if st.button("🎙️ Generate Podcast", key=f"gen_{key_suffix}", type="primary"):
-        run_podcast(entry, host_choice)
+        run_podcast(entry, host_choice, topics=selected_topics or None)
 
 
 for entry in entries:
