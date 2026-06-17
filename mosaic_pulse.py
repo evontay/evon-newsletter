@@ -28,6 +28,7 @@ from google_auth_oauthlib.flow import InstalledAppFlow
 from googleapiclient.discovery import build
 
 from sources import SOURCES
+import github_store
 
 # ── Setup ──────────────────────────────────────────────────────────────────────
 
@@ -853,7 +854,6 @@ def send_email(subject: str, plain_body: str, html_body: str) -> None:
 
 def save_to_archive(html: str) -> None:
     """Commit the newsletter HTML to archive/ in the GitHub repo."""
-    import github_store
     date_str = datetime.now().strftime("%Y-%m-%d")
     path = f"archive/{date_str}.html"
     # Use a unique path if one already exists for today
