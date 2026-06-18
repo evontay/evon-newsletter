@@ -300,6 +300,35 @@ def run_podcast(entry, host):
         st.code("\n".join(all_output), language="text")
 
 
+def extract_topics(html: str) -> list[dict]:
+    """Extract article topics from newsletter HTML, grouped by section."""
+    topics = []
+    section_re = re.compile(
+        r'letter-spacing:2px;">\s*(\d{2})\s*</span>\s*<span[^>]*>\s*([^<]+?)\s*</span>',
+        re.DOTALL,
+    )
+    bullet_re = re.compile(r'<p[^>]*font-weight:600[^>]*>(.*?)</p>', re.DOTALL)
+    elements = []
+    for m in section_re.finditer(html):
+        label = m.group(2).replace('&amp;', '&').strip()
+        elements.append(("section", m.start(), m.group(1), label))
+    for m in bullet_re.finditer(html):
+        raw = re.sub(r'<[^>]+>', '', m.group(1))
+        raw = (raw.replace('&amp;', '&').replace('&lt;', '<')
+                  .replace('&gt;', '>').replace('&nbsp;', ' ').strip())
+        if '\u2014' in raw and len(raw) > 15:
+            raw = re.sub(r'\u2192\s*link\s*$', '', raw).strip()
+            elements.append(("bullet", m.start(), raw))
+    elements.sort(key=lambda x: x[1])
+    current_section = "General"
+    for el in elements:
+        if el[0] == "section":
+            current_section = f"{el[2]} | {el[3]}"
+        elif el[0] == "bullet":
+            topics.append({"section": current_section, "label": el[2]})
+    return topics
+
+
 def podcast_generator_ui(entry, available_hosts, key_suffix):
     """Show topic selector, host selector, and generate button."""
     if not PYTHON312:
