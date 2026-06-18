@@ -237,7 +237,7 @@ if not entries:
 st.caption(f"{len(entries)} newsletter{'s' if len(entries) != 1 else ''} in archive")
 st.divider()
 
-def run_podcast(entry, host):
+def run_podcast(entry, host, topics=None):
     """Run podcast.py for the given host and show live progress."""
     env = os.environ.copy()
     try:
@@ -255,8 +255,12 @@ def run_podcast(entry, host):
     progress = st.progress(0)
     status.markdown("✍️ Writing script…")
 
+    cmd = [PYTHON312, str(SCRIPT_DIR / "podcast.py"), str(local_html), "--host", host]
+    if topics:
+        cmd += ["--topics", json.dumps(topics)]
+
     proc = subprocess.Popen(
-        [PYTHON312, str(SCRIPT_DIR / "podcast.py"), str(local_html), "--host", host],
+        cmd,
         cwd=SCRIPT_DIR,
         stdout=subprocess.PIPE,
         stderr=subprocess.STDOUT,
