@@ -237,7 +237,16 @@ def main():
     parser.add_argument("html_file", nargs="?", help="Path to newsletter HTML file")
     parser.add_argument("--host", default="VERA", choices=["VERA", "KAI", "DAN", "CARLA"],
                         help="Which host leads the episode")
+    parser.add_argument("--topics", default=None,
+                        help="JSON array of topic strings to deep dive on")
     args = parser.parse_args()
+
+    selected_topics = None
+    if args.topics:
+        try:
+            selected_topics = json.loads(args.topics)
+        except Exception:
+            log.warning("Could not parse --topics JSON — ignoring topic selection")
 
     if args.html_file:
         path = Path(args.html_file)
@@ -259,7 +268,9 @@ def main():
         )
         sys.exit(1)
 
-    turns = generate_script(digest_text, lead_host=args.host)
+    if selected_topics:
+        log.info(f"User-selected topics: {selected_topics}")
+    turns = generate_script(digest_text, lead_host=args.host, topics=selected_topics)
     audio = synthesise(turns)
     save_outputs(turns, audio, filename, lead_host=args.host)
     log.info("=== Podcast complete ===")
