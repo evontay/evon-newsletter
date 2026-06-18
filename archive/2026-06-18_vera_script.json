@@ -1,0 +1,188 @@
+[
+  {
+    "speaker": "VERA",
+    "line": "Okay, so I've been sitting with this newsletter since it landed and the thing that I can't stop thinking about — the signal I think we're genuinely underestimating — is the A2UI piece. Not because adaptive UI is new, but because of where it currently lives: developer documentation. That gap between where a capability exists and where designers can actually touch it is exactly how our profession gets written out of the story before the chapter even starts.",
+    "start": 0.0,
+    "end": 22.29
+  },
+  {
+    "speaker": "VERA",
+    "line": "Here's what I mean strategically. We've been through this before — responsive design started as a CSS problem, accessibility started as a legal compliance problem, and by the time design had a confident vocabulary for both, engineers had already made the foundational decisions. A2UI is on the same trajectory, and the window to get ahead of it is probably 12 to 18 months, not three years.",
+    "start": 22.69,
+    "end": 43.64
+  },
+  {
+    "speaker": "VERA",
+    "line": "The deeper thing is this: A2UI doesn't just change what we design, it changes the ontology of what design output even is. We stop handing over screens and start handing over rule systems — conditional logic about user state, context, and intent. If we don't build that vocabulary now, we're not just behind on a tool, we're behind on a fundamental redefinition of what design artifacts are.",
+    "start": 44.04,
+    "end": 64.63
+  },
+  {
+    "speaker": "KAI",
+    "line": "I hear you, and I'm not dismissing it, but I want to push on the framing a little. You're describing A2UI as a vocabulary problem — like if we just learn the language, we're in the game. But vocabulary without underlying mental models is just jargon adoption. The question for me is whether designers are actually equipped to think in state machines and conditional logic, because that's a genuinely different cognitive mode from screen-based design.",
+    "start": 65.03,
+    "end": 87.41
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's exactly the tension I'm trying to name, Kai. The cognitive mode shift is the strategic threat. It's not that designers can't learn it — they absolutely can — but without deliberate investment, we'll learn it late and reactively, which means we'll be translating engineering decisions into design rationale instead of the other way around.",
+    "start": 87.81,
+    "end": 105.15
+  },
+  {
+    "speaker": "KAI",
+    "line": "Okay, but let me make this concrete for a second. When I'm working on a component that has five states, I'm already thinking conditionally — hover, focus, error, loading, disabled. The logic isn't alien to us. What A2UI seems to be doing is radically expanding the number of dimensions those states respond to — not just interaction state but user context, history, environment. That's more complex, sure, but it feels like an extension of what good interaction designers already do, not a completely foreign discipline.",
+    "start": 105.55,
+    "end": 133.01
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Can I come in here, because I think there's a massive assumption baked into A2UI that nobody's interrogating yet, and it's the word 'adaptive.' Adaptive for whom, based on what data, optimising for which outcomes? An interface that restructures itself based on user state sounds incredible until you ask what it means for users whose state is misread — or whose context the system simply wasn't trained to recognise.",
+    "start": 133.41,
+    "end": 153.16
+  },
+  {
+    "speaker": "VERA",
+    "line": "Carla, yes — and I think this is actually what makes the vocabulary argument even more urgent. If designers aren't in the room when the rules are being defined, the people who are in the room will define 'user state' in whatever terms they have access to, which is almost certainly behavioural telemetry and engagement metrics. That's not a neutral starting point.",
+    "start": 153.56,
+    "end": 172.12
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Right, and the newsletter's own framing around this is interesting — it says A2UI is 'currently living mostly in developer documentation,' and I'd want to know what that documentation assumes about who the user is. Developer-authored mental models of user context have a pretty consistent track record of encoding the developer as the default user. That's not cynicism, that's just the history of how defaults get set.",
+    "start": 172.52,
+    "end": 192.92
+  },
+  {
+    "speaker": "KAI",
+    "line": "So then the design systems question becomes really pointed. We spend a lot of time in design systems talking about components and tokens, but if the future is rule-based adaptive interfaces, what's the equivalent of a design system for that? Is it a decision tree? A set of declared principles about when the interface is and isn't allowed to restructure itself? Because right now I genuinely don't know what the artefact looks like.",
+    "start": 193.32,
+    "end": 214.78
+  },
+  {
+    "speaker": "VERA",
+    "line": "That question — 'what is the artefact' — is exactly where I want us to spend time, because I think the artefact question is also a power question. Whoever owns the canonical representation of how the system behaves owns the design. And right now that canonical representation is code, not a design file, not a research insight, not a principle document.",
+    "start": 215.18,
+    "end": 233.93
+  },
+  {
+    "speaker": "CARLA",
+    "line": "There's a Mollick framing in the newsletter that I think applies here more sharply than to anything else this week. He's asking where human judgment must remain irreplaceable rather than letting AI fill the gap by default. For A2UI specifically, I'd argue that the rule-definition layer — what triggers adaptation, what counts as a meaningful context shift — that is exactly where human judgment has to be deliberate and non-negotiable.",
+    "start": 234.33,
+    "end": 254.36
+  },
+  {
+    "speaker": "VERA",
+    "line": "I love that reframe. So it's not just 'designers need to learn state-based thinking' — it's that the specific human judgment designers bring is about the ethics and experience quality of the adaptation triggers themselves. Not the engineering of how it adapts, but the criteria by which it decides to adapt at all. That's a design problem nobody else is positioned to own.",
+    "start": 254.76,
+    "end": 273.92
+  },
+  {
+    "speaker": "KAI",
+    "line": "Okay, that's genuinely shifting how I'm thinking about this. Because if I take that seriously, it means the design work isn't 'here are five layout variants' — it's something more like 'here are the conditions under which each variant is appropriate and the experience cost of getting that wrong.' That's a completely different conversation to have with an engineer or a PM.",
+    "start": 274.32,
+    "end": 292.94
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And it's a conversation that requires research to drive, not just validate. If we're defining the conditions under which an interface restructures itself, that needs to be grounded in real user context — not assumed user context. Which means the researcher has to be upstream of the rule definition, not brought in after the fact to test whether the rules feel okay.",
+    "start": 293.34,
+    "end": 311.39
+  },
+  {
+    "speaker": "DAN",
+    "line": "Sorry to barge in from the process corner, but I want to flag something practical. We're describing a design contribution that happens before wireframes, before prototypes, before any of the normal handoff artefacts — and right now our workflows don't have a slot for that. The Agile trap piece in the newsletter is directly relevant here: sprint cadences literally don't have a phase for 'define the adaptive logic before engineering starts.' That work gets eaten.",
+    "start": 311.79,
+    "end": 331.61
+  },
+  {
+    "speaker": "VERA",
+    "line": "Dan, that's the structural problem underneath all of it. The newsletter calls it the beast — continuous delivery consuming the reflective work — and A2UI just makes that beast hungrier. Because adaptive systems need to be specified upfront in ways that waterfall-era design never did and that agile-era design never created space for either.",
+    "start": 332.01,
+    "end": 350.66
+  },
+  {
+    "speaker": "DAN",
+    "line": "And practically speaking, if we want to be in the room when A2UI decisions get made, we need a workflow artefact that earns us a seat at that table. Right now we show up with a Figma file. The equivalent for rule-based adaptive design might be something like a context matrix — a structured way of documenting user states and the design rationale for each adaptation decision. I don't know if that exists yet as a practice, but someone needs to invent it.",
+    "start": 351.06,
+    "end": 370.43
+  },
+  {
+    "speaker": "KAI",
+    "line": "A context matrix — I actually quite like that as a starting concept. It's close enough to existing design artefacts that it wouldn't feel alien, but it's oriented toward logic and conditions rather than visual layout. You could imagine it sitting between the research synthesis and the component spec in terms of where it lives in a workflow.",
+    "start": 370.83,
+    "end": 388.36
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I'd push for it to be explicitly a research artefact first, though. The context matrix should be populated from user research — from actual evidence about how people's context and state varies — before it becomes a design specification. Otherwise we're just systematising our assumptions about users rather than their actual experience.",
+    "start": 388.76,
+    "end": 406.32
+  },
+  {
+    "speaker": "VERA",
+    "line": "So here's where I think we've arrived, and it's sharper than where I started. The A2UI signal isn't primarily about a new UI paradigm — it's about a coming shift in what the authoritative design artefact is, and if designers don't have a credible, research-grounded answer for what that artefact is, engineers will fill the gap with code and PMs will fill it with OKRs.",
+    "start": 406.72,
+    "end": 426.18
+  },
+  {
+    "speaker": "KAI",
+    "line": "And the Tony Fadell piece from Lenny's actually connects here in a way I didn't initially see. His argument is that taste — knowing what's right before you can prove it — becomes more scarce and more valuable as AI raises the production floor. The design judgment about when and how an interface should adapt is taste work. You can't A/B test your way to it without a human perspective anchoring what 'better' even means.",
+    "start": 426.58,
+    "end": 447.78
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Which is also why the 'design is losing power and it's our fault' piece connects. If we're absent from the A2UI conversation because we're still perfecting pixel handoffs or writing think-pieces about AI, we will have earned that absence. The leverage moment is real but it's not waiting for us.",
+    "start": 448.18,
+    "end": 463.78
+  },
+  {
+    "speaker": "VERA",
+    "line": "Right, and that's what makes this week's signals feel like they're all pointing at the same thing from different angles. The Agile trap piece, the Mollick piece, the Fadell interview, the A2UI framework — they're all describing the same underlying dynamic: the conditions are shifting, the window is open, and the question is whether design steps into the definitional work or keeps optimising the execution work.",
+    "start": 464.18,
+    "end": 483.65
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'll be honest — I came into this conversation a bit sceptical that A2UI was the right signal to anchor on. It felt like a developer framework that might or might not reach design toolchains. But the artefact question has genuinely changed my view. If the question is 'what does design own in a rule-based adaptive system,' that's urgent and it's ours to answer, regardless of whether A2UI specifically is the one that scales.",
+    "start": 484.05,
+    "end": 506.24
+  },
+  {
+    "speaker": "CARLA",
+    "line": "What I'm taking from this — and I feel like I sharpened something too — is that the equity and inclusion questions about adaptive UI aren't a downstream ethics check. They're definitional inputs. You can't write good adaptation rules without understanding the full range of user context, and that requires rigorous research with people whose context differs from the assumed default. That's not a nice-to-have, that's the foundation of the rule system working at all.",
+    "start": 506.64,
+    "end": 527.38
+  },
+  {
+    "speaker": "DAN",
+    "line": "From a DesignOps standpoint, what I'm landing on is that we need to prototype the workflow before we prototype the interface. What does a design process that includes context matrix definition actually look like in our current sprint structure? Where does it slot in, who owns it, what's the handoff? If we don't answer that now, the first A2UI project will be chaos.",
+    "start": 527.78,
+    "end": 545.25
+  },
+  {
+    "speaker": "VERA",
+    "line": "So here's what I'd want us to actually do differently — and I want to be specific because we've been pretty abstract. I think we spend one team session, before the end of this quarter, doing two things: first, reading through whatever A2UI documentation is publicly available and mapping it against our current design vocabulary — not to become engineers, but to understand the gap. And second, drafting a rough version of what a context matrix artefact could look like for one feature we're already working on.",
+    "start": 545.65,
+    "end": 571.16
+  },
+  {
+    "speaker": "KAI",
+    "line": "I'd add that the context matrix draft should explicitly include the failure modes — what happens when the system misreads user state, and what the design fallback is. That's not just a safety consideration, it's how you make the artefact useful to engineers. They need to know the graceful degradation path as much as the intended adaptation path.",
+    "start": 571.56,
+    "end": 589.63
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And I'd want the research team in that session from the start, not invited in to review after. We should have at least one real user context — from actual fieldwork, not personas — as the test case for whether the matrix we're drafting reflects genuine human variation or just the variation we imagined.",
+    "start": 590.03,
+    "end": 605.69
+  },
+  {
+    "speaker": "VERA",
+    "line": "Agreed. The reflection prompt at the bottom of the newsletter asks where the beast is being fed and what strategic work is being quietly starved — and I think for us, the honest answer is that we haven't even named the strategic work yet. Naming it is the first step. A context matrix session, grounded in real research, is us naming it out loud and committing to something before the window closes.",
+    "start": 606.09,
+    "end": 625.89
+  }
+]
