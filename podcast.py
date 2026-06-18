@@ -131,12 +131,22 @@ Structure:
 }
 
 
-def generate_script(digest_text: str, lead_host: str = "VERA") -> list[dict]:
+def generate_script(digest_text: str, lead_host: str = "VERA", topics: list = None) -> list[dict]:
     """Call Claude Sonnet to generate a host-led podcast episode."""
     client = anthropic.Anthropic(api_key=ANTHROPIC_API_KEY)
 
     host_frame = HOST_FRAMES.get(lead_host.upper(), HOST_FRAMES["VERA"])
     system = BASE_PROMPT + "\n" + host_frame
+
+    if topics:
+        topic_list = "\n".join(f"- {t}" for t in topics)
+        system += (
+            f"\n\nUSER-SELECTED TOPICS FOR THIS EPISODE:\n{topic_list}\n\n"
+            "The listener has chosen these specific topics for a deep dive. "
+            "Focus the ENTIRE episode on these topics — do not pick a different story. "
+            "Still apply the host's characteristic lens and the episode structure above, "
+            "but anchor every turn in the selected topic(s)."
+        )
 
     log.info(f"Generating podcast script — lead host: {lead_host}")
     response = client.messages.create(
