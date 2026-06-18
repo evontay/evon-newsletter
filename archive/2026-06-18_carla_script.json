@@ -1,0 +1,224 @@
+[
+  {
+    "speaker": "CARLA",
+    "line": "Okay, so I've been sitting with this week's digest and there's a thread running through three of these stories that's making me genuinely uneasy, and I want to pull on it before we all get too excited. The UX Magazine piece on researchers becoming makers, the A2UI framework, and the NNG tactics for getting research onto roadmaps — on the surface they look like three separate topics, but together they're painting a picture where the pressure on researchers to move faster, build faster, and talk like PMs is intensifying from every direction simultaneously. And I think we're at risk of cheering that on without asking who gets left behind when research accelerates to match the pace of shipping.",
+    "start": 0.0,
+    "end": 32.79
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Start with the New Makers piece. The framing is optimistic — researchers who can ship are structurally advantageous. And I get it, I really do, there's something genuinely exciting about being able to prototype and test in the same session. But the thing I keep coming back to is: which researchers get to become makers? The low-code and AI tooling that's enabling this isn't equally accessible, and the skills gap between a researcher who's already comfortable in Figma or Webflow and one who isn't is real and it maps uncomfortably onto existing inequities in the field.",
+    "start": 33.19,
+    "end": 61.95
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And there's a second problem hiding inside the first. When a researcher is also the maker, the cognitive separation between generating insight and acting on insight starts to collapse. That separation isn't inefficiency — it's a methodological safeguard. If I'm the one who built the prototype, I am less able to see the evidence that it's wrong, because I have skin in the game in a way that I didn't when my job was purely to observe and report. We don't have research on what happens to insight quality when the same person is responsible for both ends of the loop, and I find that absence pretty alarming.",
+    "start": 62.35,
+    "end": 91.34
+  },
+  {
+    "speaker": "VERA",
+    "line": "The thing that strikes me about what you're naming, Carla, is that this isn't just a MosAIc problem — this is a structural shift happening across the whole industry simultaneously, and nobody's really doing the meta-research on it. Every team is running the same experiment in parallel: what happens when we collapse the researcher-designer-builder distinction using AI tooling? And because everyone's doing it at once, there's no control group. There's no organisation that's stayed still long enough to give us a comparison point.",
+    "start": 91.74,
+    "end": 117.81
+  },
+  {
+    "speaker": "VERA",
+    "line": "The A2UI piece actually deepens this for me in a way I find slightly vertiginous. If interfaces are restructuring themselves dynamically based on context and user state, then the artefact that a researcher-maker is shipping isn't even stable. You're not shipping a thing — you're shipping a rule system that produces different things for different people in different moments. The question of 'did this work for users' becomes extraordinarily hard to answer because the interface one person saw may be meaningfully different from the interface another person saw.",
+    "start": 118.21,
+    "end": 147.48
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Yes, and that's exactly where the research methodology breaks down in ways I don't think the A2UI framework has reckoned with at all. If the UI is radically adaptive, your sample isn't really a sample of the same experience anymore. Traditional usability testing assumes some stability in the stimulus — you're watching people interact with a thing, and the thing is roughly the thing. A2UI dissolves that assumption, and I have not seen anyone in the developer documentation grappling with what that means for how you evaluate whether the adaptation is actually helping.",
+    "start": 147.88,
+    "end": 176.36
+  },
+  {
+    "speaker": "DAN",
+    "line": "Can I ask a very operational question, because I think it's relevant here. When you say the developer documentation, how far is A2UI actually from our design toolchain right now? Because there's a version of this conversation where we're solving a problem that's six months away, and there's a version where it's already affecting how the dev team is thinking about the components they're building for us. I'd want to know which one we're in before we decide how much energy to put into the methodology question.",
+    "start": 176.76,
+    "end": 201.06
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That's a fair challenge, Dan, and honestly the digest itself flags it as a six-month horizon watch. But here's why I'm raising it now rather than in September: by the time it's in our toolchain, the norms will already have formed. The developers will have made decisions about how adaptation gets triggered and logged, the PMs will have picked success metrics, and we'll be reverse-engineering our research approach to fit constraints we had no hand in shaping. If we wait until it's urgent, we've already lost the moment where we could have influenced the architecture.",
+    "start": 201.46,
+    "end": 227.67
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's a fair point and I take it. But I'll be honest — the NNG piece is the one that's making me most anxious from a process standpoint, and not for the reasons you'd expect. The tactical advice is good: join planning early, frame in PM metrics, time your delivery. Those are real things that work. But what worries me is that we're essentially teaching researchers to optimise for roadmap legibility, and I'm not sure the roadmap is the right bottleneck to optimise for.",
+    "start": 228.07,
+    "end": 248.3
+  },
+  {
+    "speaker": "DAN",
+    "line": "Here's what I mean. The NNG framing assumes that research findings are sound and the problem is translation — getting good insight into the room where decisions get made. But if researchers are simultaneously under pressure to move faster through the New Makers paradigm, and the evaluation environment is becoming unstable through A2UI, then the findings themselves might be degrading at the same time that we're getting better at selling them. We'd be very efficiently moving less reliable insight onto the roadmap.",
+    "start": 248.7,
+    "end": 272.17
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Dan, that's the most precise articulation of what's been bothering me all week and I'm slightly annoyed you got there before I did. That's exactly it. The NNG tactics are about persuasion infrastructure, but persuasion infrastructure is only valuable if the thing you're persuading people of is true. And the conditions that would let us be confident it's true — methodological rigour, stable stimuli, separation between insight and making — are all being eroded by the other two forces in this digest simultaneously.",
+    "start": 272.57,
+    "end": 298.44
+  },
+  {
+    "speaker": "KAI",
+    "line": "I want to come in on the A2UI piece from a craft angle because I think there's a concrete design problem buried here that's worth naming. If interfaces restructure themselves based on context and user state, then what I'm designing is no longer a screen — it's a decision tree with visual outputs. The design artifact shifts from layouts and components to the rules and thresholds that trigger adaptation. That's a fundamentally different kind of design thinking and I'm not sure our current tools, our current vocabulary, or honestly our current hiring profiles are built for it.",
+    "start": 298.84,
+    "end": 328.92
+  },
+  {
+    "speaker": "KAI",
+    "line": "And here's the craft tension that connects back to Carla's point about researcher-makers. When the interface is adaptive, the prototype a researcher-maker builds in a rapid testing session is essentially one instantiation of a potentially enormous state space. You've tested one path through a system that might branch in dozens of directions depending on who you are and what you were doing five minutes ago. The confidence you get from that test is real but it's bounded in a way that I'm not sure gets communicated when the finding goes into the roadmap slide.",
+    "start": 329.32,
+    "end": 358.91
+  },
+  {
+    "speaker": "VERA",
+    "line": "Kai's point about the state space is important because it connects to something bigger happening in the industry. We're moving from a design paradigm where the designer controls the output to one where the designer defines the generative rules, and that shift is happening faster in some parts of the product than others, creating these weird seams where rule-based adaptive UI meets hand-crafted static screens. Nobody's really written the playbook for how research spans both, and I think we're going to see a lot of teams discover that problem the hard way in the next twelve months.",
+    "start": 359.31,
+    "end": 387.41
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Let me be even more specific about the users I'm worried about, because I think we've been talking in the abstract. The populations most likely to benefit from radically adaptive UI — people with cognitive variability, people using assistive technology, people in low-bandwidth environments, people who are situationally impaired in some way — are also the populations least likely to be in our standard usability testing panels. Adaptive UI is being designed and validated primarily on the median user, and the edge cases are the people the adaptation is theoretically most for.",
+    "start": 387.81,
+    "end": 416.89
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And when you add the researcher-maker dynamic, this gets worse not better. A researcher who is also shipping has less time for longitudinal observation, less capacity for the slow ethnographic work that surfaces how people at the edges actually experience a product. The efficiency gains of the maker model accrue to the core use cases. The marginal use cases, the ones that require patience and deep contextual understanding, get less attention precisely because the new model rewards speed.",
+    "start": 417.29,
+    "end": 441.5
+  },
+  {
+    "speaker": "DAN",
+    "line": "So let's be operational about this for a second. If we wanted to actually slow down in the right places — not across the board, because that's not happening — what would that look like structurally? Because the sprint cadence is what it is, the delivery pressure is what it is, and I can't just tell product we're pausing to do better research without something concrete to offer in return. What's the trade I'm actually making?",
+    "start": 441.9,
+    "end": 459.86
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I think the trade is specificity. Instead of slowing down everywhere, we designate one dimension of the A2UI work as a protected research zone — specifically the adaptation triggers. The rules that determine when the interface restructures itself are the methodological crux, because that's where researcher-maker velocity is most dangerous. If those rules are set based on thin or biased data and then they're baked into the system, the adaptive UI will consistently misread the users who most need it to get it right.",
+    "start": 460.26,
+    "end": 485.71
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's actually something I can work with, because it maps onto a specific design artefact. The trigger logic, the conditions under which adaptation fires, that's a document that has to get written at some point. If we establish that that document requires a research sign-off before it goes to dev, we've created a structural checkpoint without disrupting the broader sprint rhythm. It's not a pause, it's a gate on a specific deliverable. That's a much easier conversation with product.",
+    "start": 486.11,
+    "end": 507.77
+  },
+  {
+    "speaker": "VERA",
+    "line": "I want to zoom out for a moment because I think there's a pattern here that we should name explicitly. The New Makers trend, A2UI, and the NNG roadmap tactics are all, in different ways, responses to the same underlying pressure: design and research are being asked to justify their existence in delivery terms. And the accommodation strategies — move faster, adapt the interface so it does the heavy lifting, learn to talk like a PM — are all individually rational and collectively might be hollowing out the thing that makes design and research valuable in the first place.",
+    "start": 508.17,
+    "end": 538.27
+  },
+  {
+    "speaker": "VERA",
+    "line": "Tony Fadell's point from the video piece is relevant here. As AI lowers the production floor, taste — knowing what's right before you can prove it — becomes the scarce differentiating capability. But taste is developed through exactly the kind of slow, reflective, evidence-gathering work that all three of this week's pressures are squeezing out. We're being asked to produce faster precisely at the moment when the conditions for producing well are most demanding.",
+    "start": 538.67,
+    "end": 560.53
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And the NNG roadmap tactics piece is almost a case study in that tension, which I find fascinating and a little uncomfortable. The advice is genuinely good — frame findings in PM metrics, time your delivery, join planning early. And I do these things. But there's an implicit concession in all of it: we're shaping how we present research to fit the decision-making structures that exist, rather than asking whether those decision-making structures are creating conditions for good decisions. We're optimising the translation layer without questioning whether the destination is right.",
+    "start": 560.93,
+    "end": 589.95
+  },
+  {
+    "speaker": "KAI",
+    "line": "From a pure craft standpoint, the thing that worries me about the researcher-maker model applied to A2UI specifically is that you're making design decisions at the rules layer that look invisible from the surface layer. A PM or stakeholder reviewing the interface sees a screen that looks clean and reasonable. They can't see that the adaptation trigger was set based on a prototype test with eight participants who were all power users. The visual output obscures the methodological assumptions underneath it, and that's a new kind of design debt I don't think we have good language for yet.",
+    "start": 590.35,
+    "end": 620.17
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Design debt is actually a useful frame for this, Kai, because it makes the risk legible to stakeholders who understand technical debt. If the adaptation rules are set on thin research, we're not just shipping a potentially bad experience — we're hardcoding assumptions into a generative system that will be very expensive to revisit later. The debt compounds in adaptive systems in a way it doesn't in static ones, because each rule interacts with every other rule. Changing one trigger later might invalidate a dozen interaction states you've already shipped.",
+    "start": 620.57,
+    "end": 646.36
+  },
+  {
+    "speaker": "DAN",
+    "line": "Okay I want to bring this back to the NNG piece one more time because I think there's something Carla said earlier that we haven't fully resolved. She said the tactics assume the findings are sound and the problem is translation. But what if we inverted that? What if the NNG tactics — the joining planning early, the PM metrics framing — could also be used to surface research quality concerns, not just research findings? Like, you use your seat at the planning table not just to pitch what you found, but to flag where the evidence is thin.",
+    "start": 646.76,
+    "end": 671.74
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I love that inversion, Dan, and I think it actually changes the posture of the NNG advice in a meaningful way. Instead of 'here's what we know and here's why it matters for your OKR,' the move becomes 'here's what we don't yet know and here's what it will cost us if we ship without finding out.' That's a harder conversation to have, but it's more honest, and if you've already built the relationship by joining planning early, you have more standing to have it.",
+    "start": 672.14,
+    "end": 691.69
+  },
+  {
+    "speaker": "VERA",
+    "line": "There's also an industry-level responsibility angle here that I think we shouldn't sidestep. If MosAIc is among the teams building A2UI-style systems, and we ship adaptation rules based on underspecified research, and those rules propagate through the product and influence how thousands of users experience it — we've contributed to a field norm. The decisions we make in the next six months about how much research is enough for a trigger rule are decisions that will be cited by other teams as precedent. We have more influence than we sometimes remember.",
+    "start": 692.09,
+    "end": 722.12
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That's not a comfortable thing to sit with but it's true. And it brings me back to the specific population question I raised earlier. If we're establishing precedent, we should be establishing it in a direction that treats edge-case users as part of the design problem from the beginning, not as an accessibility audit you do afterwards. The researchers who get access to adaptive UI research panels, the participants who get recruited, the edge cases that get included — those choices are happening now, not in six months.",
+    "start": 722.52,
+    "end": 747.31
+  },
+  {
+    "speaker": "KAI",
+    "line": "On the craft side, I think there's something concrete we could do about the visibility problem I raised. If the design artefact for A2UI work is rules and states rather than screens, we should be documenting those rules in a format that makes the research basis explicit. Not just 'when X, show Y,' but 'when X, show Y, based on N participants with this profile, with this confidence level.' That's not standard design documentation but it makes the methodological debt visible at the artefact layer, which is where it needs to be visible.",
+    "start": 747.71,
+    "end": 775.59
+  },
+  {
+    "speaker": "DAN",
+    "line": "That's actually implementable. I can build that into the handoff template. If every adaptive rule has a required field for research basis and confidence level, it forces the conversation to happen at the documentation stage rather than three months later when something breaks in production and nobody can remember why the trigger was set that way. It's a small structural change that creates accountability without requiring anyone to change their fundamental workflow.",
+    "start": 775.99,
+    "end": 795.86
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Before we land on the concrete step, I want to name something that's been running underneath this whole conversation. The three stories we've been discussing — researcher-makers, adaptive UI, research-to-roadmap tactics — are all oriented toward making design and research more valuable in the eyes of product and engineering. And that's not wrong. But none of them are oriented toward making research more true. And I think we need to be honest with ourselves about whether we're building practices that are more legible or practices that are more reliable.",
+    "start": 796.26,
+    "end": 822.88
+  },
+  {
+    "speaker": "VERA",
+    "line": "That's the tension of the moment, isn't it. Legibility and reliability aren't the same thing, and the systems being built around us are rewarding legibility faster than they're rewarding reliability. The researcher who ships is legible. The adaptive UI that responds to context is legible. The PM-framed roadmap slide is legible. The question of whether any of it is producing better outcomes for real users is harder to measure and slower to surface, and slow and hard is what the current incentive structure is least equipped to reward.",
+    "start": 823.28,
+    "end": 851.31
+  },
+  {
+    "speaker": "CARLA",
+    "line": "So here's what I want us to actually do, and I want to be specific because that's the whole point. Before we go any further with the A2UI work — before the adaptation rules get handed to dev, before the researcher-maker workflow becomes the default — I want us to run a structured research audit on our current participant panels. Who is in our standard usability testing pool, and who isn't. What the demographic and ability distribution looks like. Where the gaps are relative to the actual user population we're designing for. That's the foundation question, and if we can't answer it, everything built on top of it is suspect.",
+    "start": 851.71,
+    "end": 881.07
+  },
+  {
+    "speaker": "DAN",
+    "line": "I can make space for that. If we frame it as a research infrastructure review — which it is — I can get it on the calendar before the next sprint cycle without it looking like we're blocking delivery. We'd need Carla to own the methodology and give us a one-page output that we can attach to the A2UI project brief as a standing constraint. Anyone proposing adaptation rules has to demonstrate they've considered whether their research sample covers the populations the adaptation is most likely to affect.",
+    "start": 881.47,
+    "end": 909.39
+  },
+  {
+    "speaker": "CARLA",
+    "line": "One page output, standing constraint, attached to the project brief — I'll take that. And I'd add one thing: let's also invite someone from outside our immediate team to review it. Not a formal external audit, just a peer review. Because one of the risks of the researcher-maker model is that you lose the outside eye, and that outside eye is exactly what catches the assumptions you've stopped being able to see because you're too close to the thing you're building.",
+    "start": 909.79,
+    "end": 929.85
+  },
+  {
+    "speaker": "VERA",
+    "line": "That feels like the right place to land. We're not saying stop — we're saying know who you're designing for before you bake the rules in. The New Makers paradigm, done well, should actually make that easier: researchers who can move fast have more capacity to test with more diverse participants, not less. The question is whether we build that intent into the workflow explicitly, or let speed default to convenience. Carla's audit is how we make the intent structural.",
+    "start": 930.25,
+    "end": 952.3
+  },
+  {
+    "speaker": "KAI",
+    "line": "And from a craft standpoint, I'll take the action on documentation. Rules-layer artefacts with research basis fields, confidence levels required, Dan's handoff template updated before the next component gets into the adaptive system. It's a small change that makes a big commitment visible. Which is, now that I think about it, kind of what good design does.",
+    "start": 952.7,
+    "end": 971.61
+  }
+]
