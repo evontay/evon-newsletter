@@ -1,0 +1,188 @@
+[
+  {
+    "speaker": "CARLA",
+    "line": "Okay, so I want to talk about something that's been sitting with me all week, and it connects both threads from the newsletter in a way I think is genuinely uncomfortable for us as a team. The NN/g piece on dogfooding is the entry point, but it's not really about dogfooding — it's about the epistemic confidence we bring to AI product decisions when we haven't actually watched a real user struggle with them. We keep treating internal familiarity as a reasonable proxy for user experience, and I think we're doing it more than we admit.",
+    "start": 0.0,
+    "end": 26.18
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Here's the specific thing that worries me. When an AI product team dogfoods their own system, they're not just bringing product knowledge — they're bringing exit knowledge. They know where the off switch is, they know what the system can't do, they've read the internal docs. A real user doesn't have any of that, and increasingly, the systems we're building aren't giving it to them either. So the dogfooding blind spot and the exit-door problem are the same problem, they're just wearing different clothes.",
+    "start": 26.58,
+    "end": 48.63
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And I want to be precise about which users I'm most worried about here. It's not the early adopters who'll figure it out — it's the people who arrive at an AI-assisted interface with a clear task, get subtly redirected by the system's logic, and then can't find their way back to what they originally wanted. They didn't choose to be in a deeper engagement loop. They just couldn't find the door, and we never tested whether they could because everyone in the room already knew where it was.",
+    "start": 49.03,
+    "end": 71.56
+  },
+  {
+    "speaker": "DAN",
+    "line": "That framing hits, Carla, because you're right that the dogfooding problem is partly structural — it's not just that we know too much, it's that our testing environments encode our knowledge invisibly. When I set up an internal test, I'm building the scaffolding from my mental model of the product, which means the gaps in my mental model are exactly the gaps the test won't find. That's not a failure of effort, it's a failure of method.",
+    "start": 71.96,
+    "end": 90.74
+  },
+  {
+    "speaker": "VERA",
+    "line": "I want to pull the camera back for a second, because I think this is a pattern across the whole industry right now, not just us. The companies that are moving fastest on AI integration are almost uniformly relying on internal champions and power users as their primary signal, and that's partly rational — they're the ones who can articulate feedback in the vocabulary the product team understands. But it creates a systematic bias toward features and flows that serve people who already know how to use AI tools, which is an increasingly small slice of the actual user population.",
+    "start": 91.14,
+    "end": 122.01
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That's exactly it, Vera, and the exit-door angle makes it sharper. Because the industry pattern you're describing isn't just about feature prioritisation — it's about what kind of agency gets built into the system at a foundational level. If the only people shaping the product are people who would never feel trapped by it, you get a product that doesn't think trapping is a problem worth solving. The exit isn't removed maliciously, it's just never designed in the first place.",
+    "start": 122.41,
+    "end": 143.21
+  },
+  {
+    "speaker": "KAI",
+    "line": "From a craft perspective, this manifests in really specific ways that I don't think we talk about enough. The 'natural' end state of an AI interaction — what the system defaults to when no one has explicitly thought about closure — is almost always continuation. More suggestions, a follow-up prompt, a related feature. Designing for exit requires an active, deliberate choice against the product's own gravity, and that kind of counter-intentional design doesn't happen unless someone in the room is specifically advocating for it.",
+    "start": 143.61,
+    "end": 171.3
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Kai, that phrase 'counter-intentional design' is exactly the right framing, and it's what makes the dogfooding limitation so dangerous here. The people doing the internal testing are motivated users — they want the product to succeed, they're invested in it, they're not looking for the exit. So even if you do dogfooding well, you're stress-testing the engagement loop, not the disengagement path. You're never simulating the person who wants to leave.",
+    "start": 171.7,
+    "end": 191.26
+  },
+  {
+    "speaker": "DAN",
+    "line": "Operationally, here's where I see the gap showing up most clearly for us. When we scope a testing sprint, exit flows are almost never in the brief unless someone specifically adds them. They're not in the standard task list, they're not in the success metrics — we're measuring time-on-task and completion rates for the core journey, not whether users can gracefully get out of something that isn't working for them. That's a workflow default, not a considered decision, and defaults are where bias lives.",
+    "start": 191.66,
+    "end": 212.54
+  },
+  {
+    "speaker": "VERA",
+    "line": "And the business logic reinforces that default in ways that are really hard to push against. Engagement metrics, retention curves, return visit rates — the entire measurement stack is built around keeping users in the system, which means any feature that makes it easier to leave looks like a cost, not a value. UX teams are being asked to optimise for metrics that are structurally opposed to the design of dignified exit, and most of us haven't named that conflict out loud.",
+    "start": 212.94,
+    "end": 237.69
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Which brings me to the newsletter's framing that I keep coming back to — UX teams need to decide whether they're building the lock or the key. And I think the honest answer for most teams, including possibly us, is that we're building the lock while telling ourselves we're building the key. We talk about user agency, we talk about transparency, but if we're not actually testing whether users can exit, we don't know. That's not values, that's just rhetoric.",
+    "start": 238.09,
+    "end": 257.74
+  },
+  {
+    "speaker": "DAN",
+    "line": "I want to push on the 'just do more research' response to this though, because I think it can become its own kind of avoidance. Research takes time, it takes budget, it takes stakeholder buy-in to act on the findings — and if the product cycle is moving at AI speed, by the time research comes back, the thing you were researching has already shipped in a different form. I'm not saying research doesn't matter, obviously it does, but we need to be honest about what it can actually change given our current operating rhythm.",
+    "start": 258.14,
+    "end": 281.95
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Dan, I hear that, and I think you're right that 'do more research' as a blanket answer is too easy. But I'd push back on the framing that speed makes rigour impossible — I think what it makes impossible is the kind of research we're used to doing. An eight-week study with a full synthesis phase, sure, that doesn't fit. But two hours of unmoderated testing with five users who don't know our product, watching them try to stop using something — that's a week of work and it would tell us something real.",
+    "start": 282.35,
+    "end": 305.28
+  },
+  {
+    "speaker": "VERA",
+    "line": "There's a systems-level version of this tension that I think is worth naming. The NN/g piece is essentially arguing that dogfooding creates a closed epistemological loop — you're using knowledge the system produced to evaluate the system, and you can't see what's outside that loop. But that's also a description of what's happening at the industry level right now. AI companies are training models on outputs that reflect the assumptions of AI-familiar teams, and then using those models to help design more AI products, and the naïve user perspective gets further and further from the centre.",
+    "start": 305.68,
+    "end": 336.08
+  },
+  {
+    "speaker": "KAI",
+    "line": "Concretely, I keep thinking about what 'designing the key' actually looks like in the interface. It's not just a log-off button — it's persistent, legible offramps at every meaningful decision point. It's a 'pause and review' state that doesn't feel like failure. It's confirmation that the system understood your task as you intended it, not as it interpreted it. These are all design patterns that exist, but they require someone to specify them, and they require being in scope when the sprint starts.",
+    "start": 336.48,
+    "end": 361.35
+  },
+  {
+    "speaker": "CARLA",
+    "line": "And Kai, that list you just gave — those are exactly the things a dogfooding team won't notice are missing, because internally, we know we can just Slack someone if the system misunderstands us. We have a human exit that the real user doesn't have. The absence of those offramp patterns is invisible to us precisely because we're never dependent on them.",
+    "start": 361.75,
+    "end": 379.42
+  },
+  {
+    "speaker": "DAN",
+    "line": "This is making me think about how we brief internal test sessions. If I'm being honest, the task prompts I write assume familiarity with roughly what kind of thing the product does — like, 'use the AI to help you draft this brief' rather than 'you've been handed a tool your company just bought, figure out how to do your job.' The second one is closer to the real onboarding experience, but it's slower and messier to facilitate, so we default to the first.",
+    "start": 379.82,
+    "end": 398.46
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That's such a good example, Dan, because it shows how the bias isn't in anyone's intentions — it's in the small choices that make a test session manageable. You strip out the naivety to make the session run cleanly, and in doing so you strip out the exact thing you needed to see. NN/g's point about 'too much product knowledge' isn't just about knowing the features, it's about knowing how to approach the product as a category, and that's really hard to unlearn.",
+    "start": 398.86,
+    "end": 418.66
+  },
+  {
+    "speaker": "VERA",
+    "line": "I want to connect this to the IDEO U framing from the newsletter, the one about AI as editor rather than author. Because I think there's a version of that argument that applies to UX teams and exit design. Right now we're largely letting AI-informed product logic author the interaction architecture — the system's defaults, its continuation bias, its engagement optimisation — and we're doing light editorial passes on the surface. Real authorship of the exit experience would mean going back to first principles about what closure should feel like.",
+    "start": 419.06,
+    "end": 447.5
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Vera, yes — and editorial control over the exit is actually where the ethical weight sits. An AI that authors a beautiful onboarding flow is doing something commercially valuable. An AI that authors the exit, or more often doesn't, is doing something ethically significant. And if UX teams are only acting as editors at the feature level and not at the experience architecture level, we're ceding exactly the decisions that matter most.",
+    "start": 447.9,
+    "end": 469.06
+  },
+  {
+    "speaker": "KAI",
+    "line": "The design systems implication here is real and fairly immediate for us. If we're building AI-generated UI components — which the OKLCH piece in the newsletter gestures toward, these things getting delegated upstream — then exit affordances need to be in the component library with the same fidelity as CTAs and input fields. If 'graceful close' or 'task complete and leave' isn't a first-class component, it'll keep getting improvised at the last minute, which means it'll keep being deprioritised.",
+    "start": 469.46,
+    "end": 496.3
+  },
+  {
+    "speaker": "DAN",
+    "line": "Kai, that's a practical handle I can actually grip. If we treat exit affordances as a component problem rather than a philosophy problem, it changes what the conversation with product looks like — it's not 'we have ethical concerns about lock-in,' it's 'we don't have a spec'd pattern for this interaction state and we need one.' The second conversation I can get on a backlog. The first one gets me a nod and nothing else.",
+    "start": 496.7,
+    "end": 515.32
+  },
+  {
+    "speaker": "CARLA",
+    "line": "I love that reframe, Dan, and I think it's true that operationalising it that way gets it done. But I want to hold onto the ethical dimension too, because I think it matters who we are as a team. The reason exit needs to be a first-class component isn't just because it's tidy design systems practice — it's because real users who feel trapped in a system are experiencing something harmful, and we have some responsibility for that. Both things can be true.",
+    "start": 515.72,
+    "end": 535.84
+  },
+  {
+    "speaker": "VERA",
+    "line": "And the 'dissolving seam' framing from the newsletter is what makes this urgent rather than theoretical. As AI erases the line between tool and author, between online and offline, between system and user — the moment of exit becomes harder to locate, not just harder to use. When the AI is ambient, when it's integrated into your workflow across contexts, what does 'leaving' even mean? That's not a question we can answer by watching ourselves use the product.",
+    "start": 536.24,
+    "end": 558.62
+  },
+  {
+    "speaker": "CARLA",
+    "line": "That's the question I want us to sit with, because I genuinely don't think we know the answer and I think we're behaving as if we do. We're mid-transition as a team, we're excited about what these tools can do — I'm excited — and that enthusiasm is real and appropriate. But it means we have to be more deliberate about creating the conditions where we can see the thing clearly, not less. The analytical distance the newsletter mentions is harder to maintain the more invested you are, and we're invested.",
+    "start": 559.02,
+    "end": 580.63
+  },
+  {
+    "speaker": "DAN",
+    "line": "So what does 'creating those conditions' look like in practice, given the actual rhythm of how we work? Because I think there's a version of this conversation where we agree it matters and then nothing changes because we haven't touched any of the actual decision points. I want to know which gate we're adding something to, whose job it becomes, and what counts as 'we looked at this properly' before something ships.",
+    "start": 581.03,
+    "end": 598.84
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Okay, let me be specific. The thing I think we should actually do before we move forward on any of the current AI-assisted features is a structured usability study with participants who have no prior exposure to our product — specifically testing their ability to pause, redirect, or exit the AI interaction at three points in the flow. Not a full research cycle, but a tight protocol, five to eight participants, unmoderated with think-aloud, and we watch every recording as a team. The point isn't to generate a report, it's to give the team the visceral experience of watching someone who can't find the door.",
+    "start": 599.24,
+    "end": 628.23
+  },
+  {
+    "speaker": "KAI",
+    "line": "And I'd add that before we run that study, we do a design review specifically scoped to exit affordances — not general critique, just: where are the exits in this flow, are they visible without prior knowledge of the product, and what happens if someone tries to leave at an 'unintended' moment. That way we have a hypothesis going into the study rather than watching and hoping we notice something.",
+    "start": 628.63,
+    "end": 648.58
+  },
+  {
+    "speaker": "DAN",
+    "line": "I can make that happen as a standing item in the pre-launch checklist. Honestly, it's a two-hour workshop if we keep the scope tight — exit audit against the current flow, then we brief the usability study. If we time-box it I can get that space in the next sprint without it becoming a political conversation about research versus velocity.",
+    "start": 648.98,
+    "end": 667.07
+  },
+  {
+    "speaker": "VERA",
+    "line": "And I'd want us to document what we find in a way that feeds back into how we brief future sprints, not just the current one. Because the systemic risk is that we do this audit once, it goes well, and then we treat it as done. The dogfooding problem doesn't go away — every sprint we add people with more product knowledge, every feature we ship makes the internal team less naïve. This needs to be a recurring ritual, not a one-off.",
+    "start": 667.47,
+    "end": 687.55
+  },
+  {
+    "speaker": "CARLA",
+    "line": "Vera, yes — and I think that's actually the principle I want us to take from this conversation. Dogfooding is not a research substitute, it's a different kind of tool with a specific and limited purpose. It can tell you if something is obviously broken. It cannot tell you if the person who doesn't already know where the exit is can find it. Those are different questions, they need different methods, and the second one is the one that matters most right now. That's the research debt I think we're carrying, and I'd like us to start paying it.",
+    "start": 687.95,
+    "end": 711.54
+  }
+]
